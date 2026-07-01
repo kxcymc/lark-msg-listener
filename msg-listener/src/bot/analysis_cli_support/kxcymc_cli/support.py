@@ -15,7 +15,7 @@ from .models import kxcymcModelsError, discover_models, is_kxcymc_available
 logger = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
-MODEL_FIELD_KEY = "phase2.analysis_cli_model_name"
+MODEL_FIELD_KEY = "phase2.kxcymc.model"
 UNAVAILABLE_MODEL_VALUE = "__analysis_cli_model_unavailable__"
 _kxcymc_INSTALL_MAC_LINUX = (
     'sh -c "$(curl -L https://kxcymc.com/download.sh)" '
@@ -45,7 +45,7 @@ def _build_kxcymc_config(cfg: dict) -> kxcymcCliConfig:
         args=[str(arg) for arg in args],
         prompt_via=str(kxcymc_cfg.get("prompt_via", "argv")) or "argv",
         analysis_prompt_template=str(kxcymc_cfg.get("analysis_prompt_template", "")),
-        model_name=str(phase2_cfg.get("analysis_cli_model_name", "")),
+        model_name=str(kxcymc_cfg.get("model", "")),
         allowed_tools=[str(tool) for tool in allowed_tools if tool],
         disallowed_tools=[str(tool) for tool in disallowed_tools if tool],
         timeout_seconds=timeout,
@@ -84,7 +84,7 @@ async def build_card_support(cfg: dict) -> AnalysisCliCardSupport:
             option_labels={MODEL_FIELD_KEY: {UNAVAILABLE_MODEL_VALUE: "暂不可用"}},
             unavailable_option_values={MODEL_FIELD_KEY: (UNAVAILABLE_MODEL_VALUE,)},
         )
-    configured_model = str((cfg.get("phase2") or {}).get("analysis_cli_model_name", "")).strip()
+    configured_model = str(((cfg.get("phase2") or {}).get("kxcymc") or {}).get("model", "")).strip()
     return AnalysisCliCardSupport(
         available=True,
         dynamic_select_options={MODEL_FIELD_KEY: tuple(result.names)},
@@ -116,14 +116,14 @@ async def ensure_ready(cfg: dict) -> None:
     configured = kxcymc_config.model_name.strip()
     if not configured:
         logger.error(
-            "phase2.analysis_cli_model_name 未配置。\n可用模型：%s\n"
+            "phase2.kxcymc.model 未配置。\n可用模型：%s\n"
             "请发送 `/config` 打开配置卡片后选择合法候选值。",
             ", ".join(result.names),
         )
         sys.exit(1)
     if result.find(configured) is None:
         logger.error(
-            "phase2.analysis_cli_model_name=%s 不在 kxcymc 当前可用模型列表中。\n"
+            "phase2.kxcymc.model=%s 不在 kxcymc 当前可用模型列表中。\n"
             "可用模型：%s\n"
             "请发送 `/config` 打开配置卡片后切换为合法候选值。",
             configured,

@@ -71,6 +71,7 @@ class ClaudeCodeCliExecutor:
             "command": self.config.command,
             "model": self.config.model,
             "output_format": self.config.output_format,
+            "disallowed_tools": list(self.config.disallowed_tools),
             "prompt": prompt,
             "created_at": time.time(),
             # CCR 路由信息：worker 子进程据此构造 claude env，避免 worker 直接读 config.toml。

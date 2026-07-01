@@ -12,8 +12,6 @@ from pathlib import Path
 from typing import Any
 
 from .models import (
-    CLAUDE_CODE_CLI_DISALLOWED_TOOLS,
-    CLAUDE_CODE_CLI_PERMISSION_MODE,
     ERROR_CLAUDE_CLI_FAILED,
     ERROR_CLAUDE_NOT_FOUND,
     ERROR_DIRTY_WORKTREE,
@@ -22,6 +20,13 @@ from .models import (
     ERROR_REPO_NOT_FOUND,
 )
 from ....common.ccr_gateway import CcrGatewayConfig, build_ccr_env
+from ....common.claude_code_cli import (
+    CLAUDE_CODE_CLI_DEV_TASK_BUILTIN_DISALLOWED_TOOLS,
+    CLAUDE_CODE_CLI_PERMISSION_MODE,
+    ClaudeCodeCliBaseConfig,
+    build_claude_print_argv,
+    coerce_tool_list,
+)
 
 ERROR_CLAUDE_CLI_TIMEOUT = "claude_cli_timeout"
 
@@ -183,21 +188,17 @@ def _run(*, metadata: dict[str, Any], stdout_path: Path, stderr_path: Path) -> d
 
 
 def _build_cli_command(metadata: dict[str, Any]) -> list[str]:
-    cmd = [
-        str(metadata.get("command") or "claude"),
-        "-p",
-        "--permission-mode",
-        CLAUDE_CODE_CLI_PERMISSION_MODE,
-    ]
-    model = str(metadata.get("model") or "")
-    if model:
-        cmd.extend(["--model", model])
-    output_format = str(metadata.get("output_format") or "")
-    if output_format:
-        cmd.extend(["--output-format", output_format])
-    for tool in CLAUDE_CODE_CLI_DISALLOWED_TOOLS:
-        cmd.extend(["--disallowedTools", tool])
-    return cmd
+    config = ClaudeCodeCliBaseConfig(
+        command=str(metadata.get("command") or "claude"),
+        model=str(metadata.get("model") or ""),
+        output_format=str(metadata.get("output_format") or ""),
+        disallowed_tools=coerce_tool_list(metadata.get("disallowed_tools")),
+    )
+    return build_claude_print_argv(
+        config,
+        permission_mode=CLAUDE_CODE_CLI_PERMISSION_MODE,
+        disallowed_tools=CLAUDE_CODE_CLI_DEV_TASK_BUILTIN_DISALLOWED_TOOLS,
+    )
 
 
 def _cli_timeout(metadata: dict[str, Any]) -> float | None:

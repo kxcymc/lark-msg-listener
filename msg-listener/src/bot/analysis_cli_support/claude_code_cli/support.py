@@ -15,13 +15,20 @@ from ....common.ccr_gateway import (
     ensure_gateway_ready,
     load_ccr_config,
 )
+from ....common.claude_code_cli import (
+    CLAUDE_CODE_CLI_READONLY_DISALLOWED_TOOLS,
+    coerce_tool_list,
+    discover_claude_model_options,
+    load_claude_code_cli_base_config,
+    merge_disallowed_tools,
+    resolve_analysis_task_state_dir,
+)
 
 logger = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
-MODEL_FIELD_KEY = "phase2.analysis_cli_model_name"
+MODEL_FIELD_KEY = "phase2.claude.model"
 UNAVAILABLE_MODEL_VALUE = "__analysis_cli_model_unavailable__"
-DEFAULT_MODEL_OPTIONS = ("sonnet", "opus", "haiku")
 _INSTALL_PACKAGE = "@anthropic-ai/claude-code"
 
 
@@ -29,30 +36,21 @@ def _build_claude_config(cfg: dict) -> ClaudeCodeCliConfig:
     phase2_cfg = cfg.get("phase2") or {}
     claude_cfg = phase2_cfg.get("claude") or {}
     timeout = float(phase2_cfg.get("analysis_timeout_seconds", 240))
-    args = claude_cfg.get("args") or ["-p", "--output-format", "json"]
-    if not isinstance(args, list):
-        args = ["-p", "--output-format", "json"]
-    allowed_tools = claude_cfg.get("allowed_tools") or []
-    if not isinstance(allowed_tools, list):
-        allowed_tools = []
-    disallowed_tools = claude_cfg.get("disallowed_tools") or [
-        "Edit",
-        "Write",
-        "MultiEdit",
-        "Bash",
-    ]
-    if not isinstance(disallowed_tools, list):
-        disallowed_tools = ["Edit", "Write", "MultiEdit", "Bash"]
+    base_config = load_claude_code_cli_base_config(cfg)
+    extra_disallowed_tools = coerce_tool_list(claude_cfg.get("disallowed_tools"))
     ccr_cfg = load_ccr_config(cfg)
     return ClaudeCodeCliConfig(
-        command=str(claude_cfg.get("command", "claude")) or "claude",
-        args=[str(arg) for arg in args],
-        prompt_via=str(claude_cfg.get("prompt_via", "argv")) or "argv",
+        command=base_config.command,
+        output_format=base_config.output_format,
         analysis_prompt_template=str(claude_cfg.get("analysis_prompt_template", "")),
-        model_name=str(phase2_cfg.get("analysis_cli_model_name", "")),
-        allowed_tools=[str(tool) for tool in allowed_tools if tool],
-        disallowed_tools=[str(tool) for tool in disallowed_tools if tool],
+        model_name=str(claude_cfg.get("model", "")),
+        # 需求分析场景必须只读，配置项只能追加禁用工具，不能放开写入类工具。
+        disallowed_tools=merge_disallowed_tools(
+            CLAUDE_CODE_CLI_READONLY_DISALLOWED_TOOLS,
+            extra_disallowed_tools,
+        ),
         timeout_seconds=timeout,
+        state_dir=resolve_analysis_task_state_dir(PROJECT_ROOT),
         ccr_env=build_ccr_env(ccr_cfg),   # 注入 CCR 路由环境；analyzer 子进程据此连 CCR 网关
     )
 
@@ -71,10 +69,22 @@ async def build_card_support(cfg: dict) -> AnalysisCliCardSupport:
             option_labels={MODEL_FIELD_KEY: {UNAVAILABLE_MODEL_VALUE: "暂不可用"}},
             unavailable_option_values={MODEL_FIELD_KEY: (UNAVAILABLE_MODEL_VALUE,)},
         )
+    options = await discover_claude_model_options(
+        ccr_config=load_ccr_config(cfg),
+        command=command,
+        cwd=PROJECT_ROOT,
+    )
+    if not options:
+        return AnalysisCliCardSupport(
+            available=False,
+            dynamic_select_options={MODEL_FIELD_KEY: (UNAVAILABLE_MODEL_VALUE,)},
+            option_labels={MODEL_FIELD_KEY: {UNAVAILABLE_MODEL_VALUE: "未发现可用模型"}},
+            unavailable_option_values={MODEL_FIELD_KEY: (UNAVAILABLE_MODEL_VALUE,)},
+        )
     current_model = claude_config.model_name.strip()
     return AnalysisCliCardSupport(
         available=True,
-        dynamic_select_options={MODEL_FIELD_KEY: DEFAULT_MODEL_OPTIONS},
+        dynamic_select_options={MODEL_FIELD_KEY: options},
         current_option_values={MODEL_FIELD_KEY: current_model},
     )
 
@@ -95,13 +105,25 @@ async def ensure_ready(cfg: dict) -> None:
         logger.error("CCR 网关未就绪：%s", exc)
         sys.exit(1)
 
+    claude_config.state_dir.mkdir(parents=True, exist_ok=True)
+    logger.debug("claude_code_cli 分析状态目录：%s", claude_config.state_dir)
     configured = claude_config.model_name.strip()
-    if not configured:
+    model_options = await discover_claude_model_options(
+        ccr_config=load_ccr_config(cfg),
+        command=command,
+        cwd=PROJECT_ROOT,
+    )
+    if configured and model_options and configured not in model_options:
         logger.error(
-            "phase2.analysis_cli_model_name 未配置。\n"
-            "请发送 `/config` 打开配置卡片后选择或填写 Claude 模型。"
+            "phase2.claude.model=%s 不在当前 Claude 可用模型列表中。\n可用模型：%s",
+            configured,
+            ", ".join(model_options),
         )
         sys.exit(1)
+    if configured and not model_options:
+        logger.warning("未发现 Claude 可用模型，将跳过模型名预校验。")
+    if not configured:
+        logger.info("phase2.claude.model 未配置，将使用 Claude CLI/CCR 默认模型")
     logger.info("Claude Code CLI 已就绪，当前 model_name=%r", configured)
 
 

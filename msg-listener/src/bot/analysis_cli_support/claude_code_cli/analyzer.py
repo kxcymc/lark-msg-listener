@@ -6,8 +6,20 @@ import json
 import logging
 import re
 import shutil
+import time
+import uuid
 from dataclasses import dataclass, field
+from pathlib import Path
 
+from ....common.claude_code_cli import (
+    CLAUDE_CODE_CLI_ANALYSIS_TASK_STATE_DIR,
+    CLAUDE_CODE_CLI_DEFAULT_COMMAND,
+    CLAUDE_CODE_CLI_DEFAULT_OUTPUT_FORMAT,
+    CLAUDE_CODE_CLI_READONLY_DISALLOWED_TOOLS,
+    ClaudeCodeCliBaseConfig,
+    build_claude_print_argv,
+    merge_disallowed_tools,
+)
 from ...analysis.analyzers.types import (
     AnalyzerError,
     AnalyzerInput,
@@ -66,16 +78,15 @@ _RATE_LIMIT_PATTERNS = [
 
 @dataclass
 class ClaudeCodeCliConfig:
-    command: str = "claude"
-    args: list[str] = field(default_factory=lambda: ["-p", "--output-format", "json"])
-    prompt_via: str = "argv"
+    command: str = CLAUDE_CODE_CLI_DEFAULT_COMMAND
+    output_format: str = CLAUDE_CODE_CLI_DEFAULT_OUTPUT_FORMAT
     analysis_prompt_template: str = ""
     model_name: str = ""
-    allowed_tools: list[str] = field(default_factory=list)
-    disallowed_tools: list[str] = field(
-        default_factory=lambda: ["Edit", "Write", "MultiEdit", "Bash"]
+    disallowed_tools: tuple[str, ...] = field(
+        default_factory=lambda: CLAUDE_CODE_CLI_READONLY_DISALLOWED_TOOLS
     )
     timeout_seconds: float = 240.0
+    state_dir: Path = Path(CLAUDE_CODE_CLI_ANALYSIS_TASK_STATE_DIR)
     ccr_env: dict[str, str] | None = None   # CCR 注入后的子进程环境；None 表示不注入（继承父进程环境）
 
 
@@ -236,34 +247,34 @@ class ClaudeCodeCliAnalyzer:
         )
 
     def _build_argv(self, prompt: str, payload: AnalyzerInput) -> list[str]:
-        argv = [self.config.command, *self.config.args]
-        if self.config.prompt_via != "stdin":
-            argv.append(self._build_prompt_payload(prompt, payload))
-        if self.config.model_name:
-            argv += ["--model", self.config.model_name]
-        argv.extend(self._build_tool_args())
-        return argv
-
-    def _build_tool_args(self) -> list[str]:
-        argv: list[str] = []
-        for tool in self.config.allowed_tools:
-            argv += ["--allowedTools", tool]
-        for tool in self.config.disallowed_tools:
-            argv += ["--disallowedTools", tool]
-        return argv
+        cli_config = ClaudeCodeCliBaseConfig(
+            command=self.config.command,
+            model=self.config.model_name,
+            output_format=self.config.output_format,
+            disallowed_tools=merge_disallowed_tools(
+                self.config.disallowed_tools,
+                CLAUDE_CODE_CLI_READONLY_DISALLOWED_TOOLS,
+            ),
+        )
+        return build_claude_print_argv(
+            cli_config,
+            prompt=self._build_prompt_payload(prompt, payload),
+        )
 
     def _build_prompt(self) -> str:
         return self.config.analysis_prompt_template.strip() or _DEFAULT_PROMPT
 
-    def _build_stdin(self, prompt: str, payload: AnalyzerInput) -> bytes:
-        if self.config.prompt_via == "stdin":
-            return self._build_prompt_payload(prompt, payload).encode("utf-8")
-        return b""
-
     async def analyze(self, payload: AnalyzerInput) -> AnalyzerResult:
         prompt = self._build_prompt()
         argv = self._build_argv(prompt, payload)
-        stdin_bytes = self._build_stdin(prompt, payload)
+        task = _AnalysisTaskMonitor.create(
+            state_dir=self.config.state_dir,
+            payload=payload,
+            command=self.config.command,
+            model=self.config.model_name,
+            output_format=self.config.output_format,
+            disallowed_tools=self.config.disallowed_tools,
+        )
 
         logger.debug("claude exec: %s", " ".join(argv))
         try:
@@ -274,7 +285,12 @@ class ClaudeCodeCliAnalyzer:
                 stderr=asyncio.subprocess.PIPE,
                 env=self.config.ccr_env,
             )
+            task.write_process(pid=proc.pid)
         except FileNotFoundError as exc:
+            task.write_result(
+                status="failed",
+                error=f"未找到 Claude Code CLI 可执行文件：{self.config.command}",
+            )
             raise AnalyzerError(
                 f"未找到 Claude Code CLI 可执行文件：{self.config.command}",
                 retriable=False,
@@ -282,12 +298,16 @@ class ClaudeCodeCliAnalyzer:
 
         try:
             stdout_b, stderr_b = await asyncio.wait_for(
-                proc.communicate(input=stdin_bytes),
+                proc.communicate(input=b""),
                 timeout=self.config.timeout_seconds,
             )
         except asyncio.TimeoutError as exc:
             proc.kill()
             await proc.wait()
+            task.write_result(
+                status="failed",
+                error=f"Claude Code CLI 子进程超时 (> {self.config.timeout_seconds:.0f}s)",
+            )
             raise AnalyzerError(
                 f"Claude Code CLI 子进程超时 (> {self.config.timeout_seconds:.0f}s)",
                 retriable=True,
@@ -296,14 +316,25 @@ class ClaudeCodeCliAnalyzer:
         stdout = stdout_b.decode("utf-8", errors="replace")
         stderr = stderr_b.decode("utf-8", errors="replace")
         rc = proc.returncode
+        task.write_logs(stdout=stdout, stderr=stderr)
 
         if rc != 0:
             if _looks_like_rate_limit(stderr) or _looks_like_rate_limit(stdout):
+                task.write_result(
+                    status="failed",
+                    returncode=rc,
+                    error=f"rate_limited: {stderr.strip()[:400] or stdout.strip()[:400]}",
+                )
                 raise AnalyzerRateLimited(
                     f"Claude Code CLI 限流/额度不足 (rc={rc}): {stderr.strip()[:200]}",
                     raw_stdout=stdout,
                     raw_stderr=stderr,
                 )
+            task.write_result(
+                status="failed",
+                returncode=rc,
+                error=stderr.strip()[:1000] or stdout.strip()[:1000],
+            )
             raise AnalyzerError(
                 f"Claude Code CLI 子进程失败 (rc={rc}): {stderr.strip()[:400]}",
                 retriable=True,
@@ -314,11 +345,21 @@ class ClaudeCodeCliAnalyzer:
         envelope = _strip_json_envelope(stdout)
         if not envelope:
             if _looks_like_rate_limit(stdout) or _looks_like_rate_limit(stderr):
+                task.write_result(
+                    status="failed",
+                    returncode=rc,
+                    error="rate_limited: stdout/stderr matched rate-limit patterns",
+                )
                 raise AnalyzerRateLimited(
                     "Claude Code CLI 输出疑似限流/额度不足",
                     raw_stdout=stdout,
                     raw_stderr=stderr,
                 )
+            task.write_result(
+                status="failed",
+                returncode=rc,
+                error="Claude Code CLI stdout 无法解析为目标 JSON",
+            )
             raise AnalyzerError(
                 "Claude Code CLI stdout 无法解析为目标 JSON",
                 retriable=False,
@@ -328,6 +369,11 @@ class ClaudeCodeCliAnalyzer:
         try:
             data = json.loads(envelope)
         except json.JSONDecodeError as exc:
+            task.write_result(
+                status="failed",
+                returncode=rc,
+                error=f"Claude Code CLI JSON 解析失败: {exc}",
+            )
             raise AnalyzerError(
                 f"Claude Code CLI JSON 解析失败: {exc}",
                 retriable=False,
@@ -335,10 +381,108 @@ class ClaudeCodeCliAnalyzer:
                 raw_stderr=stderr,
             ) from exc
         if not isinstance(data, dict):
+            task.write_result(
+                status="failed",
+                returncode=rc,
+                error="Claude Code CLI JSON 顶层不是对象",
+            )
             raise AnalyzerError(
                 "Claude Code CLI JSON 顶层不是对象",
                 retriable=False,
                 raw_stdout=stdout,
                 raw_stderr=stderr,
             )
-        return _coerce_result(data)
+        result = _coerce_result(data)
+        task.write_result(
+            status="succeeded",
+            returncode=rc,
+            category=result.category,
+            summary=result.summary,
+            reason=result.reason,
+        )
+        return result
+
+
+class _AnalysisTaskMonitor:
+    """把分析侧 Claude CLI 子进程状态落盘，便于从 out 目录观察执行过程。"""
+
+    def __init__(self, task_dir: Path) -> None:
+        self.task_dir = task_dir
+
+    @classmethod
+    def create(
+        cls,
+        *,
+        state_dir: Path,
+        payload: AnalyzerInput,
+        command: str,
+        model: str,
+        output_format: str,
+        disallowed_tools: tuple[str, ...],
+    ) -> "_AnalysisTaskMonitor":
+        task_id = f"analysis_{uuid.uuid4().hex}"
+        task_dir = state_dir / task_id
+        task_dir.mkdir(parents=True, exist_ok=False)
+        monitor = cls(task_dir)
+        monitor._write_json(
+            "metadata.json",
+            {
+                "analysis_task_id": task_id,
+                "record_id": payload.record_id,
+                "record_path": payload.record_path,
+                "chat_type": payload.chat_type,
+                "command": command,
+                "model": model,
+                "output_format": output_format,
+                "disallowed_tools": list(disallowed_tools),
+                "created_at": time.time(),
+                "status": "running",
+            },
+        )
+        return monitor
+
+    def write_process(self, *, pid: int) -> None:
+        self._write_json(
+            "process.json",
+            {
+                "pid": pid,
+                "started_at": time.time(),
+                "metadata": str(self.task_dir / "metadata.json"),
+                "stdout": str(self.task_dir / "stdout.log"),
+                "stderr": str(self.task_dir / "stderr.log"),
+                "result": str(self.task_dir / "result.json"),
+            },
+        )
+
+    def write_logs(self, *, stdout: str, stderr: str) -> None:
+        (self.task_dir / "stdout.log").write_text(stdout, encoding="utf-8")
+        (self.task_dir / "stderr.log").write_text(stderr, encoding="utf-8")
+
+    def write_result(
+        self,
+        *,
+        status: str,
+        returncode: int | None = None,
+        error: str = "",
+        category: str = "",
+        summary: str = "",
+        reason: str = "",
+    ) -> None:
+        self._write_json(
+            "result.json",
+            {
+                "status": status,
+                "returncode": returncode,
+                "error": error,
+                "category": category,
+                "summary": summary,
+                "reason": reason,
+                "finished_at": time.time(),
+            },
+        )
+
+    def _write_json(self, name: str, payload: dict) -> None:
+        (self.task_dir / name).write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )

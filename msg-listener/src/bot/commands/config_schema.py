@@ -48,7 +48,6 @@ _STATIC_OPTIONS: dict[str, tuple[str, ...]] = {
     "phase2.process_current_date_only": ("true", "false"),
     "phase2.card.meego_prompt_delivery": ("bubble", "trae_side_chat"),
     "phase3.dev_task.executor": list_executor_options(),
-    "phase3.dev_task.claude_code_cli.output_format": ("json", "text", "stream-json"),
     "mywork.enabled": ("true", "false"),
     "mywork.conclude_cli": list_conclude_cli_options(),
     "ccr.enabled": ("true", "false"),
@@ -62,7 +61,9 @@ _STATIC_OPTION_LABELS: dict[str, dict[str, str]] = {
     },
 }
 _DYNAMIC_SELECT_KEYS: set[str] = {
-    "phase2.analysis_cli_model_name",
+    "phase2.kxcymc.model",
+    "phase2.claude.model",
+    "phase3.dev_task.claude_code_cli.model",
     "mywork.conclude_cli_model_name",
 }
 

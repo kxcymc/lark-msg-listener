@@ -64,7 +64,8 @@ filter_emoji_only = true
 
 # ----- claude-code-router(CCR) 网关 -----
 # claude_code_cli 的分析器与开发任务执行器都会经由该网关把请求路由到自定义模型供应商。
-# 前置：已安装 ccr 并在 ~/.claude-code-router/config.json 配好 Provider/Router。
+# 前置：已安装 ccr，并在当前系统的 claude-code-router 配置文件中配好 Provider/Router。
+# 配置发现会按 macOS/Linux/Windows 常见路径查找，并兼容 ~/.claude-code-router/config.json。
 [ccr]
 # 是否启用 CCR 路由；false 时 claude 直连默认 Anthropic 端点（仅用于排障/回滚）。
 enabled = true
@@ -103,8 +104,6 @@ analysis_max_concurrency = 5
 # 需求判断 CLI。
 # 可选值："kxcymc_cli", "claude_code_cli"；配置项保持为单选下拉。
 analysis_cli = "claude_code_cli"
-# 当前所选需求判断 CLI 的模型名；启动时会预拉取各 CLI 的可用模型并缓存到配置卡片。
-analysis_cli_model_name = "sonnet"
 # 单次分析 CLI 子进程超时秒数；超时按 attempts 回退/失败。
 analysis_timeout_seconds = 240
 # 单条 record 的最大尝试次数；达到上限标记 failed。
@@ -113,6 +112,8 @@ analysis_max_attempts = 2
 process_current_date_only = true
 
 [phase2.kxcymc]
+# kxcymc 需求判断 CLI 的模型名；启动时会预拉取可用模型并缓存到配置卡片。
+model = ""
 # kxcymc CLI 可执行命令（默认在 PATH 中查找 `kxcymc`）。
 command = "kxcymc"
 # kxcymc 子命令参数；默认 `--json -p`。
@@ -126,17 +127,12 @@ allowed_tools = []
 disallowed_tools = ["Edit", "Write", "MultiEdit", "Bash"]
 
 [phase2.claude]
-# Claude Code CLI 可执行命令（默认在 PATH 中查找 `claude`）。
-command = "claude"
-# Claude Code CLI 参数；默认使用 print 模式并要求 JSON 输出。
-args = ["-p", "--output-format", "json"]
-# prompt 投喂方式：argv。
-prompt_via = "argv"
+# Claude 分析器模型名；留空使用 CLI/CCR 默认模型，候选值由 CCR 配置或 ACP 动态发现。
+model = ""
 # 自定义分析 prompt 模板；留空使用内置模板。
 analysis_prompt_template = ""
-# 允许 / 禁用的工具。默认禁用所有写入类工具，保证只读。
-allowed_tools = []
-disallowed_tools = ["Edit", "Write", "MultiEdit", "Bash"]
+# 分析器额外禁用工具；Edit/Write/MultiEdit/Bash 由代码固定追加，保证只读。
+disallowed_tools = []
 
 [phase2.card]
 # 是否在卡片之外补发媒体附件消息（图片单独推送；视频暂未推送）。
@@ -186,14 +182,13 @@ pat_token = ""
 [phase3.dev_task.claude_code_cli]
 # Claude Code CLI 可执行命令（默认在 PATH 中查找 `claude`）。
 command = "claude"
-# Claude Code CLI 模型名；留空使用 CLI 默认模型。
-# 经 CCR 网关路由：claude CLI 的别名 sonnet/opus 会被解析为 claude-*-4-6，
-# 必须填 CCR 实际可路由的模型名，否则 CLI 预检直接报 404「model 不存在」。
-model = "sonnet"
+# Claude Code CLI 模型名；留空使用 CLI/CCR 默认模型，候选值由 CCR 配置或 ACP 动态发现。
+model = ""
 # 要求 CLI 输出可解析结果；权限模式 bypassPermissions 与高风险 Bash 黑名单由代码固定处理。
 output_format = "json"
-# 本地持久化任务状态目录；Bot 重启后会通过 executor_task_id 继续等待该目录结果。
-state_dir = "out/claude_code_cli_tasks"
+# 执行器额外禁用工具；高风险 Bash 黑名单由代码固定追加。
+disallowed_tools = []
+# 任务状态固定写入 out/claude_code_cli_dev_tasks，不提供配置项。
 
 # ----- 我的工作总结 -----
 [mywork]
