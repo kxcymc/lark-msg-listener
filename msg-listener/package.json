@@ -1,0 +1,9 @@
+{
+  "name": "msg-listener",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "bootstrap": "node scripts/launch.mjs --mode bootstrap",
+    "start": "node scripts/launch.mjs --mode run"
+  }
+}

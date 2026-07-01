@@ -1,0 +1,21 @@
+# Generated artifacts
+out/
+cache/
+.local/
+logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.eggs/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+config.toml

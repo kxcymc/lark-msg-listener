@@ -1,0 +1,19 @@
+[project]
+name = "msg-listener-agent"
+version = "0.1.0"
+description = "飞书消息实时监听 Agent"
+requires-python = ">=3.11"
+dependencies = [
+    "lark-oapi==1.6.5",
+    "cryptography==48.0.0",
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]

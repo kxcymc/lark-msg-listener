@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <rect x="0" y="0" width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- ===== 左侧导航 240px ===== -->
+  <rect x="0" y="0" width="240" height="1080" fill="#FFFFFF"/>
+  <line x1="240" y1="0" x2="240" y2="1080" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="20" y="16" width="32" height="32" rx="8" fill="#2563EB"/>
+  <path d="M28 32 l4 4 l8 -8" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="62" y="30" font-size="15" font-weight="600" fill="#0F172A">工作量后台</text>
+  <text x="62" y="45" font-size="11" fill="#64748B">dashboard-monitor</text>
+  <line x1="16" y1="68" x2="224" y2="68" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="20" y="92" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">概览</text>
+  <text x="50" y="125" font-size="14" fill="#0F172A">总览</text>
+  <rect x="22" y="112" width="16" height="16" rx="3" fill="none" stroke="#64748B" stroke-width="1.6"/>
+  <text x="50" y="165" font-size="14" fill="#0F172A">实时监控台</text>
+  <circle cx="30" cy="160" r="6" fill="none" stroke="#64748B" stroke-width="1.6"/>
+  <text x="50" y="205" font-size="14" fill="#0F172A">数据分析</text>
+  <path d="M24 204 l0 -10 M30 204 l0 -16 M36 204 l0 -7" stroke="#64748B" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="16" y1="226" x2="224" y2="226" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="20" y="250" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">消息记录</text>
+  <text x="50" y="287" font-size="14" fill="#0F172A">记录列表</text>
+  <rect x="23" y="275" width="14" height="14" rx="2" fill="none" stroke="#64748B" stroke-width="1.6"/>
+  <!-- 会话回放 (选中) -->
+  <rect x="8" y="306" width="224" height="40" rx="8" fill="#EFF4FF"/>
+  <rect x="8" y="306" width="3" height="40" rx="1.5" fill="#2563EB"/>
+  <path d="M25 318 l0 16 M25 318 q9 8 0 16" stroke="#2563EB" stroke-width="1.6" fill="none"/>
+  <path d="M30 322 l6 4 l-6 4 z" fill="#2563EB"/>
+  <text x="50" y="331" font-size="14" font-weight="600" fill="#2563EB">会话回放</text>
+  <line x1="16" y1="352" x2="224" y2="352" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="20" y="376" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">研发流程</text>
+  <text x="50" y="409" font-size="14" fill="#0F172A">需求</text>
+  <text x="50" y="447" font-size="14" fill="#0F172A">开发任务</text>
+  <text x="50" y="491" font-size="14" fill="#0F172A">仓库</text>
+  <line x1="16" y1="514" x2="224" y2="514" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="20" y="538" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">运行诊断</text>
+  <text x="50" y="567" font-size="14" fill="#0F172A">接口调用</text>
+  <text x="50" y="609" font-size="14" fill="#0F172A">长连接事件</text>
+  <text x="50" y="651" font-size="14" fill="#0F172A">错误中心</text>
+  <circle cx="30" cy="646" r="8" fill="none" stroke="#DC2626" stroke-width="1.6"/>
+  <line x1="16" y1="672" x2="224" y2="672" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="20" y="696" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">报表与设置</text>
+  <text x="50" y="725" font-size="14" fill="#0F172A">周报链接</text>
+  <text x="50" y="773" font-size="14" fill="#0F172A">报表导出</text>
+  <text x="50" y="819" font-size="14" fill="#0F172A">设置</text>
+  <line x1="16" y1="996" x2="224" y2="996" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="16" y="1012" width="208" height="48" rx="8" fill="#F1F5F9"/>
+  <circle cx="34" cy="1036" r="5" fill="#16A34A"/>
+  <text x="50" y="1032" font-size="12" font-weight="600" fill="#0F172A">数据源已连接</text>
+  <text x="50" y="1048" font-size="11" fill="#64748B">本地文件 record.json</text>
+
+  <!-- ===== 顶栏 ===== -->
+  <rect x="240" y="0" width="1680" height="56" fill="#FFFFFF"/>
+  <line x1="240" y1="56" x2="1920" y2="56" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="264" y="34" font-size="20" font-weight="600" fill="#0F172A">会话回放</text>
+  <text x="346" y="34" font-size="13" fill="#94A3B8">消息记录 / 会话回放</text>
+  <rect x="800" y="14" width="280" height="28" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="832" y="33" font-size="13" fill="#0F172A">2026-06-05 ~ 2026-06-12</text>
+  <rect x="1660" y="14" width="84" height="28" rx="6" fill="#2563EB"/>
+  <text x="1690" y="33" font-size="13" fill="#FFFFFF">刷新</text>
+  <text x="1762" y="33" font-size="13" fill="#64748B">自动刷新</text>
+  <rect x="1830" y="20" width="34" height="16" rx="8" fill="#16A34A"/>
+  <circle cx="1856" cy="28" r="6" fill="#FFFFFF"/>
+  <circle cx="1896" cy="28" r="7" fill="#16A34A"/>
+  <path d="M1893 28 l2 2 l4 -4" stroke="#FFFFFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== 会话信息栏 ===== -->
+  <rect x="264" y="80" width="1632" height="56" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="288" y="96" width="24" height="24" rx="6" fill="#2563EB"/>
+  <text x="296" y="113" font-size="13" fill="#FFFFFF">研</text>
+  <text x="324" y="106" font-size="14" font-weight="600" fill="#0F172A">研发协作群</text>
+  <text x="324" y="124" font-size="12" fill="#64748B">回放范围 2026-06-12 · 共 86 条消息</text>
+  <rect x="1700" y="96" width="80" height="24" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1740" y="113" font-size="12" fill="#64748B" text-anchor="middle">导出</text>
+  <rect x="1792" y="96" width="80" height="24" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1832" y="113" font-size="12" fill="#64748B" text-anchor="middle">跳转记录</text>
+
+  <!-- ===== IM 气泡流 ===== -->
+  <rect x="264" y="152" width="1632" height="876" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- 日期分隔 -->
+  <line x1="900" y1="186" x2="980" y2="186" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1080" y="190" font-size="12" fill="#94A3B8" text-anchor="middle">2026-06-12 14:00</text>
+  <line x1="1180" y1="186" x2="1260" y2="186" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- 气泡1：左 文本 -->
+  <circle cx="320" cy="232" r="18" fill="#0891B2"/>
+  <text x="320" y="237" font-size="13" fill="#FFFFFF" text-anchor="middle">娜</text>
+  <text x="352" y="218" font-size="12" fill="#64748B">李娜 · 14:02</text>
+  <rect x="352" y="228" width="320" height="44" rx="10" fill="#F1F5F9"/>
+  <text x="372" y="254" font-size="14" fill="#0F172A">大家看下最新的原型，已更新到这版。</text>
+
+  <!-- 气泡2：左 图片（媒体缺失） -->
+  <circle cx="320" cy="332" r="18" fill="#0891B2"/>
+  <text x="320" y="337" font-size="13" fill="#FFFFFF" text-anchor="middle">娜</text>
+  <text x="352" y="312" font-size="12" fill="#64748B">李娜 · 14:03</text>
+  <rect x="352" y="322" width="300" height="160" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="5 4"/>
+  <!-- 破图图标 -->
+  <g transform="translate(470, 372)">
+    <rect x="-26" y="-22" width="52" height="44" rx="6" fill="#E2E8F0"/>
+    <path d="M-26 12 l16 -16 l12 12 l10 -10 l14 14" stroke="#94A3B8" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="-10" cy="-8" r="4" fill="#94A3B8"/>
+    <!-- 断裂线 -->
+    <line x1="-30" y1="-26" x2="30" y2="30" stroke="#DC2626" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+  <text x="502" y="436" font-size="13" font-weight="600" fill="#64748B" text-anchor="middle">媒体文件不存在 / 已清理</text>
+  <text x="502" y="456" font-size="11" fill="#94A3B8" text-anchor="middle" font-family="monospace">/data/media/2026/06/img_8f3a91.png</text>
+
+  <!-- 气泡3：右 文本 -->
+  <circle cx="1840" cy="532" r="18" fill="#2563EB"/>
+  <text x="1840" y="537" font-size="13" fill="#FFFFFF" text-anchor="middle">伟</text>
+  <text x="1808" y="518" font-size="12" fill="#64748B" text-anchor="end">张伟 · 14:05</text>
+  <rect x="1480" y="528" width="328" height="44" rx="10" fill="#EFF4FF"/>
+  <text x="1500" y="554" font-size="14" fill="#0F172A">收到，我先按这版评估开发工作量。</text>
+
+  <!-- 气泡4：左 视频（媒体缺失） -->
+  <circle cx="320" cy="632" r="18" fill="#0891B2"/>
+  <text x="320" y="637" font-size="13" fill="#FFFFFF" text-anchor="middle">娜</text>
+  <text x="352" y="612" font-size="12" fill="#64748B">李娜 · 14:08</text>
+  <rect x="352" y="622" width="360" height="150" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="5 4"/>
+  <!-- 破视频图标 -->
+  <g transform="translate(500, 668)">
+    <rect x="-30" y="-20" width="60" height="40" rx="6" fill="#E2E8F0"/>
+    <path d="M-6 -8 l14 8 l-14 8 z" fill="#94A3B8"/>
+    <line x1="-34" y1="-24" x2="34" y2="28" stroke="#DC2626" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+  <text x="532" y="726" font-size="13" font-weight="600" fill="#64748B" text-anchor="middle">媒体文件不存在 / 已清理</text>
+  <text x="532" y="746" font-size="11" fill="#94A3B8" text-anchor="middle" font-family="monospace">/data/media/2026/06/screen_rec_2291.mp4</text>
+
+  <!-- 气泡5：左 文本（正常） -->
+  <circle cx="320" cy="832" r="18" fill="#0891B2"/>
+  <text x="320" y="837" font-size="13" fill="#FFFFFF" text-anchor="middle">娜</text>
+  <text x="352" y="812" font-size="12" fill="#64748B">李娜 · 14:09</text>
+  <rect x="352" y="822" width="420" height="44" rx="10" fill="#F1F5F9"/>
+  <text x="372" y="848" font-size="14" fill="#0F172A">上面是录屏，演示了交互细节，有问题随时@我。</text>
+
+  <!-- 气泡6：右 文本（正常） -->
+  <circle cx="1840" cy="932" r="18" fill="#2563EB"/>
+  <text x="1840" y="937" font-size="13" fill="#FFFFFF" text-anchor="middle">伟</text>
+  <text x="1808" y="918" font-size="12" fill="#64748B" text-anchor="end">张伟 · 14:12</text>
+  <rect x="1520" y="928" width="288" height="44" rx="10" fill="#EFF4FF"/>
+  <text x="1540" y="954" font-size="14" fill="#0F172A">好的，工作量预估已记录到任务。</text>
+
+  <!-- 提示条 -->
+  <rect x="640" y="990" width="640" height="24" rx="12" fill="#FEF3C7"/>
+  <circle cx="664" cy="1002" r="7" fill="none" stroke="#D97706" stroke-width="1.4"/>
+  <line x1="664" y1="999" x2="664" y2="1003" stroke="#D97706" stroke-width="1.4" stroke-linecap="round"/>
+  <circle cx="664" cy="1006" r="1" fill="#D97706"/>
+  <text x="680" y="1007" font-size="12" fill="#D97706">本次回放有 2 个媒体文件因清理策略已不可用，文本内容不受影响。</text>
+</svg>

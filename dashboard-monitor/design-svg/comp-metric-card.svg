@@ -1,0 +1,106 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',-apple-system,Helvetica,Arial,sans-serif">
+  <!-- bg -->
+  <rect x="0" y="0" width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- ===== header ===== -->
+  <text x="80" y="72" font-size="20" font-weight="600" fill="#0F172A">MetricCard 指标卡</text>
+  <text x="80" y="100" font-size="14" fill="#64748B">展示单一核心指标：标题 + 大数字 + 同比/环比方向标，可选迷你趋势图。固定高度 120px。</text>
+  <line x1="80" y1="120" x2="1840" y2="120" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- ====== Section A: 含趋势图 ====== -->
+  <text x="80" y="172" font-size="16" font-weight="600" fill="#0F172A">变体 A · 含迷你趋势图</text>
+
+  <!-- card A1 positive primary -->
+  <rect x="80" y="196" width="360" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="104" y="232" font-size="14" fill="#64748B">今日处理消息</text>
+  <text x="104" y="278" font-size="32" font-weight="700" fill="#0F172A">12,486</text>
+  <!-- direction up green -->
+  <path d="M104 296 l6 -8 l6 8 z" fill="#16A34A"/>
+  <text x="120" y="300" font-size="13" fill="#16A34A">+12.4%</text>
+  <text x="172" y="300" font-size="12" fill="#94A3B8">较昨日</text>
+  <!-- mini trend -->
+  <polyline points="280,290 300,278 320,284 340,262 360,268 380,250 400,256 420,238" fill="none" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="420" cy="238" r="3" fill="#2563EB"/>
+
+  <!-- card A2 negative danger -->
+  <rect x="468" y="196" width="360" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="492" y="232" font-size="14" fill="#64748B">接口错误数</text>
+  <text x="492" y="278" font-size="32" font-weight="700" fill="#0F172A">38</text>
+  <path d="M492 292 l6 8 l6 -8 z" fill="#DC2626"/>
+  <text x="508" y="300" font-size="13" fill="#DC2626">-5.2%</text>
+  <text x="556" y="300" font-size="12" fill="#94A3B8">较昨日</text>
+  <polyline points="668,250 688,256 708,248 728,268 748,262 768,278 788,272 808,288" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <circle cx="808" cy="288" r="3" fill="#DC2626"/>
+
+  <!-- card A3 success -->
+  <rect x="856" y="196" width="360" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="880" y="232" font-size="14" fill="#64748B">任务成功率</text>
+  <text x="880" y="278" font-size="32" font-weight="700" fill="#16A34A">98.6%</text>
+  <path d="M880 296 l6 -8 l6 8 z" fill="#16A34A"/>
+  <text x="896" y="300" font-size="13" fill="#16A34A">+0.8%</text>
+  <text x="944" y="300" font-size="12" fill="#94A3B8">较上周</text>
+  <polyline points="1056,288 1076,282 1096,284 1116,272 1136,270 1156,260 1176,258 1196,248" fill="none" stroke="#16A34A" stroke-width="2"/>
+  <circle cx="1196" cy="248" r="3" fill="#16A34A"/>
+
+  <!-- height annotation -->
+  <line x1="1244" y1="196" x2="1244" y2="316" stroke="#94A3B8" stroke-width="1"/>
+  <line x1="1239" y1="196" x2="1249" y2="196" stroke="#94A3B8" stroke-width="1"/>
+  <line x1="1239" y1="316" x2="1249" y2="316" stroke="#94A3B8" stroke-width="1"/>
+  <text x="1256" y="260" font-size="12" fill="#64748B">高度 120px</text>
+
+  <!-- ====== Section B: 无趋势图 ====== -->
+  <text x="80" y="396" font-size="16" font-weight="600" fill="#0F172A">变体 B · 无趋势图（不同语义色）</text>
+
+  <!-- B1 info -->
+  <rect x="80" y="420" width="280" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <rect x="80" y="420" width="4" height="120" rx="2" fill="#0891B2"/>
+  <text x="108" y="456" font-size="14" fill="#64748B">活跃会话</text>
+  <text x="108" y="502" font-size="32" font-weight="700" fill="#0F172A">1,204</text>
+  <path d="M108 520 l6 -8 l6 8 z" fill="#16A34A"/>
+  <text x="124" y="524" font-size="13" fill="#16A34A">+3.1%</text>
+
+  <!-- B2 warning -->
+  <rect x="388" y="420" width="280" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <rect x="388" y="420" width="4" height="120" rx="2" fill="#D97706"/>
+  <text x="416" y="456" font-size="14" fill="#64748B">待处理告警</text>
+  <text x="416" y="502" font-size="32" font-weight="700" fill="#D97706">17</text>
+  <path d="M416 514 l6 8 l6 -8 z" fill="#16A34A"/>
+  <text x="432" y="524" font-size="13" fill="#16A34A">-2</text>
+
+  <!-- B3 primary -->
+  <rect x="696" y="420" width="280" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <rect x="696" y="420" width="4" height="120" rx="2" fill="#2563EB"/>
+  <text x="724" y="456" font-size="14" fill="#64748B">长连接数</text>
+  <text x="724" y="502" font-size="32" font-weight="700" fill="#0F172A">86</text>
+  <text x="724" y="524" font-size="13" fill="#64748B">— 持平</text>
+
+  <!-- B4 danger -->
+  <rect x="1004" y="420" width="280" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <rect x="1004" y="420" width="4" height="120" rx="2" fill="#DC2626"/>
+  <text x="1032" y="456" font-size="14" fill="#64748B">超时任务</text>
+  <text x="1032" y="502" font-size="32" font-weight="700" fill="#DC2626">9</text>
+  <path d="M1032 502 l6 -8 l6 8 z" fill="#DC2626"/>
+  <text x="1048" y="524" font-size="13" fill="#DC2626">+4</text>
+
+  <!-- ====== Section C: 结构标注 ====== -->
+  <text x="80" y="620" font-size="16" font-weight="600" fill="#0F172A">结构标注</text>
+  <rect x="80" y="644" width="360" height="120" rx="12" fill="#FFFFFF" stroke="#2563EB" stroke-dasharray="4 3"/>
+  <text x="104" y="680" font-size="14" fill="#64748B">标题区 · 14/400 次要文字</text>
+  <text x="104" y="726" font-size="32" font-weight="700" fill="#0F172A">12,486</text>
+  <path d="M104 744 l6 -8 l6 8 z" fill="#16A34A"/>
+  <text x="120" y="748" font-size="13" fill="#16A34A">+12.4%</text>
+
+  <!-- annotation: padding -->
+  <line x1="80" y1="644" x2="104" y2="644" stroke="#DC2626" stroke-width="1"/>
+  <text x="108" y="640" font-size="12" fill="#DC2626">内边距 24px</text>
+  <line x1="460" y1="644" x2="460" y2="764" stroke="#94A3B8" stroke-width="1"/>
+  <line x1="455" y1="644" x2="465" y2="644" stroke="#94A3B8" stroke-width="1"/>
+  <line x1="455" y1="764" x2="465" y2="764" stroke="#94A3B8" stroke-width="1"/>
+  <text x="472" y="708" font-size="12" fill="#64748B">高度 120px</text>
+
+  <!-- spec list -->
+  <text x="560" y="676" font-size="13" fill="#64748B">· 卡片圆角 12px，描边 #E2E8F0</text>
+  <text x="560" y="702" font-size="13" fill="#64748B">· 指标数字 28-32 / 700 字重</text>
+  <text x="560" y="728" font-size="13" fill="#64748B">· 方向标：↑ 上升用 Success #16A34A，↓ 下降用 Danger #DC2626</text>
+  <text x="560" y="754" font-size="13" fill="#64748B">· 左侧 4px 语义色条用于强调卡片类别（可选）</text>
+</svg>

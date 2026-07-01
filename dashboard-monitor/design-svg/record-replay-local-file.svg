@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <rect x="0" y="0" width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- ===== 左侧导航 240px ===== -->
+  <rect x="0" y="0" width="240" height="1080" fill="#FFFFFF"/>
+  <line x1="240" y1="0" x2="240" y2="1080" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="20" y="16" width="32" height="32" rx="8" fill="#2563EB"/>
+  <path d="M28 32 l4 4 l8 -8" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="62" y="30" font-size="15" font-weight="600" fill="#0F172A">工作量后台</text>
+  <text x="62" y="45" font-size="11" fill="#64748B">dashboard-monitor</text>
+  <line x1="16" y1="68" x2="224" y2="68" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="20" y="92" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">概览</text>
+  <text x="50" y="125" font-size="14" fill="#0F172A">总览</text>
+  <rect x="22" y="112" width="16" height="16" rx="3" fill="none" stroke="#64748B" stroke-width="1.6"/>
+  <text x="50" y="165" font-size="14" fill="#0F172A">实时监控台</text>
+  <circle cx="30" cy="160" r="6" fill="none" stroke="#64748B" stroke-width="1.6"/>
+  <text x="50" y="205" font-size="14" fill="#0F172A">数据分析</text>
+  <path d="M24 204 l0 -10 M30 204 l0 -16 M36 204 l0 -7" stroke="#64748B" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="16" y1="226" x2="224" y2="226" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="20" y="250" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">消息记录</text>
+  <text x="50" y="287" font-size="14" fill="#0F172A">记录列表</text>
+  <rect x="23" y="275" width="14" height="14" rx="2" fill="none" stroke="#64748B" stroke-width="1.6"/>
+  <!-- 会话回放 (选中) -->
+  <rect x="8" y="306" width="224" height="40" rx="8" fill="#EFF4FF"/>
+  <rect x="8" y="306" width="3" height="40" rx="1.5" fill="#2563EB"/>
+  <path d="M25 318 l0 16 M25 318 q9 8 0 16" stroke="#2563EB" stroke-width="1.6" fill="none"/>
+  <path d="M30 322 l6 4 l-6 4 z" fill="#2563EB"/>
+  <text x="50" y="331" font-size="14" font-weight="600" fill="#2563EB">会话回放</text>
+  <line x1="16" y1="352" x2="224" y2="352" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="20" y="376" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">研发流程</text>
+  <text x="50" y="409" font-size="14" fill="#0F172A">需求</text>
+  <text x="50" y="447" font-size="14" fill="#0F172A">开发任务</text>
+  <text x="50" y="491" font-size="14" fill="#0F172A">仓库</text>
+  <line x1="16" y1="514" x2="224" y2="514" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="20" y="538" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">运行诊断</text>
+  <text x="50" y="567" font-size="14" fill="#0F172A">接口调用</text>
+  <text x="50" y="609" font-size="14" fill="#0F172A">长连接事件</text>
+  <text x="50" y="651" font-size="14" fill="#0F172A">错误中心</text>
+  <circle cx="30" cy="646" r="8" fill="none" stroke="#DC2626" stroke-width="1.6"/>
+  <line x1="16" y1="672" x2="224" y2="672" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="20" y="696" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">报表与设置</text>
+  <text x="50" y="725" font-size="14" fill="#0F172A">周报链接</text>
+  <text x="50" y="773" font-size="14" fill="#0F172A">报表导出</text>
+  <text x="50" y="819" font-size="14" fill="#0F172A">设置</text>
+  <line x1="16" y1="996" x2="224" y2="996" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="16" y="1012" width="208" height="48" rx="8" fill="#F1F5F9"/>
+  <circle cx="34" cy="1036" r="5" fill="#94A3B8"/>
+  <text x="50" y="1032" font-size="12" font-weight="600" fill="#0F172A">未加载会话</text>
+  <text x="50" y="1048" font-size="11" fill="#64748B">等待选择 record.json</text>
+
+  <!-- ===== 顶栏 ===== -->
+  <rect x="240" y="0" width="1680" height="56" fill="#FFFFFF"/>
+  <line x1="240" y1="56" x2="1920" y2="56" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="264" y="34" font-size="20" font-weight="600" fill="#0F172A">会话回放</text>
+  <text x="346" y="34" font-size="13" fill="#94A3B8">消息记录 / 会话回放</text>
+  <rect x="800" y="14" width="280" height="28" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="832" y="33" font-size="13" fill="#94A3B8">未选择文件</text>
+  <rect x="1660" y="14" width="84" height="28" rx="6" fill="#E2E8F0"/>
+  <text x="1690" y="33" font-size="13" fill="#94A3B8">刷新</text>
+  <text x="1762" y="33" font-size="13" fill="#94A3B8">自动刷新</text>
+  <rect x="1830" y="20" width="34" height="16" rx="8" fill="#CBD5E1"/>
+  <circle cx="1840" cy="28" r="6" fill="#FFFFFF"/>
+  <circle cx="1896" cy="28" r="7" fill="#94A3B8"/>
+
+  <!-- ===== 内容区：本地文件选择 ===== -->
+  <rect x="264" y="80" width="1632" height="948" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- 拖拽虚线框（居中） -->
+  <rect x="660" y="320" width="840" height="380" rx="16" fill="#F8FAFC" stroke="#2563EB" stroke-width="2" stroke-dasharray="10 8"/>
+
+  <!-- 上传插画 -->
+  <g transform="translate(1080, 440)">
+    <!-- 文件 -->
+    <rect x="-44" y="-50" width="88" height="108" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+    <path d="M16 -50 l28 28 h-28 z" fill="#E2E8F0"/>
+    <text x="-22" y="6" font-size="14" font-weight="600" fill="#2563EB" font-family="monospace">{ }</text>
+    <text x="0" y="36" font-size="11" fill="#94A3B8" text-anchor="middle" font-family="monospace">JSON</text>
+    <!-- 上传箭头 -->
+    <circle cx="34" cy="40" r="22" fill="#2563EB"/>
+    <path d="M34 30 l0 20 M26 38 l8 -8 l8 8" stroke="#FFFFFF" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 说明文字 -->
+  <text x="1080" y="556" font-size="18" font-weight="600" fill="#0F172A" text-anchor="middle">从本地选择 record.json 文件进行回放</text>
+  <text x="1080" y="586" font-size="14" fill="#64748B" text-anchor="middle">将文件拖拽到此处，或点击下方按钮选择。支持采集器导出的会话记录 JSON。</text>
+
+  <!-- 选择文件按钮 -->
+  <rect x="940" y="616" width="160" height="44" rx="10" fill="#2563EB"/>
+  <path d="M962 638 l0 -12 M956 632 l6 -6 l6 6 M956 644 l12 0" stroke="#FFFFFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1024" y="643" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">选择文件</text>
+  <rect x="1116" y="616" width="160" height="44" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1196" y="643" font-size="14" fill="#0F172A" text-anchor="middle">从记录列表导入</text>
+
+  <!-- 格式提示 -->
+  <text x="1080" y="752" font-size="12" fill="#94A3B8" text-anchor="middle" font-family="monospace">支持格式：record.json（单文件 ≤ 50MB） · 仅在本地解析，不上传服务器</text>
+
+  <!-- 最近文件（可选辅助） -->
+  <text x="690" y="852" font-size="13" font-weight="600" fill="#64748B">最近打开</text>
+  <line x1="690" y1="864" x2="1470" y2="864" stroke="#F1F5F9" stroke-width="1"/>
+  <g font-family="monospace" font-size="12">
+    <rect x="690" y="880" width="20" height="24" rx="4" fill="#EFF4FF"/>
+    <text x="700" y="897" font-size="11" fill="#2563EB" text-anchor="middle">{}</text>
+    <text x="722" y="892" font-family="-apple-system, sans-serif" font-size="13" fill="#0F172A">研发协作群_20260612.record.json</text>
+    <text x="722" y="908" fill="#94A3B8">~/Downloads · 1.8MB · 2 小时前</text>
+
+    <rect x="690" y="928" width="20" height="24" rx="4" fill="#EFF4FF"/>
+    <text x="700" y="945" font-size="11" fill="#2563EB" text-anchor="middle">{}</text>
+    <text x="722" y="940" font-family="-apple-system, sans-serif" font-size="13" fill="#0F172A">需求评审群_20260611.record.json</text>
+    <text x="722" y="956" fill="#94A3B8">~/Downloads · 920KB · 昨天</text>
+  </g>
+</svg>

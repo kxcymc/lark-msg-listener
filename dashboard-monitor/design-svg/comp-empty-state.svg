@@ -1,0 +1,77 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',-apple-system,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- header -->
+  <text x="80" y="72" font-size="20" font-weight="600" fill="#0F172A">EmptyState 空状态</text>
+  <text x="80" y="100" font-size="14" fill="#64748B">简笔插画 + 说明文字 + 可选操作按钮。覆盖无数据 / 无搜索结果 / 出错 三种文案变体。</text>
+  <line x1="80" y1="120" x2="1840" y2="120" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- ===== 变体1 无数据 ===== -->
+  <rect x="80" y="170" width="540" height="480" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="104" y="206" font-size="14" font-weight="600" fill="#0F172A">变体一 · 无数据</text>
+  <!-- 插画: empty box -->
+  <g transform="translate(350,320)">
+    <ellipse cx="0" cy="120" rx="110" ry="18" fill="#F1F5F9"/>
+    <rect x="-70" y="-10" width="140" height="100" rx="10" fill="#EFF4FF" stroke="#BFD7FF" stroke-width="2"/>
+    <path d="M-70 30 h140" stroke="#BFD7FF" stroke-width="2"/>
+    <rect x="-30" y="-46" width="60" height="44" rx="8" fill="#FFFFFF" stroke="#BFD7FF" stroke-width="2"/>
+    <line x1="-12" y1="-24" x2="12" y2="-24" stroke="#BFD7FF" stroke-width="2"/>
+    <circle cx="56" cy="-30" r="5" fill="#BFD7FF"/>
+    <circle cx="-66" cy="-44" r="4" fill="#DBEAFE"/>
+  </g>
+  <text x="350" y="500" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle">暂无数据</text>
+  <text x="350" y="528" font-size="13" fill="#64748B" text-anchor="middle">当前还没有任何消息记录</text>
+  <rect x="290" y="556" width="120" height="36" rx="6" fill="#2563EB"/>
+  <text x="350" y="579" font-size="14" fill="#FFFFFF" text-anchor="middle">立即创建</text>
+
+  <!-- ===== 变体2 无搜索结果 ===== -->
+  <rect x="690" y="170" width="540" height="480" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="714" y="206" font-size="14" font-weight="600" fill="#0F172A">变体二 · 无搜索结果</text>
+  <!-- 插画: magnifier -->
+  <g transform="translate(960,320)">
+    <ellipse cx="0" cy="120" rx="110" ry="18" fill="#F1F5F9"/>
+    <circle cx="-12" cy="20" r="56" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="6"/>
+    <circle cx="-12" cy="20" r="40" fill="#F8FAFC"/>
+    <line x1="30" y1="62" x2="70" y2="102" stroke="#CBD5E1" stroke-width="10" stroke-linecap="round"/>
+    <line x1="-30" y1="6" x2="2" y2="6" stroke="#E2E8F0" stroke-width="4"/>
+    <line x1="-30" y1="22" x2="6" y2="22" stroke="#E2E8F0" stroke-width="4"/>
+    <line x1="-30" y1="38" x2="-8" y2="38" stroke="#E2E8F0" stroke-width="4"/>
+  </g>
+  <text x="960" y="500" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle">未找到匹配结果</text>
+  <text x="960" y="528" font-size="13" fill="#64748B" text-anchor="middle">试试调整筛选条件或更换关键词</text>
+  <rect x="900" y="556" width="120" height="36" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="960" y="579" font-size="14" fill="#475569" text-anchor="middle">重置筛选</text>
+
+  <!-- ===== 变体3 出错 ===== -->
+  <rect x="1300" y="170" width="540" height="480" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="1324" y="206" font-size="14" font-weight="600" fill="#0F172A">变体三 · 加载出错</text>
+  <!-- 插画: warning cloud -->
+  <g transform="translate(1570,320)">
+    <ellipse cx="0" cy="120" rx="110" ry="18" fill="#F1F5F9"/>
+    <path d="M-60 50 a40 40 0 0 1 8 -79 a46 46 0 0 1 88 -6 a36 36 0 0 1 6 85 Z" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+    <line x1="0" y1="-18" x2="0" y2="22" stroke="#DC2626" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="0" cy="38" r="4" fill="#DC2626"/>
+  </g>
+  <text x="1570" y="500" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle">数据加载失败</text>
+  <text x="1570" y="528" font-size="13" fill="#64748B" text-anchor="middle">网络异常或服务暂不可用</text>
+  <rect x="1510" y="556" width="120" height="36" rx="6" fill="#2563EB"/>
+  <text x="1570" y="579" font-size="14" fill="#FFFFFF" text-anchor="middle">重新加载</text>
+
+  <!-- ===== 紧凑变体（表格内联） ===== -->
+  <text x="80" y="710" font-size="16" font-weight="600" fill="#0F172A">紧凑变体（行内 / 卡片内嵌）</text>
+  <rect x="80" y="730" width="700" height="160" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <g transform="translate(220,810)">
+    <rect x="-30" y="-24" width="60" height="44" rx="8" fill="#EFF4FF" stroke="#BFD7FF" stroke-width="2"/>
+    <line x1="-14" y1="-2" x2="14" y2="-2" stroke="#BFD7FF" stroke-width="2"/>
+  </g>
+  <text x="320" y="800" font-size="14" font-weight="600" fill="#0F172A">该时间段内暂无监控数据</text>
+  <text x="320" y="826" font-size="13" fill="#64748B">切换时间范围后可重新查询</text>
+  <text x="320" y="858" font-size="13" fill="#2563EB">查看全部 →</text>
+
+  <!-- spec footer -->
+  <text x="820" y="760" font-size="16" font-weight="600" fill="#0F172A">规范要点</text>
+  <text x="820" y="796" font-size="13" fill="#64748B">· 插画使用纯 path/rect/circle 简笔绘制，主色调取浅蓝 #EFF4FF / 描边 #BFD7FF；</text>
+  <text x="820" y="822" font-size="13" fill="#64748B">  出错态用 Danger 色系 #FEF2F2 / #DC2626。</text>
+  <text x="820" y="848" font-size="13" fill="#64748B">· 结构：插画 → 主标题 16/600 → 说明 13/400 次要文字 → 可选操作按钮（高 36px）。</text>
+  <text x="820" y="874" font-size="13" fill="#64748B">· 内容整体居中；无数据/出错给主按钮，无搜索结果给次按钮（重置）。</text>
+</svg>

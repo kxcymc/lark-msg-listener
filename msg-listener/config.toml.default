@@ -1,0 +1,251 @@
+# 飞书消息实时监听 Agent 配置
+
+# 上下文聚合
+# 命中一条 @我消息后，向前补充收集的同一会话消息条数。
+# 这些消息只作为上下文写入 record，不作为新的命中消息。
+context_before = 10
+
+# 命中一条 @我消息后，向后补充收集的同一会话消息条数。
+# 后续消息不要求继续 @我，用于保留命中后的讨论过程。
+context_after = 10
+
+# 锚点消息收到后，最多等待多少秒再拉取后文（按锚点绝对时间计算）
+# 新消息会等到“锚点时间 + 该秒数”后再拉后文；旧消息如果已经超过该时间点，则不额外等待。
+context_after_max_wait_seconds = 60
+
+# 日志级别
+# 常用值：DEBUG、INFO、WARNING、ERROR；INFO 会输出轮询、命中、聚合和写入摘要。
+log_level = "DEBUG"
+
+# 全部运行数据统一保留天数，覆盖 out、telemetry、payload、mywork、logs。
+# 后台监控和 msg-listener 清理逻辑共同使用该值。
+data_retention_days = 7
+
+# user 身份轮询 @我消息（持久化游标 + overlap 模式）
+# 是否启用群聊 @我消息轮询。
+# 开启后会搜索 chat_type=group 且 @当前用户的消息。
+poll_group_at_me_enabled = true
+
+# 是否启用私聊消息轮询。
+# 开启后会搜索 chat_type=p2p 的用户可见私聊消息，并复用同一套上下文聚合和去重逻辑。
+poll_p2p_enabled = false
+
+# 不参与采集的私聊会话。机器人单聊和自己发给自己的会话不应写入 out。
+ignored_p2p_chat_ids = []
+
+# 轮询间隔，单位：秒。
+# 每隔该秒数调用一次 lark-cli im +messages-search 查询新的 群聊@我消息 和 私聊消息。
+poll_interval_seconds = 16
+
+# overlap 仅做 API 时序/时区误差兜底，重复由 seen_messages 表挡住，可以放心开大
+# 每轮查询都会从“上次轮询结束时间 - 该秒数”开始查，单位：秒。
+# 它会故意制造重叠查询窗口，避免 API 索引延迟或时间边界导致漏消息。
+poll_overlap_seconds = 30
+
+# 首次启动（没有游标时）回看多久
+# 没有历史游标时，第一轮会查询“当前时间 - 该秒数”到当前时间的消息。
+# 用于补上程序启动前刚发生、但还没被记录的 @我消息。
+poll_bootstrap_lookback_seconds = 60
+
+# 单页搜索结果数量，传给 lark-cli im +messages-search --page-size。
+# lark-cli/飞书接口单页不能超过 50；调大不能突破接口上限。
+poll_page_size = 50
+
+# 单轮轮询最多拉取多少页，传给 lark-cli im +messages-search --page-limit。
+# 当前最多处理 poll_page_size * poll_page_limit 条候选消息。
+poll_page_limit = 2
+
+# 过滤器开关
+# 是否过滤 sticker 贴纸消息；开启后贴纸不会作为命中，也不会写入上下文。
+filter_sticker = true
+
+# 是否过滤纯 emoji 或纯飞书表情文本；开启后这类消息不会作为命中，也不会写入上下文。
+filter_emoji_only = true
+
+# ----- claude-code-router(CCR) 网关 -----
+# claude_code_cli 的分析器与开发任务执行器都会经由该网关把请求路由到自定义模型供应商。
+# 前置：已安装 ccr 并在 ~/.claude-code-router/config.json 配好 Provider/Router。
+[ccr]
+# 是否启用 CCR 路由；false 时 claude 直连默认 Anthropic 端点（仅用于排障/回滚）。
+enabled = true
+# 网关未运行时是否由本服务自动 `ccr start` 并轮询保活。
+auto_start = true
+# ccr 可执行命令（默认在 PATH 中查找）。
+command = "ccr"
+# 网关地址；注入到 claude 子进程的 ANTHROPIC_BASE_URL。
+base_url = "http://127.0.0.1:3456"
+# 自动保活时等待网关 running 的最大秒数。
+startup_timeout_seconds = 30
+
+# ----- 后台 dashboard-monitor 前端消费的本地只读 API 服务 -----
+# 由 scripts/setup.py 在 bootstrap/run 两种模式下统一编排；仅在 bot 就绪后按配置拉起。
+# 实际进程仍为 `python -m src.dashboard_api.main`，不参与采集/分析业务，仅监听本地。
+[dashboard_api]
+# 是否允许启动对外 API 服务。
+enabled = false
+# API 服务监听地址与端口，默认仅本地。
+host = "127.0.0.1"
+port = 4317
+# JSON 预览返回的最大字节数。
+max_json_preview_bytes = 200000
+# GET /api/logs 默认返回行数。
+tail_log_lines = 800
+
+# ----- 分析与卡片推送 -----
+# 由 bot-agent 进程（python -m src.bot_main）独立运行；分析流程是一个循环，命中的需求固定推送卡片。
+[phase2]
+# AnalyzerLoop 两轮扫描之间的睡眠秒数。
+analysis_interval_seconds = 30.0
+# 单轮最多占坑多少条 pending 任务进行分析。
+analysis_batch_size = 20
+# 同时进行的分析子进程上限（瓶颈是上游模型限流而非本机 CPU）。
+analysis_max_concurrency = 5
+# 需求判断 CLI。
+# 可选值："kxcymc_cli", "claude_code_cli"；配置项保持为单选下拉。
+analysis_cli = "claude_code_cli"
+# 当前所选需求判断 CLI 的模型名；启动时会预拉取各 CLI 的可用模型并缓存到配置卡片。
+analysis_cli_model_name = "sonnet"
+# 单次分析 CLI 子进程超时秒数；超时按 attempts 回退/失败。
+analysis_timeout_seconds = 240
+# 单条 record 的最大尝试次数；达到上限标记 failed。
+analysis_max_attempts = 2
+# 是否仅扫描本地当日 records。
+process_current_date_only = true
+
+[phase2.kxcymc]
+# kxcymc CLI 可执行命令（默认在 PATH 中查找 `kxcymc`）。
+command = "kxcymc"
+# kxcymc 子命令参数；默认 `--json -p`。
+args = ["--json", "-p"]
+# prompt 投喂方式：argv。当前 kxcymc CLI print 模式不会稳定读取 stdin。
+prompt_via = "argv"
+# 自定义分析 prompt 模板；留空使用 src/analyzers/kxcymc_cli.py 内置模板。
+analysis_prompt_template = ""
+# 允许 / 禁用的工具。默认禁用所有写入类工具，保证只读。
+allowed_tools = []
+disallowed_tools = ["Edit", "Write", "MultiEdit", "Bash"]
+
+[phase2.claude]
+# Claude Code CLI 可执行命令（默认在 PATH 中查找 `claude`）。
+command = "claude"
+# Claude Code CLI 参数；默认使用 print 模式并要求 JSON 输出。
+args = ["-p", "--output-format", "json"]
+# prompt 投喂方式：argv。
+prompt_via = "argv"
+# 自定义分析 prompt 模板；留空使用内置模板。
+analysis_prompt_template = ""
+# 允许 / 禁用的工具。默认禁用所有写入类工具，保证只读。
+allowed_tools = []
+disallowed_tools = ["Edit", "Write", "MultiEdit", "Bash"]
+
+[phase2.card]
+# 是否在卡片之外补发媒体附件消息（图片单独推送；视频暂未推送）。
+send_media_messages = true
+# 串行卡片推送上限，避免刷屏与触发飞书频控。
+card_send_max_concurrency = 1
+# meego需求域名；必须填写为当前环境可访问的 Meego 域名。
+meego_requirement_host = ""
+# meego prompt 推送方式：bubble=智能体私聊（气泡消息），trae_side_chat=打开 Trae 侧聊。
+meego_prompt_delivery = "bubble"
+# meego 的 prompt 结尾文案（最多 1000 字）；留空则兜底使用「根据以上信息，生成开发任务清单。」。
+meego_prompt_content = ""
+# 打开 Trae 侧聊时，先开新工作区窗口、再投递侧聊 query 之间的等待秒数。
+# side-chat 协议不携带窗口标识，会落到当前聚焦窗口；等待太短会导致 query 被旧窗口接走。
+# 机器较慢可适当调大；<=0 时回退默认值。
+trae_side_chat_open_wait_seconds = 3.0
+
+[phase3.git]
+scan_roots = ["~"]
+ignore_substrings = ["/.Trash/", "/Library/", "/node_modules/", "/.venv/", "/.cache/"]
+max_depth = 5
+inventory_ttl_seconds = 600
+
+# ----- 开发任务编排 -----
+# 注意：开发任务执行器单选下拉，仅可选已注册的 key。
+[phase3.dev_task]
+# 开发任务执行器。可选值："kxcymc_openapi", "claude_code_cli", "trae_side_chat"
+# 配置项保持为单选下拉，后续可继续扩展其他执行器。
+executor = "claude_code_cli"
+# 同时进行的开发任务上限（asyncio.Semaphore）。
+max_concurrency = 3
+# 单次任务的最大 SSE 订阅等待时长（分钟）；超时记为 event_timeout 进入退避重试。
+max_wait_minutes = 60
+# 单次 submit 的 HTTP 超时（秒）。
+submit_timeout_seconds = 30
+# OpenAPI 确认接单的最大等待时长（秒）；超时仅弹 toast，卡片保持可重试。
+startup_submit_timeout_seconds = 30
+# 重试退避基数（秒）；第 n 次重试等待 base * n 秒。
+retry_backoff_base_seconds = 5
+
+[phase3.dev_task.kxcymc_openapi]
+# kxcymc OpenAPI endpoint，必须为 https。
+endpoint = "https://example-api.com"
+# kxcymc OpenAPI PAT（code_pat_...），可通过 /config 卡片设置。
+pat_token = ""
+
+[phase3.dev_task.claude_code_cli]
+# Claude Code CLI 可执行命令（默认在 PATH 中查找 `claude`）。
+command = "claude"
+# Claude Code CLI 模型名；留空使用 CLI 默认模型。
+# 经 CCR 网关路由：claude CLI 的别名 sonnet/opus 会被解析为 claude-*-4-6，
+# 必须填 CCR 实际可路由的模型名，否则 CLI 预检直接报 404「model 不存在」。
+model = "sonnet"
+# 要求 CLI 输出可解析结果；权限模式 bypassPermissions 与高风险 Bash 黑名单由代码固定处理。
+output_format = "json"
+# 本地持久化任务状态目录；Bot 重启后会通过 executor_task_id 继续等待该目录结果。
+state_dir = "out/claude_code_cli_tasks"
+
+# ----- 我的工作总结 -----
+[mywork]
+# 是否启用一次性 mywork 收集与总结。
+enabled = false
+# 向前回看多少天，搜索当前用户发送过的消息作为锚点；最小值为 1 天。
+lookback_days = 5
+# 每条锚点消息前后保留多少条同会话上下文。
+context_window = 10
+# 拉取聊天历史时，向锚点时间外侧扩展的缓冲小时数。
+chat_history_buffer_hours = 24
+# 单次列消息分页大小；lark-cli/飞书接口单页不能超过 50。
+page_size = 50
+# 单聊天最多翻多少页，避免极端会话拖慢一次性任务。
+max_pages_per_chat = 40
+# 总结 CLI provider。可选值："kxcymc_cli"。
+conclude_cli = "kxcymc_cli"
+# 当前所选总结 CLI 的模型名；可通过 /config 动态下拉选择。
+conclude_cli_model_name = "GPT-5.4"
+
+[mywork.conclude_cli_providers.kxcymc_cli]
+# kxcymc CLI 可执行命令（默认在 PATH 中查找 `kxcymc`）。
+command = "kxcymc"
+# 单次总结 CLI 子进程超时秒数。
+timeout_seconds = 3600
+# 云文档标题文字；最终标题固定为 `yyyymmdd-yyyymmdd_` 加该文字，日期段按 lookback_days 计算。
+doc_title_text = "我的工作总结"
+# 总结内容清单；JSON 路径、云文档标题和完整 prompt 由代码固定拼接。
+prompt_template = "工作事项概览、按会话归纳的进展、待跟进事项"
+
+# ----- 机器人单聊命令 -----
+[commands]
+# 命令前缀；目前固定 `/`，预留可配置位。
+prefix = "/"
+# collector 端是否对命令消息做短路，避免命令文本被收为 record。
+ignore_in_collector = true
+# `/del-out` 二次确认的最大间隔；超过后需要重新发送 `/del-out`。
+del_out_confirm_ttl_seconds = 120
+
+# ----- 飞书应用人工确认 -----
+[lark_app]
+# 卡片回传交互回调（card.action.trigger）是否已由用户在飞书后台手动配置。
+# 该回调位于飞书开放平台「事件与回调 → 回调」tab，无任何 OpenAPI/CLI 可查询订阅状态，
+# 仅能由用户在 bootstrap 流程里输出引导链接后人工确认；确认完成后该字段写为 true，
+# 后续启动会跳过该原子。如需重新校验，将其改回 false 即可。
+card_callback_event_confirmed = false
+# 机器人自定义菜单是否已由用户在飞书后台手动开启。
+# 该配置位于飞书开放平台「机器人 → 机器人自定义菜单」编辑区，需将菜单状态选择「开启」、
+# 菜单的「响应动作」选择「推送事件」，并按 README 表格填写各菜单项的事件 ID；
+# 无任何 OpenAPI/CLI 可查询配置状态，仅能由用户在启动流程里人工确认，确认后写为 true。
+bot_menu_config_confirmed = false
+# 机器人菜单事件（application.bot.menu_v6）是否已由用户在飞书后台手动添加并发布。
+# 该事件位于飞书开放平台「事件与回调 → 事件配置」，需手动添加事件、按页面提示确认开通事件权限，
+# 并创建/发布应用版本；无任何 OpenAPI/CLI 可查询订阅状态，仅能由用户在启动流程里人工确认，确认后写为 true。
+bot_menu_event_confirmed = false

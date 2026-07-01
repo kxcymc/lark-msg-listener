@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <rect x="0" y="0" width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- ===== 左侧导航 240px ===== -->
+  <rect x="0" y="0" width="240" height="1080" fill="#FFFFFF"/>
+  <line x1="240" y1="0" x2="240" y2="1080" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="20" y="16" width="32" height="32" rx="8" fill="#2563EB"/>
+  <path d="M28 32 l4 4 l8 -8" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="62" y="30" font-size="15" font-weight="600" fill="#0F172A">工作量后台</text>
+  <text x="62" y="45" font-size="11" fill="#64748B">dashboard-monitor</text>
+  <line x1="16" y1="68" x2="224" y2="68" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="20" y="92" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">概览</text>
+  <text x="50" y="125" font-size="14" fill="#0F172A">总览</text>
+  <rect x="22" y="112" width="16" height="16" rx="3" fill="none" stroke="#64748B" stroke-width="1.6"/>
+  <text x="50" y="165" font-size="14" fill="#0F172A">实时监控台</text>
+  <circle cx="30" cy="160" r="6" fill="none" stroke="#64748B" stroke-width="1.6"/>
+  <text x="50" y="205" font-size="14" fill="#0F172A">数据分析</text>
+  <path d="M24 204 l0 -10 M30 204 l0 -16 M36 204 l0 -7" stroke="#64748B" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="16" y1="226" x2="224" y2="226" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="20" y="250" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">消息记录</text>
+  <rect x="8" y="262" width="224" height="40" rx="8" fill="#EFF4FF"/>
+  <rect x="8" y="262" width="3" height="40" rx="1.5" fill="#2563EB"/>
+  <rect x="23" y="275" width="14" height="14" rx="2" fill="none" stroke="#2563EB" stroke-width="1.6"/>
+  <text x="50" y="287" font-size="14" font-weight="600" fill="#2563EB">记录列表</text>
+  <text x="50" y="331" font-size="14" fill="#0F172A">会话回放</text>
+  <path d="M25 318 l0 16 M25 318 q9 8 0 16" stroke="#64748B" stroke-width="1.6" fill="none"/>
+  <path d="M30 322 l6 4 l-6 4 z" fill="#64748B"/>
+  <line x1="16" y1="352" x2="224" y2="352" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="20" y="376" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">研发流程</text>
+  <text x="50" y="409" font-size="14" fill="#0F172A">需求</text>
+  <text x="50" y="447" font-size="14" fill="#0F172A">开发任务</text>
+  <text x="50" y="491" font-size="14" fill="#0F172A">仓库</text>
+  <line x1="16" y1="514" x2="224" y2="514" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="20" y="538" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">运行诊断</text>
+  <text x="50" y="567" font-size="14" fill="#0F172A">接口调用</text>
+  <text x="50" y="609" font-size="14" fill="#0F172A">长连接事件</text>
+  <text x="50" y="651" font-size="14" fill="#0F172A">错误中心</text>
+  <circle cx="30" cy="646" r="8" fill="none" stroke="#DC2626" stroke-width="1.6"/>
+  <line x1="16" y1="672" x2="224" y2="672" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="20" y="696" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">报表与设置</text>
+  <text x="50" y="725" font-size="14" fill="#0F172A">周报链接</text>
+  <text x="50" y="773" font-size="14" fill="#0F172A">报表导出</text>
+  <text x="50" y="819" font-size="14" fill="#0F172A">设置</text>
+  <line x1="16" y1="996" x2="224" y2="996" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="16" y="1012" width="208" height="48" rx="8" fill="#F1F5F9"/>
+  <circle cx="34" cy="1036" r="5" fill="#16A34A"/>
+  <text x="50" y="1032" font-size="12" font-weight="600" fill="#0F172A">数据源已连接</text>
+  <text x="50" y="1048" font-size="11" fill="#64748B">WebSocket · 延迟 42ms</text>
+  <circle cx="206" cy="1036" r="3" fill="#64748B"/>
+  <circle cx="206" cy="1036" r="6" fill="none" stroke="#64748B" stroke-width="1.4"/>
+
+  <!-- ===== 顶栏 ===== -->
+  <rect x="240" y="0" width="1680" height="56" fill="#FFFFFF"/>
+  <line x1="240" y1="56" x2="1920" y2="56" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="264" y="34" font-size="20" font-weight="600" fill="#0F172A">记录列表</text>
+  <text x="346" y="34" font-size="13" fill="#94A3B8">消息记录 / 记录列表</text>
+  <rect x="800" y="14" width="280" height="28" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="832" y="33" font-size="13" fill="#0F172A">2026-06-05 ~ 2026-06-12</text>
+  <rect x="1660" y="14" width="84" height="28" rx="6" fill="#2563EB"/>
+  <text x="1690" y="33" font-size="13" fill="#FFFFFF">刷新</text>
+  <text x="1762" y="33" font-size="13" fill="#64748B">自动刷新</text>
+  <rect x="1830" y="20" width="34" height="16" rx="8" fill="#16A34A"/>
+  <circle cx="1856" cy="28" r="6" fill="#FFFFFF"/>
+  <circle cx="1896" cy="28" r="7" fill="#16A34A"/>
+  <path d="M1893 28 l2 2 l4 -4" stroke="#FFFFFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== 内容区：筛选栏 ===== -->
+  <rect x="264" y="80" width="1632" height="56" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="288" y="98" width="220" height="20" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="298" y="112" font-size="12" fill="#94A3B8">搜索关键词 / 会话 ID</text>
+  <rect x="524" y="98" width="140" height="20" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="534" y="112" font-size="12" fill="#64748B">渠道：全部</text>
+  <rect x="680" y="98" width="140" height="20" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="690" y="112" font-size="12" fill="#64748B">类型：全部</text>
+  <rect x="836" y="98" width="140" height="20" rx="4" fill="#EFF4FF" stroke="#2563EB" stroke-width="1"/>
+  <text x="846" y="112" font-size="12" fill="#2563EB">含图片附件</text>
+  <text x="1820" y="112" font-size="12" fill="#64748B">共 0 条</text>
+
+  <!-- ===== 表格框架 ===== -->
+  <rect x="264" y="152" width="1632" height="876" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="264" y="152" width="1632" height="44" fill="#F8FAFC"/>
+  <path d="M264 164 a12 12 0 0 1 12 -12 h1608 a12 12 0 0 1 12 12" fill="#F8FAFC"/>
+  <text x="296" y="180" font-size="13" font-weight="600" fill="#64748B">时间</text>
+  <text x="520" y="180" font-size="13" font-weight="600" fill="#64748B">会话</text>
+  <text x="900" y="180" font-size="13" font-weight="600" fill="#64748B">发送人</text>
+  <text x="1200" y="180" font-size="13" font-weight="600" fill="#64748B">消息内容</text>
+  <text x="1700" y="180" font-size="13" font-weight="600" fill="#64748B">操作</text>
+  <line x1="264" y1="196" x2="1896" y2="196" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- ===== 空状态插画 + 文案 (中央) ===== -->
+  <g transform="translate(1080, 560)">
+    <!-- 简笔插画：空文件夹 + 放大镜 -->
+    <ellipse cx="0" cy="118" rx="150" ry="18" fill="#E2E8F0" opacity="0.5"/>
+    <rect x="-90" y="-30" width="180" height="120" rx="14" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+    <path d="M-90 -16 a14 14 0 0 1 14 -14 h44 l16 18 h74 a14 14 0 0 1 14 14 v8 h-176 z" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="2"/>
+    <line x1="-60" y1="20" x2="60" y2="20" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-60" y1="44" x2="30" y2="44" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-60" y1="68" x2="48" y2="68" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="72" cy="78" r="26" fill="#FFFFFF" stroke="#94A3B8" stroke-width="3"/>
+    <line x1="90" y1="96" x2="108" y2="114" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+    <!-- 文案 -->
+    <text x="0" y="172" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle">暂无数据</text>
+    <text x="0" y="198" font-size="13" fill="#64748B" text-anchor="middle">当前筛选条件下没有匹配的消息记录，请尝试调整筛选条件或刷新。</text>
+    <!-- 操作按钮 -->
+    <rect x="-128" y="220" width="120" height="36" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="-68" y="243" font-size="13" fill="#0F172A" text-anchor="middle">调整筛选条件</text>
+    <rect x="8" y="220" width="96" height="36" rx="8" fill="#2563EB"/>
+    <path d="M30 232 a8 8 0 1 0 3 -5 M30 226 l0 5 l5 0" stroke="#FFFFFF" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="66" y="243" font-size="13" fill="#FFFFFF" text-anchor="middle">刷新</text>
+  </g>
+</svg>

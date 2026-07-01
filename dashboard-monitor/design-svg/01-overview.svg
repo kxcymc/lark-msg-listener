@@ -1,0 +1,278 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',-apple-system,Helvetica,Arial,sans-serif">
+  <defs>
+    <linearGradient id="pieG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#1D4ED8"/></linearGradient>
+  </defs>
+
+  <!-- ===== global bg ===== -->
+  <rect x="0" y="0" width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- ===== left nav 240 ===== -->
+  <rect x="0" y="0" width="240" height="1080" fill="#FFFFFF"/>
+  <line x1="240" y1="0" x2="240" y2="1080" stroke="#E2E8F0" stroke-width="1"/>
+  <!-- logo -->
+  <rect x="20" y="18" width="32" height="32" rx="8" fill="#2563EB"/>
+  <text x="29" y="40" font-size="16" font-weight="700" fill="#FFFFFF">WL</text>
+  <text x="62" y="34" font-size="16" font-weight="600" fill="#0F172A">工作量后台</text>
+  <text x="62" y="50" font-size="11" fill="#64748B">dashboard-monitor</text>
+  <line x1="16" y1="66" x2="224" y2="66" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- group 概览 -->
+  <text x="20" y="92" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">概览</text>
+  <!-- selected: 总览 -->
+  <rect x="0" y="102" width="240" height="36" fill="#EFF4FF"/>
+  <rect x="0" y="102" width="3" height="36" fill="#2563EB"/>
+  <text x="44" y="125" font-size="14" font-weight="600" fill="#2563EB">总览</text>
+  <text x="44" y="161" font-size="14" fill="#475569">实时监控台</text>
+  <text x="44" y="197" font-size="14" fill="#475569">数据分析</text>
+  <!-- group 消息记录 -->
+  <text x="20" y="232" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">消息记录</text>
+  <text x="44" y="265" font-size="14" fill="#475569">记录列表</text>
+  <text x="44" y="301" font-size="14" fill="#475569">会话回放</text>
+  <!-- group 研发流程 -->
+  <text x="20" y="336" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">研发流程</text>
+  <text x="44" y="369" font-size="14" fill="#475569">需求</text>
+  <text x="44" y="405" font-size="14" fill="#475569">开发任务</text>
+  <text x="44" y="441" font-size="14" fill="#475569">仓库</text>
+  <!-- group 运行诊断 -->
+  <text x="20" y="476" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">运行诊断</text>
+  <text x="44" y="509" font-size="14" fill="#475569">接口调用</text>
+  <text x="44" y="545" font-size="14" fill="#475569">长连接事件</text>
+  <text x="44" y="581" font-size="14" fill="#475569">错误中心</text>
+  <!-- group 报表与设置 -->
+  <text x="20" y="616" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">报表与设置</text>
+  <text x="44" y="649" font-size="14" fill="#475569">周报链接</text>
+  <text x="44" y="685" font-size="14" fill="#475569">报表导出</text>
+  <text x="44" y="721" font-size="14" fill="#475569">设置</text>
+
+  <!-- nav footer -->
+  <line x1="16" y1="1000" x2="224" y2="1000" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="28" cy="1028" r="5" fill="#16A34A"/>
+  <text x="42" y="1032" font-size="12" fill="#475569">数据源 · SQLite 已连接</text>
+  <text x="42" y="1052" font-size="11" fill="#94A3B8">延迟 12ms · 同步正常</text>
+
+  <!-- ===== top bar 56 ===== -->
+  <rect x="240" y="0" width="1680" height="56" fill="#FFFFFF"/>
+  <line x1="240" y1="56" x2="1920" y2="56" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="264" y="28" font-size="20" font-weight="600" fill="#0F172A">总览</text>
+  <text x="264" y="46" font-size="12" fill="#64748B">概览 / 总览</text>
+  <!-- date range center -->
+  <rect x="820" y="14" width="280" height="28" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="836" y="32" font-size="13" fill="#0F172A">2026-06-05 ～ 2026-06-12</text>
+  <text x="1070" y="32" font-size="12" fill="#64748B">▾</text>
+  <!-- right -->
+  <rect x="1640" y="14" width="72" height="28" rx="6" fill="#2563EB"/>
+  <text x="1656" y="32" font-size="13" fill="#FFFFFF">刷新</text>
+  <text x="1728" y="32" font-size="13" fill="#475569">自动刷新</text>
+  <rect x="1800" y="20" width="34" height="16" rx="8" fill="#16A34A"/>
+  <circle cx="1826" cy="28" r="6" fill="#FFFFFF"/>
+  <circle cx="1872" cy="28" r="6" fill="#16A34A"/>
+  <text x="1884" y="32" font-size="13" fill="#475569">健康</text>
+
+  <!-- ===== indicator cards row1 ===== -->
+  <!-- card template width 402 -->
+  <g>
+    <rect x="264" y="80" width="402" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="288" y="112" font-size="14" fill="#64748B">今日 Record 数</text>
+    <text x="288" y="156" font-size="32" font-weight="700" fill="#0F172A">1,284</text>
+    <text x="288" y="184" font-size="13" fill="#16A34A">↑ +12.4% 较昨日</text>
+  </g>
+  <g>
+    <rect x="690" y="80" width="402" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="714" y="112" font-size="14" fill="#64748B">需求数</text>
+    <text x="714" y="156" font-size="32" font-weight="700" fill="#0F172A">86</text>
+    <text x="714" y="184" font-size="13" fill="#16A34A">↑ +6 个 较昨日</text>
+  </g>
+  <g>
+    <rect x="1116" y="80" width="402" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="1140" y="112" font-size="14" fill="#64748B">MR 数</text>
+    <text x="1140" y="156" font-size="32" font-weight="700" fill="#0F172A">47</text>
+    <text x="1140" y="184" font-size="13" fill="#DC2626">↓ −3 个 较昨日</text>
+  </g>
+  <g>
+    <rect x="1542" y="80" width="402" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="1566" y="112" font-size="14" fill="#64748B">开发任务数</text>
+    <text x="1566" y="156" font-size="32" font-weight="700" fill="#0F172A">132</text>
+    <text x="1566" y="184" font-size="13" fill="#16A34A">↑ +18.2% 较昨日</text>
+  </g>
+  <!-- indicator cards row2 -->
+  <g>
+    <rect x="264" y="216" width="402" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="288" y="248" font-size="14" fill="#64748B">执行成功数</text>
+    <text x="288" y="292" font-size="32" font-weight="700" fill="#16A34A">118</text>
+    <text x="288" y="320" font-size="13" fill="#16A34A">↑ +9.1% 成功率 89.4%</text>
+  </g>
+  <g>
+    <rect x="690" y="216" width="402" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="714" y="248" font-size="14" fill="#64748B">执行失败数</text>
+    <text x="714" y="292" font-size="32" font-weight="700" fill="#DC2626">14</text>
+    <text x="714" y="320" font-size="13" fill="#DC2626">↑ +2 个 失败率 10.6%</text>
+  </g>
+  <g>
+    <rect x="1116" y="216" width="402" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="1140" y="248" font-size="14" fill="#64748B">API 失败数</text>
+    <text x="1140" y="292" font-size="32" font-weight="700" fill="#D97706">23</text>
+    <text x="1140" y="320" font-size="13" fill="#16A34A">↓ −5.3% 较昨日</text>
+  </g>
+  <g>
+    <rect x="1542" y="216" width="402" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="1566" y="248" font-size="14" fill="#64748B">错误数</text>
+    <text x="1566" y="292" font-size="32" font-weight="700" fill="#DC2626">39</text>
+    <text x="1566" y="320" font-size="13" fill="#DC2626">↑ +11 个 较昨日</text>
+  </g>
+
+  <!-- ===== charts row ===== -->
+  <!-- pie demand status (6 col) -->
+  <g>
+    <rect x="264" y="352" width="828" height="300" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="288" y="384" font-size="16" font-weight="600" fill="#0F172A">需求状态分布</text>
+    <text x="288" y="404" font-size="12" fill="#94A3B8">demand / ignored / failed / dispatch</text>
+    <!-- pie centered at 430,520 r=90; slices demand45/dispatch25/ignored18/failed12 -->
+    <path d="M430 520 L430 430 A90 90 0 0 1 515.6 491.8 Z" fill="#2563EB"/>
+    <path d="M430 520 L515.6 491.8 A90 90 0 0 1 471.1 605.0 Z" fill="#16A34A"/>
+    <path d="M430 520 L471.1 605.0 A90 90 0 0 1 348.0 575.7 Z" fill="#0891B2"/>
+    <path d="M430 520 L348.0 575.7 A90 90 0 0 1 430 430 Z" fill="#DC2626"/>
+    <!-- legend -->
+    <rect x="650" y="440" width="12" height="12" rx="3" fill="#2563EB"/>
+    <text x="670" y="450" font-size="13" fill="#475569">demand 已分发</text>
+    <text x="1010" y="450" font-size="13" font-weight="600" fill="#0F172A">45% · 39</text>
+    <rect x="650" y="478" width="12" height="12" rx="3" fill="#16A34A"/>
+    <text x="670" y="488" font-size="13" fill="#475569">dispatch 派发中</text>
+    <text x="1010" y="488" font-size="13" font-weight="600" fill="#0F172A">25% · 22</text>
+    <rect x="650" y="516" width="12" height="12" rx="3" fill="#0891B2"/>
+    <text x="670" y="526" font-size="13" fill="#475569">ignored 已忽略</text>
+    <text x="1010" y="526" font-size="13" font-weight="600" fill="#0F172A">18% · 15</text>
+    <rect x="650" y="554" width="12" height="12" rx="3" fill="#DC2626"/>
+    <text x="670" y="564" font-size="13" fill="#475569">failed 解析失败</text>
+    <text x="1010" y="564" font-size="13" font-weight="600" fill="#0F172A">12% · 10</text>
+    <text x="650" y="612" font-size="12" fill="#94A3B8">口径：按需求当前最终状态统计，共 86 条</text>
+  </g>
+
+  <!-- daily workload bar (6 col) -->
+  <g>
+    <rect x="1116" y="352" width="828" height="300" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="1140" y="384" font-size="16" font-weight="600" fill="#0F172A">每日工作量（堆叠）</text>
+    <text x="1140" y="404" font-size="12" fill="#94A3B8">record / 需求 / 任务 / MR / 周报 · 按日</text>
+    <!-- axis -->
+    <line x1="1170" y1="600" x2="1900" y2="600" stroke="#E2E8F0"/>
+    <line x1="1170" y1="430" x2="1170" y2="600" stroke="#E2E8F0"/>
+    <!-- 7 days bars, x base each 100 wide group -->
+    <!-- day groups centers -->
+    <g>
+      <!-- 06-06 -->
+      <rect x="1190" y="540" width="60" height="60" fill="#2563EB"/>
+      <rect x="1190" y="520" width="60" height="20" fill="#16A34A"/>
+      <rect x="1190" y="505" width="60" height="15" fill="#0891B2"/>
+      <rect x="1190" y="495" width="60" height="10" fill="#D97706"/>
+      <text x="1198" y="616" font-size="11" fill="#64748B">06-06</text>
+      <!-- 06-07 -->
+      <rect x="1290" y="500" width="60" height="100" fill="#2563EB"/>
+      <rect x="1290" y="478" width="60" height="22" fill="#16A34A"/>
+      <rect x="1290" y="462" width="60" height="16" fill="#0891B2"/>
+      <rect x="1290" y="452" width="60" height="10" fill="#D97706"/>
+      <text x="1298" y="616" font-size="11" fill="#64748B">06-07</text>
+      <!-- 06-08 -->
+      <rect x="1390" y="520" width="60" height="80" fill="#2563EB"/>
+      <rect x="1390" y="500" width="60" height="20" fill="#16A34A"/>
+      <rect x="1390" y="486" width="60" height="14" fill="#0891B2"/>
+      <text x="1398" y="616" font-size="11" fill="#64748B">06-08</text>
+      <!-- 06-09 -->
+      <rect x="1490" y="475" width="60" height="125" fill="#2563EB"/>
+      <rect x="1490" y="450" width="60" height="25" fill="#16A34A"/>
+      <rect x="1490" y="432" width="60" height="18" fill="#0891B2"/>
+      <rect x="1490" y="422" width="60" height="10" fill="#D97706"/>
+      <text x="1498" y="616" font-size="11" fill="#64748B">06-09</text>
+      <!-- 06-10 -->
+      <rect x="1590" y="490" width="60" height="110" fill="#2563EB"/>
+      <rect x="1590" y="468" width="60" height="22" fill="#16A34A"/>
+      <rect x="1590" y="454" width="60" height="14" fill="#0891B2"/>
+      <text x="1598" y="616" font-size="11" fill="#64748B">06-10</text>
+      <!-- 06-11 -->
+      <rect x="1690" y="460" width="60" height="140" fill="#2563EB"/>
+      <rect x="1690" y="434" width="60" height="26" fill="#16A34A"/>
+      <rect x="1690" y="416" width="60" height="18" fill="#0891B2"/>
+      <rect x="1690" y="406" width="60" height="10" fill="#D97706"/>
+      <text x="1698" y="616" font-size="11" fill="#64748B">06-11</text>
+      <!-- 06-12 -->
+      <rect x="1790" y="480" width="60" height="120" fill="#2563EB"/>
+      <rect x="1790" y="456" width="60" height="24" fill="#16A34A"/>
+      <rect x="1790" y="442" width="60" height="14" fill="#0891B2"/>
+      <text x="1798" y="616" font-size="11" fill="#64748B">06-12</text>
+    </g>
+    <!-- legend -->
+    <rect x="1490" y="372" width="10" height="10" fill="#2563EB"/><text x="1504" y="381" font-size="11" fill="#64748B">record</text>
+    <rect x="1560" y="372" width="10" height="10" fill="#16A34A"/><text x="1574" y="381" font-size="11" fill="#64748B">需求</text>
+    <rect x="1620" y="372" width="10" height="10" fill="#0891B2"/><text x="1634" y="381" font-size="11" fill="#64748B">任务</text>
+    <rect x="1680" y="372" width="10" height="10" fill="#D97706"/><text x="1694" y="381" font-size="11" fill="#64748B">MR</text>
+    <rect x="1730" y="372" width="10" height="10" fill="#94A3B8"/><text x="1744" y="381" font-size="11" fill="#64748B">周报</text>
+  </g>
+
+  <!-- trend line full 12 col -->
+  <g>
+    <rect x="264" y="676" width="1680" height="120" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="288" y="706" font-size="16" font-weight="600" fill="#0F172A">趋势折线</text>
+    <text x="380" y="706" font-size="12" fill="#94A3B8">需求数 / 执行成功数 / 错误数 · 近 14 天</text>
+    <line x1="288" y1="780" x2="1920" y2="780" stroke="#E2E8F0"/>
+    <!-- 需求数 blue -->
+    <polyline fill="none" stroke="#2563EB" stroke-width="2" points="300,760 420,752 540,758 660,740 780,748 900,730 1020,742 1140,724 1260,736 1380,718 1500,728 1620,712 1740,722 1900,708"/>
+    <!-- 成功 green -->
+    <polyline fill="none" stroke="#16A34A" stroke-width="2" points="300,768 420,762 540,766 660,758 780,762 900,750 1020,756 1140,748 1260,752 1380,742 1500,748 1620,738 1740,744 1900,734"/>
+    <!-- 错误 red -->
+    <polyline fill="none" stroke="#DC2626" stroke-width="2" points="300,776 420,774 540,775 660,772 780,773 900,768 1020,770 1140,766 1260,768 1380,762 1500,765 1620,760 1740,763 1900,758"/>
+    <rect x="1500" y="688" width="10" height="10" fill="#2563EB"/><text x="1514" y="697" font-size="11" fill="#64748B">需求数</text>
+    <rect x="1580" y="688" width="10" height="10" fill="#16A34A"/><text x="1594" y="697" font-size="11" fill="#64748B">成功数</text>
+    <rect x="1660" y="688" width="10" height="10" fill="#DC2626"/><text x="1674" y="697" font-size="11" fill="#64748B">错误数</text>
+  </g>
+
+  <!-- ===== bottom three lists ===== -->
+  <!-- 最近错误 -->
+  <g>
+    <rect x="264" y="820" width="544" height="236" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="288" y="850" font-size="16" font-weight="600" fill="#0F172A">最近错误</text>
+    <line x1="264" y1="864" x2="808" y2="864" stroke="#E2E8F0"/>
+    <text x="288" y="884" font-size="12" fill="#94A3B8">时间</text>
+    <text x="380" y="884" font-size="12" fill="#94A3B8">服务</text>
+    <text x="470" y="884" font-size="12" fill="#94A3B8">阶段</text>
+    <text x="560" y="884" font-size="12" fill="#94A3B8">错误信息</text>
+    <g font-size="12" fill="#0F172A">
+      <text x="288" y="910">14:32:08</text><text x="380" y="910" fill="#2563EB">bot</text><text x="470" y="910">analysis</text><text x="560" y="910" fill="#DC2626">TimeoutError 超时</text>
+      <text x="288" y="938">14:18:41</text><text x="380" y="938" fill="#2563EB">collector</text><text x="470" y="938">poll</text><text x="560" y="938" fill="#DC2626">429 限流</text>
+      <text x="288" y="966">13:57:22</text><text x="380" y="966" fill="#2563EB">mywork</text><text x="470" y="966">conclude</text><text x="560" y="966" fill="#DC2626">JSON 解析失败</text>
+      <text x="288" y="994">13:40:11</text><text x="380" y="994" fill="#2563EB">bot</text><text x="470" y="994">dispatch</text><text x="560" y="994" fill="#DC2626">仓库不存在</text>
+      <text x="288" y="1022">13:12:03</text><text x="380" y="1022" fill="#2563EB">main</text><text x="470" y="1022">card</text><text x="560" y="1022" fill="#DC2626">Lark API 403</text>
+    </g>
+  </g>
+  <!-- 最近任务 -->
+  <g>
+    <rect x="832" y="820" width="544" height="236" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="856" y="850" font-size="16" font-weight="600" fill="#0F172A">最近任务</text>
+    <line x1="832" y1="864" x2="1376" y2="864" stroke="#E2E8F0"/>
+    <text x="856" y="884" font-size="12" fill="#94A3B8">taskID</text>
+    <text x="930" y="884" font-size="12" fill="#94A3B8">需求摘要</text>
+    <text x="1120" y="884" font-size="12" fill="#94A3B8">仓库</text>
+    <text x="1300" y="884" font-size="12" fill="#94A3B8">状态</text>
+    <g font-size="12" fill="#0F172A">
+      <text x="856" y="910">T-2087</text><text x="930" y="910">登录页改版</text><text x="1120" y="910" fill="#0891B2">web-app</text><text x="1300" y="910" fill="#16A34A">成功</text>
+      <text x="856" y="938">T-2086</text><text x="930" y="938">埋点补全</text><text x="1120" y="938" fill="#0891B2">tracker</text><text x="1300" y="938" fill="#D97706">运行中</text>
+      <text x="856" y="966">T-2085</text><text x="930" y="966">接口联调修复</text><text x="1120" y="966" fill="#0891B2">api-svc</text><text x="1300" y="966" fill="#16A34A">成功</text>
+      <text x="856" y="994">T-2084</text><text x="930" y="994">权限校验</text><text x="1120" y="994" fill="#0891B2">auth</text><text x="1300" y="994" fill="#DC2626">失败</text>
+      <text x="856" y="1022">T-2083</text><text x="930" y="1022">报表导出</text><text x="1120" y="1022" fill="#0891B2">report</text><text x="1300" y="1022" fill="#16A34A">成功</text>
+    </g>
+  </g>
+  <!-- 最近 record -->
+  <g>
+    <rect x="1400" y="820" width="544" height="236" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="1424" y="850" font-size="16" font-weight="600" fill="#0F172A">最近 Record</text>
+    <line x1="1400" y1="864" x2="1944" y2="864" stroke="#E2E8F0"/>
+    <text x="1424" y="884" font-size="12" fill="#94A3B8">时间</text>
+    <text x="1500" y="884" font-size="12" fill="#94A3B8">会话</text>
+    <text x="1600" y="884" font-size="12" fill="#94A3B8">发送人</text>
+    <text x="1700" y="884" font-size="12" fill="#94A3B8">锚点文本</text>
+    <g font-size="12" fill="#0F172A">
+      <text x="1424" y="910">14:35</text><text x="1500" y="910">研发群</text><text x="1600" y="910">张伟</text><text x="1700" y="910" fill="#475569">"帮我看下登录…"</text>
+      <text x="1424" y="938">14:30</text><text x="1500" y="938">需求池</text><text x="1600" y="938">李娜</text><text x="1700" y="938" fill="#475569">"新需求：导出…"</text>
+      <text x="1424" y="966">14:22</text><text x="1500" y="966">研发群</text><text x="1600" y="966">王芳</text><text x="1700" y="966" fill="#475569">"接口报错了"</text>
+      <text x="1424" y="994">14:11</text><text x="1500" y="994">测试群</text><text x="1600" y="994">陈强</text><text x="1700" y="994" fill="#475569">"复现步骤如下"</text>
+      <text x="1424" y="1022">14:03</text><text x="1500" y="1022">研发群</text><text x="1600" y="1022">赵敏</text><text x="1700" y="1022" fill="#475569">"MR 已合并"</text>
+    </g>
+  </g>
+</svg>

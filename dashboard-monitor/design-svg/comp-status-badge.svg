@@ -1,0 +1,91 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',-apple-system,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- header -->
+  <text x="80" y="72" font-size="20" font-weight="600" fill="#0F172A">StatusBadge 状态徽标</text>
+  <text x="80" y="100" font-size="14" fill="#64748B">圆点 + 文字组合，表达任务/记录的运行状态。语义色覆盖 success / failed / running / pending / timeout。圆角 6px。</text>
+  <line x1="80" y1="120" x2="1840" y2="120" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- ===== 填充型 ===== -->
+  <text x="80" y="172" font-size="16" font-weight="600" fill="#0F172A">填充型（浅底 + 圆点 + 文字）</text>
+
+  <!-- success -->
+  <rect x="80" y="196" width="120" height="28" rx="6" fill="#DCFCE7"/>
+  <circle cx="100" cy="210" r="5" fill="#16A34A"/>
+  <text x="114" y="215" font-size="13" fill="#16A34A">成功 success</text>
+  <!-- failed -->
+  <rect x="232" y="196" width="120" height="28" rx="6" fill="#FEE2E2"/>
+  <circle cx="252" cy="210" r="5" fill="#DC2626"/>
+  <text x="266" y="215" font-size="13" fill="#DC2626">失败 failed</text>
+  <!-- running -->
+  <rect x="384" y="196" width="128" height="28" rx="6" fill="#DBEAFE"/>
+  <circle cx="404" cy="210" r="5" fill="#2563EB"/>
+  <text x="418" y="215" font-size="13" fill="#2563EB">进行中 running</text>
+  <!-- pending -->
+  <rect x="544" y="196" width="132" height="28" rx="6" fill="#FEF3C7"/>
+  <circle cx="564" cy="210" r="5" fill="#D97706"/>
+  <text x="578" y="215" font-size="13" fill="#D97706">等待 pending</text>
+  <!-- timeout -->
+  <rect x="708" y="196" width="132" height="28" rx="6" fill="#CFFAFE"/>
+  <circle cx="728" cy="210" r="5" fill="#0891B2"/>
+  <text x="742" y="215" font-size="13" fill="#0891B2">超时 timeout</text>
+
+  <!-- ===== 描边型 ===== -->
+  <text x="80" y="288" font-size="16" font-weight="600" fill="#0F172A">描边型（透明底 + 语义色描边）</text>
+  <rect x="80" y="312" width="120" height="28" rx="6" fill="none" stroke="#16A34A"/>
+  <circle cx="100" cy="326" r="5" fill="#16A34A"/>
+  <text x="114" y="331" font-size="13" fill="#16A34A">成功 success</text>
+  <rect x="232" y="312" width="120" height="28" rx="6" fill="none" stroke="#DC2626"/>
+  <circle cx="252" cy="326" r="5" fill="#DC2626"/>
+  <text x="266" y="331" font-size="13" fill="#DC2626">失败 failed</text>
+  <rect x="384" y="312" width="128" height="28" rx="6" fill="none" stroke="#2563EB"/>
+  <circle cx="404" cy="326" r="5" fill="#2563EB"/>
+  <text x="418" y="331" font-size="13" fill="#2563EB">进行中 running</text>
+  <rect x="544" y="312" width="132" height="28" rx="6" fill="none" stroke="#D97706"/>
+  <circle cx="564" cy="326" r="5" fill="#D97706"/>
+  <text x="578" y="331" font-size="13" fill="#D97706">等待 pending</text>
+  <rect x="708" y="312" width="132" height="28" rx="6" fill="none" stroke="#0891B2"/>
+  <circle cx="728" cy="326" r="5" fill="#0891B2"/>
+  <text x="742" y="331" font-size="13" fill="#0891B2">超时 timeout</text>
+
+  <!-- ===== 仅圆点（紧凑） ===== -->
+  <text x="80" y="404" font-size="16" font-weight="600" fill="#0F172A">紧凑型（仅圆点 + 文字，用于表格内）</text>
+  <circle cx="92" cy="428" r="5" fill="#16A34A"/>
+  <text x="106" y="433" font-size="13" fill="#475569">成功</text>
+  <circle cx="192" cy="428" r="5" fill="#DC2626"/>
+  <text x="206" y="433" font-size="13" fill="#475569">失败</text>
+  <circle cx="292" cy="428" r="5" fill="#2563EB"/>
+  <text x="306" y="433" font-size="13" fill="#475569">进行中</text>
+  <circle cx="412" cy="428" r="5" fill="#D97706"/>
+  <text x="426" y="433" font-size="13" fill="#475569">等待</text>
+  <circle cx="512" cy="428" r="5" fill="#0891B2"/>
+  <text x="526" y="433" font-size="13" fill="#475569">超时</text>
+  <!-- running with pulse ring -->
+  <circle cx="632" cy="428" r="5" fill="#2563EB"/>
+  <circle cx="632" cy="428" r="9" fill="none" stroke="#2563EB" stroke-width="1.5" opacity="0.4"/>
+  <text x="648" y="433" font-size="13" fill="#475569">进行中（带脉冲）</text>
+
+  <!-- ===== 标注稿 ===== -->
+  <text x="80" y="500" font-size="16" font-weight="600" fill="#0F172A">尺寸标注</text>
+  <rect x="80" y="524" width="120" height="28" rx="6" fill="#DCFCE7" stroke="#2563EB" stroke-dasharray="4 3"/>
+  <circle cx="100" cy="538" r="5" fill="#16A34A"/>
+  <text x="114" y="543" font-size="13" fill="#16A34A">成功 success</text>
+  <!-- height -->
+  <line x1="216" y1="524" x2="216" y2="552" stroke="#DC2626" stroke-width="1"/>
+  <line x1="211" y1="524" x2="221" y2="524" stroke="#DC2626" stroke-width="1"/>
+  <line x1="211" y1="552" x2="221" y2="552" stroke="#DC2626" stroke-width="1"/>
+  <text x="226" y="542" font-size="12" fill="#DC2626">高 28px</text>
+  <!-- radius -->
+  <line x1="80" y1="510" x2="92" y2="522" stroke="#0891B2" stroke-width="1"/>
+  <text x="300" y="530" font-size="12" fill="#0891B2">圆角 6px</text>
+  <!-- 圆点直径 -->
+  <text x="300" y="552" font-size="12" fill="#64748B">圆点直径 10px · 左内边距 20px · 点字间距 14px</text>
+
+  <!-- spec footer -->
+  <text x="80" y="616" font-size="16" font-weight="600" fill="#0F172A">语义色映射</text>
+  <text x="80" y="650" font-size="13" fill="#64748B">· success 成功 → #16A34A / 浅底 #DCFCE7</text>
+  <text x="80" y="676" font-size="13" fill="#64748B">· failed 失败 → #DC2626 / 浅底 #FEE2E2</text>
+  <text x="80" y="702" font-size="13" fill="#64748B">· running 进行中 → #2563EB / 浅底 #DBEAFE（可加脉冲动效）</text>
+  <text x="80" y="728" font-size="13" fill="#64748B">· pending 等待 → #D97706 / 浅底 #FEF3C7</text>
+  <text x="80" y="754" font-size="13" fill="#64748B">· timeout 超时 → #0891B2 / 浅底 #CFFAFE</text>
+</svg>

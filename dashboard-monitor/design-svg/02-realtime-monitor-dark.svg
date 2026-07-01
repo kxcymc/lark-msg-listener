@@ -1,0 +1,217 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',-apple-system,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1920" height="1080" fill="#0B1220"/>
+
+  <!-- ===== left nav ===== -->
+  <rect x="0" y="0" width="240" height="1080" fill="#111827"/>
+  <line x1="240" y1="0" x2="240" y2="1080" stroke="#1F2937" stroke-width="1"/>
+  <rect x="20" y="18" width="32" height="32" rx="8" fill="#2563EB"/>
+  <text x="29" y="40" font-size="16" font-weight="700" fill="#FFFFFF">WL</text>
+  <text x="62" y="34" font-size="16" font-weight="600" fill="#F1F5F9">工作量后台</text>
+  <text x="62" y="50" font-size="11" fill="#64748B">dashboard-monitor</text>
+  <line x1="16" y1="66" x2="224" y2="66" stroke="#1F2937" stroke-width="1"/>
+  <text x="20" y="92" font-size="11" font-weight="600" fill="#64748B" letter-spacing="1">概览</text>
+  <text x="44" y="125" font-size="14" fill="#94A3B8">总览</text>
+  <!-- selected: 实时监控台 -->
+  <rect x="0" y="138" width="240" height="36" fill="#1E293B"/>
+  <rect x="0" y="138" width="3" height="36" fill="#2563EB"/>
+  <text x="44" y="161" font-size="14" font-weight="600" fill="#60A5FA">实时监控台</text>
+  <text x="44" y="197" font-size="14" fill="#94A3B8">数据分析</text>
+  <text x="20" y="232" font-size="11" font-weight="600" fill="#64748B" letter-spacing="1">消息记录</text>
+  <text x="44" y="265" font-size="14" fill="#94A3B8">记录列表</text>
+  <text x="44" y="301" font-size="14" fill="#94A3B8">会话回放</text>
+  <text x="20" y="336" font-size="11" font-weight="600" fill="#64748B" letter-spacing="1">研发流程</text>
+  <text x="44" y="369" font-size="14" fill="#94A3B8">需求</text>
+  <text x="44" y="405" font-size="14" fill="#94A3B8">开发任务</text>
+  <text x="44" y="441" font-size="14" fill="#94A3B8">仓库</text>
+  <text x="20" y="476" font-size="11" font-weight="600" fill="#64748B" letter-spacing="1">运行诊断</text>
+  <text x="44" y="509" font-size="14" fill="#94A3B8">接口调用</text>
+  <text x="44" y="545" font-size="14" fill="#94A3B8">长连接事件</text>
+  <text x="44" y="581" font-size="14" fill="#94A3B8">错误中心</text>
+  <text x="20" y="616" font-size="11" font-weight="600" fill="#64748B" letter-spacing="1">报表与设置</text>
+  <text x="44" y="649" font-size="14" fill="#94A3B8">周报链接</text>
+  <text x="44" y="685" font-size="14" fill="#94A3B8">报表导出</text>
+  <text x="44" y="721" font-size="14" fill="#94A3B8">设置</text>
+  <line x1="16" y1="1000" x2="224" y2="1000" stroke="#1F2937" stroke-width="1"/>
+  <circle cx="28" cy="1028" r="5" fill="#22C55E"/>
+  <text x="42" y="1032" font-size="12" fill="#94A3B8">数据源 · SQLite 已连接</text>
+  <text x="42" y="1052" font-size="11" fill="#64748B">延迟 12ms · 同步正常</text>
+
+  <!-- ===== top bar ===== -->
+  <rect x="240" y="0" width="1680" height="56" fill="#111827"/>
+  <line x1="240" y1="56" x2="1920" y2="56" stroke="#1F2937" stroke-width="1"/>
+  <text x="264" y="28" font-size="20" font-weight="600" fill="#F1F5F9">实时监控台 · 大屏模式</text>
+  <text x="264" y="46" font-size="12" fill="#64748B">概览 / 实时监控台</text>
+  <rect x="820" y="14" width="280" height="28" rx="6" fill="#1E293B" stroke="#334155"/>
+  <text x="836" y="32" font-size="13" fill="#E2E8F0">实时窗口：最近 5 分钟</text>
+  <text x="1070" y="32" font-size="12" fill="#64748B">▾</text>
+  <rect x="1640" y="14" width="72" height="28" rx="6" fill="#2563EB"/>
+  <text x="1656" y="32" font-size="13" fill="#FFFFFF">刷新</text>
+  <text x="1722" y="32" font-size="13" fill="#94A3B8">自动刷新</text>
+  <rect x="1794" y="20" width="34" height="16" rx="8" fill="#22C55E"/>
+  <circle cx="1820" cy="28" r="6" fill="#FFFFFF"/>
+  <circle cx="1866" cy="28" r="6" fill="#22C55E"/>
+  <text x="1878" y="32" font-size="13" fill="#94A3B8">健康</text>
+
+  <!-- ===== row1: 服务健康 + 系统资源 ===== -->
+  <g>
+    <rect x="264" y="80" width="1104" height="248" rx="12" fill="#111827" stroke="#1F2937"/>
+    <text x="288" y="112" font-size="16" font-weight="600" fill="#F1F5F9">服务健康</text>
+    <text x="900" y="112" font-size="12" fill="#64748B">心跳间隔 5s · 数据更新于 14:35:12</text>
+    <line x1="264" y1="128" x2="1368" y2="128" stroke="#1F2937"/>
+    <g font-size="12" fill="#64748B">
+      <text x="288" y="156">服务</text><text x="520" y="156">状态</text><text x="700" y="156">PID</text>
+      <text x="860" y="156">最近心跳</text><text x="1080" y="156">退出码</text><text x="1240" y="156">运行时长</text>
+    </g>
+    <line x1="264" y1="172" x2="1368" y2="172" stroke="#1A2333"/>
+    <g font-size="13" fill="#E2E8F0">
+      <text x="288" y="200" font-weight="600">main</text>
+      <rect x="520" y="186" width="58" height="22" rx="6" fill="#14321F"/><text x="532" y="201" font-size="12" fill="#22C55E">运行中</text>
+      <text x="700" y="200">18342</text><text x="860" y="200">2s 前</text><text x="1080" y="200" fill="#64748B">—</text><text x="1240" y="200">3d 04:12</text>
+    </g>
+    <line x1="264" y1="220" x2="1368" y2="220" stroke="#1A2333"/>
+    <g font-size="13" fill="#E2E8F0">
+      <text x="288" y="248" font-weight="600">bot</text>
+      <rect x="520" y="234" width="58" height="22" rx="6" fill="#14321F"/><text x="532" y="249" font-size="12" fill="#22C55E">运行中</text>
+      <text x="700" y="248">18356</text><text x="860" y="248">1s 前</text><text x="1080" y="248" fill="#64748B">—</text><text x="1240" y="248">3d 04:12</text>
+    </g>
+    <line x1="264" y1="268" x2="1368" y2="268" stroke="#1A2333"/>
+    <g font-size="13" fill="#E2E8F0">
+      <text x="288" y="296" font-weight="600">collector</text>
+      <rect x="520" y="282" width="58" height="22" rx="6" fill="#3A2A0A"/><text x="532" y="297" font-size="12" fill="#FBBF24">重连中</text>
+      <text x="700" y="296">18361</text><text x="860" y="296">14s 前</text><text x="1080" y="296" fill="#64748B">—</text><text x="1240" y="296">3d 04:11</text>
+    </g>
+    <line x1="264" y1="316" x2="1368" y2="316" stroke="#1A2333"/>
+    <g font-size="13" fill="#E2E8F0">
+      <text x="288" y="320" font-weight="600">mywork</text>
+      <rect x="520" y="306" width="58" height="22" rx="6" fill="#3A1414"/><text x="532" y="321" font-size="12" fill="#F87171">已退出</text>
+      <text x="700" y="320">—</text><text x="860" y="320">2m 前</text><text x="1080" y="320" fill="#F87171">1</text><text x="1240" y="320">—</text>
+    </g>
+  </g>
+  <g>
+    <rect x="1392" y="80" width="552" height="248" rx="12" fill="#111827" stroke="#1F2937"/>
+    <text x="1416" y="112" font-size="16" font-weight="600" fill="#F1F5F9">系统资源</text>
+    <text x="1416" y="140" font-size="12" fill="#94A3B8">CPU 38% · 内存 5.2/16 GB · 磁盘 62%</text>
+    <text x="1416" y="160" font-size="12" fill="#94A3B8">日志目录 1.8 GB · out 目录 740 MB</text>
+    <line x1="1416" y1="300" x2="1920" y2="300" stroke="#1F2937"/>
+    <path d="M1416,280 L1456,260 L1496,268 L1536,240 L1576,252 L1616,225 L1656,238 L1696,210 L1736,228 L1776,205 L1816,220 L1856,200 L1896,214 L1920,200 L1920,300 L1416,300 Z" fill="#3B82F6" fill-opacity="0.18"/>
+    <polyline fill="none" stroke="#3B82F6" stroke-width="2" points="1416,280 1456,260 1496,268 1536,240 1576,252 1616,225 1656,238 1696,210 1736,228 1776,205 1816,220 1856,200 1896,214 1920,200"/>
+    <polyline fill="none" stroke="#22D3EE" stroke-width="2" points="1416,290 1456,288 1496,285 1536,286 1576,282 1616,284 1656,280 1696,282 1736,278 1776,280 1816,276 1856,278 1896,274 1920,276"/>
+    <rect x="1416" y="178" width="10" height="10" fill="#3B82F6"/><text x="1430" y="187" font-size="11" fill="#94A3B8">CPU%</text>
+    <rect x="1490" y="178" width="10" height="10" fill="#22D3EE"/><text x="1504" y="187" font-size="11" fill="#94A3B8">内存%</text>
+  </g>
+
+  <!-- ===== row2: 队列积压 + 接口健康 ===== -->
+  <g>
+    <rect x="264" y="344" width="828" height="248" rx="12" fill="#111827" stroke="#1F2937"/>
+    <text x="288" y="376" font-size="16" font-weight="600" fill="#F1F5F9">队列积压</text>
+    <text x="430" y="376" font-size="12" fill="#64748B">实时面积图 · 每 5s 采样</text>
+    <g>
+      <rect x="288" y="392" width="180" height="40" rx="8" fill="#1E293B"/>
+      <text x="300" y="410" font-size="11" fill="#94A3B8">pending analysis</text>
+      <text x="300" y="428" font-size="16" font-weight="700" fill="#60A5FA">27</text>
+      <rect x="488" y="392" width="180" height="40" rx="8" fill="#1E293B"/>
+      <text x="500" y="410" font-size="11" fill="#94A3B8">running task</text>
+      <text x="500" y="428" font-size="16" font-weight="700" fill="#22C55E">8</text>
+      <rect x="688" y="392" width="180" height="40" rx="8" fill="#1E293B"/>
+      <text x="700" y="410" font-size="11" fill="#94A3B8">failed task</text>
+      <text x="700" y="428" font-size="16" font-weight="700" fill="#F87171">5</text>
+      <rect x="888" y="392" width="180" height="40" rx="8" fill="#1E293B"/>
+      <text x="900" y="410" font-size="11" fill="#94A3B8">stale task</text>
+      <text x="900" y="428" font-size="16" font-weight="700" fill="#FBBF24">3</text>
+    </g>
+    <line x1="288" y1="560" x2="1068" y2="560" stroke="#1F2937"/>
+    <path d="M288,540 L348,520 L408,528 L468,500 L528,510 L588,485 L648,498 L708,470 L768,488 L828,460 L888,475 L948,450 L1008,468 L1068,448 L1068,560 L288,560 Z" fill="#3B82F6" fill-opacity="0.2"/>
+    <polyline fill="none" stroke="#3B82F6" stroke-width="2" points="288,540 348,520 408,528 468,500 528,510 588,485 648,498 708,470 768,488 828,460 888,475 948,450 1008,468 1068,448"/>
+    <path d="M288,552 L348,550 L408,551 L468,548 L528,549 L588,545 L648,548 L708,544 L768,546 L828,542 L888,544 L948,540 L1008,542 L1068,538 L1068,560 L288,560 Z" fill="#EF4444" fill-opacity="0.2"/>
+    <polyline fill="none" stroke="#EF4444" stroke-width="2" points="288,552 348,550 408,551 468,548 528,549 588,545 648,548 708,544 768,546 828,542 888,544 948,540 1008,542 1068,538"/>
+  </g>
+  <g>
+    <rect x="1116" y="344" width="828" height="248" rx="12" fill="#111827" stroke="#1F2937"/>
+    <text x="1140" y="376" font-size="16" font-weight="600" fill="#F1F5F9">接口健康</text>
+    <line x1="1116" y1="392" x2="1944" y2="392" stroke="#1F2937"/>
+    <g font-size="12" fill="#64748B">
+      <text x="1140" y="416">provider</text><text x="1320" y="416">operation</text><text x="1540" y="416">成功</text>
+      <text x="1620" y="416">失败</text><text x="1700" y="416">超时</text><text x="1800" y="416">平均耗时</text>
+    </g>
+    <g font-size="13" fill="#E2E8F0">
+      <line x1="1116" y1="432" x2="1944" y2="432" stroke="#1A2333"/>
+      <text x="1140" y="460">Lark OpenAPI</text><text x="1320" y="460">send_message</text><text x="1540" y="460" fill="#22C55E">1,842</text><text x="1620" y="460" fill="#F87171">12</text><text x="1700" y="460" fill="#FBBF24">3</text><text x="1800" y="460">142ms</text>
+      <line x1="1116" y1="480" x2="1944" y2="480" stroke="#1A2333"/>
+      <text x="1140" y="508">Meego</text><text x="1320" y="508">list_work_item</text><text x="1540" y="508" fill="#22C55E">638</text><text x="1620" y="508" fill="#F87171">7</text><text x="1700" y="508" fill="#FBBF24">1</text><text x="1800" y="508">310ms</text>
+      <line x1="1116" y1="528" x2="1944" y2="528" stroke="#1A2333"/>
+      <text x="1140" y="556">kxcymc OpenAPI</text><text x="1320" y="556">create_task</text><text x="1540" y="556" fill="#22C55E">421</text><text x="1620" y="556" fill="#F87171">19</text><text x="1700" y="556" fill="#FBBF24">5</text><text x="1800" y="556">880ms</text>
+    </g>
+  </g>
+
+  <!-- ===== row3: 长连接健康 + 错误摘要 + 事件流 ===== -->
+  <g>
+    <rect x="264" y="608" width="544" height="448" rx="12" fill="#111827" stroke="#1F2937"/>
+    <text x="288" y="640" font-size="16" font-weight="600" fill="#F1F5F9">长连接健康</text>
+    <rect x="288" y="660" width="496" height="170" rx="10" fill="#1E293B"/>
+    <circle cx="306" cy="690" r="5" fill="#22C55E"/>
+    <text x="320" y="694" font-size="14" font-weight="600" fill="#F1F5F9">Lark WebSocket</text>
+    <rect x="690" y="680" width="78" height="22" rx="6" fill="#14321F"/><text x="700" y="695" font-size="12" fill="#22C55E">已连接</text>
+    <g font-size="13" fill="#94A3B8">
+      <text x="320" y="726">连接时长</text><text x="600" y="726" fill="#E2E8F0">3d 04:09</text>
+      <text x="320" y="752">断开次数</text><text x="600" y="752" fill="#E2E8F0">2</text>
+      <text x="320" y="778">重连次数</text><text x="600" y="778" fill="#FBBF24">2</text>
+      <text x="320" y="804">事件数</text><text x="600" y="804" fill="#E2E8F0">12,840</text>
+    </g>
+    <rect x="288" y="846" width="496" height="170" rx="10" fill="#1E293B"/>
+    <circle cx="306" cy="876" r="5" fill="#FBBF24"/>
+    <text x="320" y="880" font-size="14" font-weight="600" fill="#F1F5F9">kxcymc SSE</text>
+    <rect x="690" y="866" width="78" height="22" rx="6" fill="#3A2A0A"/><text x="700" y="881" font-size="12" fill="#FBBF24">重连中</text>
+    <g font-size="13" fill="#94A3B8">
+      <text x="320" y="912">连接时长</text><text x="600" y="912" fill="#E2E8F0">00:04:21</text>
+      <text x="320" y="938">断开次数</text><text x="600" y="938" fill="#E2E8F0">9</text>
+      <text x="320" y="964">重连次数</text><text x="600" y="964" fill="#FBBF24">9</text>
+      <text x="320" y="990">事件数</text><text x="600" y="990" fill="#E2E8F0">3,217</text>
+    </g>
+  </g>
+  <g>
+    <rect x="832" y="608" width="544" height="448" rx="12" fill="#111827" stroke="#1F2937"/>
+    <text x="856" y="640" font-size="16" font-weight="600" fill="#F1F5F9">错误摘要</text>
+    <text x="856" y="662" font-size="12" fill="#64748B">近 1 小时 · 共 39 条</text>
+    <line x1="832" y1="676" x2="1376" y2="676" stroke="#1F2937"/>
+    <g font-size="12" fill="#64748B">
+      <text x="856" y="700">错误类型</text><text x="1180" y="700">次数</text><text x="1280" y="700">占比</text>
+    </g>
+    <g font-size="13" fill="#E2E8F0">
+      <text x="856" y="734">TimeoutError</text>
+      <rect x="856" y="744" width="180" height="8" rx="4" fill="#3A1414"/><rect x="856" y="744" width="135" height="8" rx="4" fill="#EF4444"/>
+      <text x="1180" y="738">14</text><text x="1280" y="738" fill="#94A3B8">35.9%</text>
+      <text x="856" y="784">JSONDecodeError</text>
+      <rect x="856" y="794" width="180" height="8" rx="4" fill="#3A1414"/><rect x="856" y="794" width="92" height="8" rx="4" fill="#EF4444"/>
+      <text x="1180" y="788">9</text><text x="1280" y="788" fill="#94A3B8">23.1%</text>
+      <text x="856" y="834">HTTP 429 限流</text>
+      <rect x="856" y="844" width="180" height="8" rx="4" fill="#3A1414"/><rect x="856" y="844" width="72" height="8" rx="4" fill="#EF4444"/>
+      <text x="1180" y="838">7</text><text x="1280" y="838" fill="#94A3B8">17.9%</text>
+      <text x="856" y="884">HTTP 403 鉴权</text>
+      <rect x="856" y="894" width="180" height="8" rx="4" fill="#3A1414"/><rect x="856" y="894" width="52" height="8" rx="4" fill="#EF4444"/>
+      <text x="1180" y="888">5</text><text x="1280" y="888" fill="#94A3B8">12.8%</text>
+      <text x="856" y="934">RepoNotFound</text>
+      <rect x="856" y="944" width="180" height="8" rx="4" fill="#3A1414"/><rect x="856" y="944" width="41" height="8" rx="4" fill="#EF4444"/>
+      <text x="1180" y="938">4</text><text x="1280" y="938" fill="#94A3B8">10.3%</text>
+    </g>
+    <text x="856" y="1004" font-size="12" fill="#F87171">↑ 较上一小时 +11 条</text>
+  </g>
+  <g>
+    <rect x="1400" y="608" width="544" height="448" rx="12" fill="#111827" stroke="#1F2937"/>
+    <text x="1424" y="640" font-size="16" font-weight="600" fill="#F1F5F9">事件流</text>
+    <text x="1424" y="662" font-size="12" fill="#64748B">实时滚动 · 最新在上</text>
+    <line x1="1400" y1="676" x2="1944" y2="676" stroke="#1F2937"/>
+    <g font-family="ui-monospace,Menlo,Consolas,monospace" font-size="13">
+      <text x="1424" y="704" fill="#64748B">14:35:12</text><circle cx="1530" cy="700" r="4" fill="#22C55E"/><text x="1546" y="704" fill="#E2E8F0">message.received · 研发群</text>
+      <text x="1424" y="734" fill="#64748B">14:35:08</text><circle cx="1530" cy="730" r="4" fill="#60A5FA"/><text x="1546" y="734" fill="#E2E8F0">analysis.dispatch · T-2087</text>
+      <text x="1424" y="764" fill="#64748B">14:35:01</text><circle cx="1530" cy="760" r="4" fill="#FBBF24"/><text x="1546" y="764" fill="#E2E8F0">sse.reconnect · kxcymc</text>
+      <text x="1424" y="794" fill="#64748B">14:34:55</text><circle cx="1530" cy="790" r="4" fill="#22C55E"/><text x="1546" y="794" fill="#E2E8F0">task.success · T-2085</text>
+      <text x="1424" y="824" fill="#64748B">14:34:40</text><circle cx="1530" cy="820" r="4" fill="#EF4444"/><text x="1546" y="824" fill="#E2E8F0">task.failed · T-2084</text>
+      <text x="1424" y="854" fill="#64748B">14:34:31</text><circle cx="1530" cy="850" r="4" fill="#22C55E"/><text x="1546" y="854" fill="#E2E8F0">mr.merged · web-app !312</text>
+      <text x="1424" y="884" fill="#64748B">14:34:18</text><circle cx="1530" cy="880" r="4" fill="#22D3EE"/><text x="1546" y="884" fill="#E2E8F0">api.call · Meego list</text>
+      <text x="1424" y="914" fill="#64748B">14:34:02</text><circle cx="1530" cy="910" r="4" fill="#EF4444"/><text x="1546" y="914" fill="#E2E8F0">error · Timeout bot/analysis</text>
+      <text x="1424" y="944" fill="#64748B">14:33:50</text><circle cx="1530" cy="940" r="4" fill="#22C55E"/><text x="1546" y="944" fill="#E2E8F0">message.received · 需求池</text>
+      <text x="1424" y="974" fill="#64748B">14:33:36</text><circle cx="1530" cy="970" r="4" fill="#60A5FA"/><text x="1546" y="974" fill="#E2E8F0">requirement.created · R-918</text>
+      <text x="1424" y="1004" fill="#64748B">14:33:20</text><circle cx="1530" cy="1000" r="4" fill="#22C55E"/><text x="1546" y="1004" fill="#E2E8F0">task.success · T-2083</text>
+    </g>
+  </g>
+</svg>

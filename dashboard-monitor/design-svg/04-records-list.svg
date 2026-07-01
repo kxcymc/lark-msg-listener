@@ -1,0 +1,305 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',-apple-system,Helvetica,Arial,sans-serif">
+  <!-- ===== global bg ===== -->
+  <rect x="0" y="0" width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- ===== left nav 240 ===== -->
+  <rect x="0" y="0" width="240" height="1080" fill="#FFFFFF"/>
+  <line x1="240" y1="0" x2="240" y2="1080" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="20" y="18" width="32" height="32" rx="8" fill="#2563EB"/>
+  <text x="29" y="40" font-size="16" font-weight="700" fill="#FFFFFF">WL</text>
+  <text x="62" y="34" font-size="16" font-weight="600" fill="#0F172A">工作量后台</text>
+  <text x="62" y="50" font-size="11" fill="#64748B">dashboard-monitor</text>
+  <line x1="16" y1="66" x2="224" y2="66" stroke="#E2E8F0" stroke-width="1"/>
+
+  <text x="20" y="92" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">概览</text>
+  <text x="44" y="125" font-size="14" fill="#475569">总览</text>
+  <text x="44" y="161" font-size="14" fill="#475569">实时监控台</text>
+  <text x="44" y="197" font-size="14" fill="#475569">数据分析</text>
+
+  <text x="20" y="232" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">消息记录</text>
+  <!-- selected: 记录列表 -->
+  <rect x="0" y="242" width="240" height="36" fill="#EFF4FF"/>
+  <rect x="0" y="242" width="3" height="36" fill="#2563EB"/>
+  <text x="44" y="265" font-size="14" font-weight="600" fill="#2563EB">记录列表</text>
+  <text x="44" y="301" font-size="14" fill="#475569">会话回放</text>
+
+  <text x="20" y="336" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">研发流程</text>
+  <text x="44" y="369" font-size="14" fill="#475569">需求</text>
+  <text x="44" y="405" font-size="14" fill="#475569">开发任务</text>
+  <text x="44" y="441" font-size="14" fill="#475569">仓库</text>
+
+  <text x="20" y="476" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">运行诊断</text>
+  <text x="44" y="509" font-size="14" fill="#475569">接口调用</text>
+  <text x="44" y="545" font-size="14" fill="#475569">长连接事件</text>
+  <text x="44" y="581" font-size="14" fill="#475569">错误中心</text>
+
+  <text x="20" y="616" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">报表与设置</text>
+  <text x="44" y="649" font-size="14" fill="#475569">周报链接</text>
+  <text x="44" y="685" font-size="14" fill="#475569">报表导出</text>
+  <text x="44" y="721" font-size="14" fill="#475569">设置</text>
+
+  <line x1="16" y1="1000" x2="224" y2="1000" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="28" cy="1028" r="5" fill="#16A34A"/>
+  <text x="42" y="1032" font-size="12" fill="#475569">数据源 · SQLite 已连接</text>
+  <text x="42" y="1052" font-size="11" fill="#94A3B8">延迟 12ms · 同步正常</text>
+
+  <!-- ===== top bar 56 ===== -->
+  <rect x="240" y="0" width="1680" height="56" fill="#FFFFFF"/>
+  <line x1="240" y1="56" x2="1920" y2="56" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="264" y="28" font-size="20" font-weight="600" fill="#0F172A">记录列表</text>
+  <text x="264" y="46" font-size="12" fill="#64748B">消息记录 / 记录列表</text>
+  <rect x="820" y="14" width="280" height="28" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="836" y="32" font-size="13" fill="#0F172A">2026-06-05 ～ 2026-06-12</text>
+  <text x="1070" y="32" font-size="12" fill="#64748B">▾</text>
+  <rect x="1640" y="14" width="72" height="28" rx="6" fill="#2563EB"/>
+  <text x="1656" y="32" font-size="13" fill="#FFFFFF">刷新</text>
+  <text x="1728" y="32" font-size="13" fill="#475569">自动刷新</text>
+  <rect x="1800" y="20" width="34" height="16" rx="8" fill="#16A34A"/>
+  <circle cx="1826" cy="28" r="6" fill="#FFFFFF"/>
+  <circle cx="1872" cy="28" r="6" fill="#16A34A"/>
+  <text x="1884" y="32" font-size="13" fill="#475569">健康</text>
+
+  <!-- ===== FilterBar ===== -->
+  <rect x="264" y="80" width="1656" height="108" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <!-- row1 -->
+  <text x="288" y="112" font-size="12" fill="#64748B">日期范围</text>
+  <rect x="288" y="120" width="200" height="32" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="300" y="141" font-size="13" fill="#0F172A">2026-06-05 ～ 06-12</text>
+  <text x="512" y="112" font-size="12" fill="#64748B">会话类型</text>
+  <rect x="512" y="120" width="160" height="32" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="524" y="141" font-size="13" fill="#0F172A">全部</text>
+  <text x="652" y="141" font-size="12" fill="#94A3B8">▾</text>
+  <text x="696" y="112" font-size="12" fill="#64748B">会话 ID</text>
+  <rect x="696" y="120" width="200" height="32" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="708" y="141" font-size="13" fill="#94A3B8">oc_xxxx / 输入会话 ID</text>
+  <text x="920" y="112" font-size="12" fill="#64748B">发送人</text>
+  <rect x="920" y="120" width="160" height="32" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="932" y="141" font-size="13" fill="#94A3B8">姓名 / 工号</text>
+  <text x="1104" y="112" font-size="12" fill="#64748B">关键词</text>
+  <rect x="1104" y="120" width="240" height="32" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="1116" y="141" font-size="13" fill="#94A3B8">锚点文本 / 摘要关键词</text>
+  <!-- toggles -->
+  <text x="1368" y="112" font-size="12" fill="#64748B">是否含媒体</text>
+  <rect x="1368" y="122" width="34" height="16" rx="8" fill="#16A34A"/>
+  <circle cx="1394" cy="130" r="6" fill="#FFFFFF"/>
+  <text x="1414" y="135" font-size="12" fill="#475569">是</text>
+  <text x="1456" y="112" font-size="12" fill="#64748B">是否含链接</text>
+  <rect x="1456" y="122" width="34" height="16" rx="8" fill="#E2E8F0"/>
+  <circle cx="1464" cy="130" r="6" fill="#FFFFFF"/>
+  <text x="1502" y="135" font-size="12" fill="#94A3B8">不限</text>
+  <!-- buttons -->
+  <rect x="1700" y="120" width="92" height="32" rx="6" fill="#2563EB"/>
+  <text x="1722" y="141" font-size="13" fill="#FFFFFF">查询</text>
+  <rect x="1804" y="120" width="92" height="32" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="1826" y="141" font-size="13" fill="#64748B">重置</text>
+
+  <!-- ===== Table ===== -->
+  <rect x="264" y="204" width="1656" height="788" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="288" y="236" font-size="16" font-weight="600" fill="#0F172A">Record 记录</text>
+  <text x="430" y="236" font-size="12" fill="#94A3B8">共 1,284 条 · 当前 1-12</text>
+  <!-- table header row 44 -->
+  <rect x="264" y="252" width="1656" height="44" fill="#F8FAFC"/>
+  <line x1="264" y1="296" x2="1920" y2="296" stroke="#E2E8F0"/>
+  <g font-size="12" fill="#64748B">
+    <text x="288" y="279">record ID</text>
+    <text x="420" y="279">时间 ▾</text>
+    <text x="540" y="279">会话</text>
+    <text x="680" y="279">发送人</text>
+    <text x="790" y="279">锚点摘要</text>
+    <text x="1230" y="279">消息数</text>
+    <text x="1320" y="279">媒体数</text>
+    <text x="1410" y="279">链接数</text>
+    <text x="1560" y="279">操作</text>
+  </g>
+  <!-- rows 48px each starting y=296 -->
+  <g font-size="13" fill="#0F172A">
+    <!-- row template -->
+    <!-- 1 -->
+    <text x="288" y="325" fill="#2563EB" font-family="monospace">rec_8f3a21</text>
+    <text x="420" y="325">06-12 14:35:08</text>
+    <text x="540" y="325">研发群·登录模块</text>
+    <text x="680" y="325">张伟</text>
+    <text x="790" y="325" fill="#475569">"帮我看下登录页跳转白屏问题…"</text>
+    <text x="1240" y="325">18</text>
+    <text x="1330" y="325">3</text>
+    <text x="1420" y="325">2</text>
+    <text x="1500" y="325" font-size="12" fill="#2563EB">JSON</text>
+    <text x="1546" y="325" font-size="12" fill="#0891B2">回放</text>
+    <text x="1592" y="325" font-size="12" fill="#16A34A">分析</text>
+    <text x="1644" y="325" font-size="12" fill="#64748B">复制</text>
+    <line x1="264" y1="344" x2="1920" y2="344" stroke="#E2E8F0"/>
+    <!-- 2 -->
+    <text x="288" y="373" fill="#2563EB" font-family="monospace">rec_8f3a18</text>
+    <text x="420" y="373">06-12 14:30:41</text>
+    <text x="540" y="373">需求池</text>
+    <text x="680" y="373">李娜</text>
+    <text x="790" y="373" fill="#475569">"新需求：报表支持按周导出 Excel"</text>
+    <text x="1240" y="373">9</text>
+    <text x="1330" y="373">0</text>
+    <text x="1420" y="373">1</text>
+    <text x="1500" y="373" font-size="12" fill="#2563EB">JSON</text>
+    <text x="1546" y="373" font-size="12" fill="#0891B2">回放</text>
+    <text x="1592" y="373" font-size="12" fill="#16A34A">分析</text>
+    <text x="1644" y="373" font-size="12" fill="#64748B">复制</text>
+    <line x1="264" y1="392" x2="1920" y2="392" stroke="#E2E8F0"/>
+    <!-- 3 -->
+    <text x="288" y="421" fill="#2563EB" font-family="monospace">rec_8f3a07</text>
+    <text x="420" y="421">06-12 14:22:13</text>
+    <text x="540" y="421">研发群·接口联调</text>
+    <text x="680" y="421">王芳</text>
+    <text x="790" y="421" fill="#475569">"订单接口 500，附错误堆栈截图"</text>
+    <text x="1240" y="421">24</text>
+    <text x="1330" y="421">5</text>
+    <text x="1420" y="421">0</text>
+    <text x="1500" y="421" font-size="12" fill="#2563EB">JSON</text>
+    <text x="1546" y="421" font-size="12" fill="#0891B2">回放</text>
+    <text x="1592" y="421" font-size="12" fill="#16A34A">分析</text>
+    <text x="1644" y="421" font-size="12" fill="#64748B">复制</text>
+    <line x1="264" y1="440" x2="1920" y2="440" stroke="#E2E8F0"/>
+    <!-- 4 hover -->
+    <rect x="264" y="440" width="1656" height="48" fill="#F8FAFC"/>
+    <text x="288" y="469" fill="#2563EB" font-family="monospace">rec_8f39f5</text>
+    <text x="420" y="469">06-12 14:11:55</text>
+    <text x="540" y="469">测试群</text>
+    <text x="680" y="469">陈强</text>
+    <text x="790" y="469" fill="#475569">"复现步骤如下，含录屏视频一段"</text>
+    <text x="1240" y="469">12</text>
+    <text x="1330" y="469">2</text>
+    <text x="1420" y="469">0</text>
+    <text x="1500" y="469" font-size="12" fill="#2563EB">JSON</text>
+    <text x="1546" y="469" font-size="12" fill="#0891B2">回放</text>
+    <text x="1592" y="469" font-size="12" fill="#16A34A">分析</text>
+    <text x="1644" y="469" font-size="12" fill="#64748B">复制</text>
+    <line x1="264" y1="488" x2="1920" y2="488" stroke="#E2E8F0"/>
+    <!-- 5 -->
+    <text x="288" y="517" fill="#2563EB" font-family="monospace">rec_8f39e2</text>
+    <text x="420" y="517">06-12 14:03:20</text>
+    <text x="540" y="517">研发群·登录模块</text>
+    <text x="680" y="517">赵敏</text>
+    <text x="790" y="517" fill="#475569">"MR !128 已合并，发布灰度 10%"</text>
+    <text x="1240" y="517">7</text>
+    <text x="1330" y="517">0</text>
+    <text x="1420" y="517">3</text>
+    <text x="1500" y="517" font-size="12" fill="#2563EB">JSON</text>
+    <text x="1546" y="517" font-size="12" fill="#0891B2">回放</text>
+    <text x="1592" y="517" font-size="12" fill="#16A34A">分析</text>
+    <text x="1644" y="517" font-size="12" fill="#64748B">复制</text>
+    <line x1="264" y1="536" x2="1920" y2="536" stroke="#E2E8F0"/>
+    <!-- 6 -->
+    <text x="288" y="565" fill="#2563EB" font-family="monospace">rec_8f39d1</text>
+    <text x="420" y="565">06-12 13:57:22</text>
+    <text x="540" y="565">需求池</text>
+    <text x="680" y="565">刘洋</text>
+    <text x="790" y="565" fill="#475569">"埋点补全：曝光与点击事件梳理"</text>
+    <text x="1240" y="565">15</text>
+    <text x="1330" y="565">1</text>
+    <text x="1420" y="565">4</text>
+    <text x="1500" y="565" font-size="12" fill="#2563EB">JSON</text>
+    <text x="1546" y="565" font-size="12" fill="#0891B2">回放</text>
+    <text x="1592" y="565" font-size="12" fill="#16A34A">分析</text>
+    <text x="1644" y="565" font-size="12" fill="#64748B">复制</text>
+    <line x1="264" y1="584" x2="1920" y2="584" stroke="#E2E8F0"/>
+    <!-- 7 -->
+    <text x="288" y="613" fill="#2563EB" font-family="monospace">rec_8f39c0</text>
+    <text x="420" y="613">06-12 13:40:11</text>
+    <text x="540" y="613">研发群·权限</text>
+    <text x="680" y="613">孙磊</text>
+    <text x="790" y="613" fill="#475569">"权限校验失败，仓库不存在报错"</text>
+    <text x="1240" y="613">11</text>
+    <text x="1330" y="613">0</text>
+    <text x="1420" y="613">1</text>
+    <text x="1500" y="613" font-size="12" fill="#2563EB">JSON</text>
+    <text x="1546" y="613" font-size="12" fill="#0891B2">回放</text>
+    <text x="1592" y="613" font-size="12" fill="#16A34A">分析</text>
+    <text x="1644" y="613" font-size="12" fill="#64748B">复制</text>
+    <line x1="264" y1="632" x2="1920" y2="632" stroke="#E2E8F0"/>
+    <!-- 8 -->
+    <text x="288" y="661" fill="#2563EB" font-family="monospace">rec_8f39b3</text>
+    <text x="420" y="661">06-12 13:31:48</text>
+    <text x="540" y="661">测试群</text>
+    <text x="680" y="661">周婷</text>
+    <text x="790" y="661" fill="#475569">"回归用例通过率 96%，附报表链接"</text>
+    <text x="1240" y="661">20</text>
+    <text x="1330" y="661">4</text>
+    <text x="1420" y="661">2</text>
+    <text x="1500" y="661" font-size="12" fill="#2563EB">JSON</text>
+    <text x="1546" y="661" font-size="12" fill="#0891B2">回放</text>
+    <text x="1592" y="661" font-size="12" fill="#16A34A">分析</text>
+    <text x="1644" y="661" font-size="12" fill="#64748B">复制</text>
+    <line x1="264" y1="680" x2="1920" y2="680" stroke="#E2E8F0"/>
+    <!-- 9 -->
+    <text x="288" y="709" fill="#2563EB" font-family="monospace">rec_8f39a2</text>
+    <text x="420" y="709">06-12 13:12:03</text>
+    <text x="540" y="709">研发群·卡片</text>
+    <text x="680" y="709">吴昊</text>
+    <text x="790" y="709" fill="#475569">"Lark 卡片渲染异常 403，需重授权"</text>
+    <text x="1240" y="709">13</text>
+    <text x="1330" y="709">1</text>
+    <text x="1420" y="709">2</text>
+    <text x="1500" y="709" font-size="12" fill="#2563EB">JSON</text>
+    <text x="1546" y="709" font-size="12" fill="#0891B2">回放</text>
+    <text x="1592" y="709" font-size="12" fill="#16A34A">分析</text>
+    <text x="1644" y="709" font-size="12" fill="#64748B">复制</text>
+    <line x1="264" y1="728" x2="1920" y2="728" stroke="#E2E8F0"/>
+    <!-- 10 -->
+    <text x="288" y="757" fill="#2563EB" font-family="monospace">rec_8f3991</text>
+    <text x="420" y="757">06-12 12:58:39</text>
+    <text x="540" y="757">需求池</text>
+    <text x="680" y="757">郑爽</text>
+    <text x="790" y="757" fill="#475569">"首页 Banner 支持运营配置化"</text>
+    <text x="1240" y="757">8</text>
+    <text x="1330" y="757">2</text>
+    <text x="1420" y="757">0</text>
+    <text x="1500" y="757" font-size="12" fill="#2563EB">JSON</text>
+    <text x="1546" y="757" font-size="12" fill="#0891B2">回放</text>
+    <text x="1592" y="757" font-size="12" fill="#16A34A">分析</text>
+    <text x="1644" y="757" font-size="12" fill="#64748B">复制</text>
+    <line x1="264" y1="776" x2="1920" y2="776" stroke="#E2E8F0"/>
+    <!-- 11 -->
+    <text x="288" y="805" fill="#2563EB" font-family="monospace">rec_8f3980</text>
+    <text x="420" y="805">06-12 12:41:17</text>
+    <text x="540" y="805">研发群·支付</text>
+    <text x="680" y="805">冯雷</text>
+    <text x="790" y="805" fill="#475569">"支付回调超时优化，附压测图"</text>
+    <text x="1240" y="805">26</text>
+    <text x="1330" y="805">6</text>
+    <text x="1420" y="805">3</text>
+    <text x="1500" y="805" font-size="12" fill="#2563EB">JSON</text>
+    <text x="1546" y="805" font-size="12" fill="#0891B2">回放</text>
+    <text x="1592" y="805" font-size="12" fill="#16A34A">分析</text>
+    <text x="1644" y="805" font-size="12" fill="#64748B">复制</text>
+    <line x1="264" y1="824" x2="1920" y2="824" stroke="#E2E8F0"/>
+    <!-- 12 -->
+    <text x="288" y="853" fill="#2563EB" font-family="monospace">rec_8f396f</text>
+    <text x="420" y="853">06-12 12:20:05</text>
+    <text x="540" y="853">测试群</text>
+    <text x="680" y="853">何静</text>
+    <text x="790" y="853" fill="#475569">"导出 CSV 字段缺失，已贴样例数据"</text>
+    <text x="1240" y="853">10</text>
+    <text x="1330" y="853">0</text>
+    <text x="1420" y="853">1</text>
+    <text x="1500" y="853" font-size="12" fill="#2563EB">JSON</text>
+    <text x="1546" y="853" font-size="12" fill="#0891B2">回放</text>
+    <text x="1592" y="853" font-size="12" fill="#16A34A">分析</text>
+    <text x="1644" y="853" font-size="12" fill="#64748B">复制</text>
+    <line x1="264" y1="872" x2="1920" y2="872" stroke="#E2E8F0"/>
+  </g>
+
+  <!-- ===== pager ===== -->
+  <text x="288" y="952" font-size="13" fill="#64748B">共 1,284 条 · 每页 12 条</text>
+  <rect x="1560" y="936" width="32" height="28" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="1570" y="955" font-size="13" fill="#94A3B8">‹</text>
+  <rect x="1600" y="936" width="32" height="28" rx="6" fill="#2563EB"/>
+  <text x="1612" y="955" font-size="13" fill="#FFFFFF">1</text>
+  <rect x="1640" y="936" width="32" height="28" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="1652" y="955" font-size="13" fill="#475569">2</text>
+  <rect x="1680" y="936" width="32" height="28" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="1692" y="955" font-size="13" fill="#475569">3</text>
+  <rect x="1720" y="936" width="32" height="28" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="1732" y="955" font-size="13" fill="#475569">4</text>
+  <text x="1762" y="955" font-size="13" fill="#94A3B8">…</text>
+  <rect x="1788" y="936" width="40" height="28" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="1798" y="955" font-size="13" fill="#475569">107</text>
+  <rect x="1836" y="936" width="32" height="28" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="1846" y="955" font-size="13" fill="#475569">›</text>
+</svg>

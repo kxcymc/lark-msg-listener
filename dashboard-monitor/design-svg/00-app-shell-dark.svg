@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <!-- ===== 深色背景 ===== -->
+  <rect x="0" y="0" width="1920" height="1080" fill="#0B1220"/>
+
+  <!-- ===== 左侧导航 240px ===== -->
+  <rect x="0" y="0" width="240" height="1080" fill="#111827"/>
+  <line x1="240" y1="0" x2="240" y2="1080" stroke="#1F2A3C" stroke-width="1"/>
+
+  <!-- Logo + 名称 -->
+  <rect x="20" y="16" width="32" height="32" rx="8" fill="#2563EB"/>
+  <path d="M28 32 l4 4 l8 -8" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="62" y="30" font-size="15" font-weight="600" fill="#F1F5F9">工作量后台</text>
+  <text x="62" y="45" font-size="11" fill="#64748B">dashboard-monitor</text>
+  <line x1="16" y1="68" x2="224" y2="68" stroke="#1F2A3C" stroke-width="1"/>
+
+  <!-- 分组：概览组 -->
+  <text x="20" y="92" font-size="11" font-weight="600" fill="#475569" letter-spacing="1">概览</text>
+  <!-- 总览 (选中) -->
+  <rect x="8" y="100" width="224" height="40" rx="8" fill="#1E3A8A"/>
+  <rect x="8" y="100" width="3" height="40" rx="1.5" fill="#3B82F6"/>
+  <rect x="22" y="112" width="16" height="16" rx="3" fill="none" stroke="#93C5FD" stroke-width="1.6"/>
+  <line x1="26" y1="120" x2="34" y2="120" stroke="#93C5FD" stroke-width="1.6"/>
+  <text x="50" y="125" font-size="14" font-weight="600" fill="#FFFFFF">总览</text>
+  <!-- 实时监控台 -->
+  <circle cx="30" cy="160" r="6" fill="none" stroke="#94A3B8" stroke-width="1.6"/>
+  <circle cx="30" cy="160" r="2" fill="#94A3B8"/>
+  <text x="50" y="165" font-size="14" fill="#CBD5E1">实时监控台</text>
+  <!-- 数据分析 -->
+  <path d="M24 204 l0 -10 M30 204 l0 -16 M36 204 l0 -7" stroke="#94A3B8" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="50" y="205" font-size="14" fill="#CBD5E1">数据分析</text>
+
+  <!-- 分组：消息记录组 -->
+  <line x1="16" y1="226" x2="224" y2="226" stroke="#1F2A3C" stroke-width="1"/>
+  <text x="20" y="250" font-size="11" font-weight="600" fill="#475569" letter-spacing="1">消息记录</text>
+  <rect x="23" y="270" width="14" height="14" rx="2" fill="none" stroke="#94A3B8" stroke-width="1.6"/>
+  <line x1="26" y1="275" x2="34" y2="275" stroke="#94A3B8" stroke-width="1.4"/>
+  <line x1="26" y1="279" x2="34" y2="279" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="50" y="283" font-size="14" fill="#CBD5E1">记录列表</text>
+  <path d="M25 318 l0 16 M25 318 q9 8 0 16" stroke="#94A3B8" stroke-width="1.6" fill="none"/>
+  <path d="M30 322 l6 4 l-6 4 z" fill="#94A3B8"/>
+  <text x="50" y="331" font-size="14" fill="#CBD5E1">会话回放</text>
+
+  <!-- 分组：研发流程组 -->
+  <line x1="16" y1="352" x2="224" y2="352" stroke="#1F2A3C" stroke-width="1"/>
+  <text x="20" y="376" font-size="11" font-weight="600" fill="#475569" letter-spacing="1">研发流程</text>
+  <rect x="24" y="390" width="13" height="16" rx="2" fill="none" stroke="#94A3B8" stroke-width="1.6"/>
+  <text x="50" y="409" font-size="14" fill="#CBD5E1">需求</text>
+  <path d="M24 440 l4 4 l8 -8" stroke="#94A3B8" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="50" y="447" font-size="14" fill="#CBD5E1">开发任务</text>
+  <circle cx="26" cy="481" r="3" fill="none" stroke="#94A3B8" stroke-width="1.6"/>
+  <circle cx="26" cy="495" r="3" fill="none" stroke="#94A3B8" stroke-width="1.6"/>
+  <line x1="26" y1="484" x2="26" y2="492" stroke="#94A3B8" stroke-width="1.6"/>
+  <text x="50" y="491" font-size="14" fill="#CBD5E1">仓库</text>
+
+  <!-- 分组：运行诊断组 -->
+  <line x1="16" y1="514" x2="224" y2="514" stroke="#1F2A3C" stroke-width="1"/>
+  <text x="20" y="538" font-size="11" font-weight="600" fill="#475569" letter-spacing="1">运行诊断</text>
+  <path d="M23 558 l-4 4 l4 4 M37 558 l4 4 l-4 4" stroke="#94A3B8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="50" y="567" font-size="14" fill="#CBD5E1">接口调用</text>
+  <path d="M22 604 q4 -8 8 0 q4 8 8 0" stroke="#94A3B8" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <text x="50" y="609" font-size="14" fill="#CBD5E1">长连接事件</text>
+  <circle cx="30" cy="646" r="8" fill="none" stroke="#F87171" stroke-width="1.6"/>
+  <line x1="30" y1="642" x2="30" y2="647" stroke="#F87171" stroke-width="1.6" stroke-linecap="round"/>
+  <circle cx="30" cy="650" r="1" fill="#F87171"/>
+  <text x="50" y="651" font-size="14" fill="#CBD5E1">错误中心</text>
+
+  <!-- 分组：报表与设置组 -->
+  <line x1="16" y1="672" x2="224" y2="672" stroke="#1F2A3C" stroke-width="1"/>
+  <text x="20" y="696" font-size="11" font-weight="600" fill="#475569" letter-spacing="1">报表与设置</text>
+  <path d="M24 714 a4 4 0 0 1 6 0 l1 1 a4 4 0 0 1 -6 6 M36 728 a4 4 0 0 1 -6 0 l-1 -1 a4 4 0 0 1 6 -6" stroke="#94A3B8" stroke-width="1.6" fill="none"/>
+  <text x="50" y="725" font-size="14" fill="#CBD5E1">周报链接</text>
+  <path d="M30 760 l0 12 M26 768 l4 4 l4 -4 M23 776 l14 0" stroke="#94A3B8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="50" y="773" font-size="14" fill="#CBD5E1">报表导出</text>
+  <circle cx="30" cy="814" r="4" fill="none" stroke="#94A3B8" stroke-width="1.6"/>
+  <circle cx="30" cy="814" r="8" fill="none" stroke="#94A3B8" stroke-width="1.6" stroke-dasharray="2 3"/>
+  <text x="50" y="819" font-size="14" fill="#CBD5E1">设置</text>
+
+  <!-- 底部数据源连接状态 + 设置 -->
+  <line x1="16" y1="996" x2="224" y2="996" stroke="#1F2A3C" stroke-width="1"/>
+  <rect x="16" y="1012" width="208" height="48" rx="8" fill="#1A2435"/>
+  <circle cx="34" cy="1036" r="5" fill="#16A34A"/>
+  <circle cx="34" cy="1036" r="8" fill="none" stroke="#16A34A" stroke-width="1" opacity="0.5"/>
+  <text x="50" y="1032" font-size="12" font-weight="600" fill="#F1F5F9">数据源已连接</text>
+  <text x="50" y="1048" font-size="11" fill="#64748B">WebSocket · 延迟 42ms</text>
+  <circle cx="206" cy="1036" r="3" fill="#94A3B8"/>
+  <circle cx="206" cy="1036" r="6" fill="none" stroke="#94A3B8" stroke-width="1.4"/>
+
+  <!-- ===== 顶栏 56px ===== -->
+  <rect x="240" y="0" width="1680" height="56" fill="#111827"/>
+  <line x1="240" y1="56" x2="1920" y2="56" stroke="#1F2A3C" stroke-width="1"/>
+  <text x="264" y="34" font-size="20" font-weight="600" fill="#F1F5F9">总览</text>
+  <text x="318" y="34" font-size="13" fill="#64748B">概览 / 总览</text>
+
+  <!-- 日期范围选择器 -->
+  <rect x="800" y="14" width="280" height="28" rx="6" fill="#0B1220" stroke="#1F2A3C" stroke-width="1"/>
+  <rect x="810" y="22" width="12" height="12" rx="2" fill="none" stroke="#94A3B8" stroke-width="1.4"/>
+  <line x1="813" y1="20" x2="813" y2="24" stroke="#94A3B8" stroke-width="1.4"/>
+  <line x1="819" y1="20" x2="819" y2="24" stroke="#94A3B8" stroke-width="1.4"/>
+  <text x="832" y="33" font-size="13" fill="#E2E8F0">2026-06-05 ~ 2026-06-12</text>
+  <path d="M1058 25 l5 5 l5 -5" stroke="#94A3B8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 刷新 + 自动刷新 + 健康灯 -->
+  <rect x="1660" y="14" width="84" height="28" rx="6" fill="#2563EB"/>
+  <path d="M1676 24 a6 6 0 1 0 2 -4 M1676 20 l0 4 l4 0" stroke="#FFFFFF" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1690" y="33" font-size="13" fill="#FFFFFF">刷新</text>
+  <text x="1762" y="33" font-size="13" fill="#94A3B8">自动刷新</text>
+  <rect x="1830" y="20" width="34" height="16" rx="8" fill="#16A34A"/>
+  <circle cx="1856" cy="28" r="6" fill="#FFFFFF"/>
+  <circle cx="1896" cy="28" r="7" fill="#16A34A"/>
+  <path d="M1893 28 l2 2 l4 -4" stroke="#FFFFFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== 内容区 12 列栅格示意 ===== -->
+  <text x="264" y="92" font-size="13" font-weight="600" fill="#94A3B8">内容区有效宽度 1680px / 12 列栅格 · 列间距 24px · 左右内边距 24px</text>
+
+  <g>
+    <rect x="264" y="112" width="118" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <rect x="406" y="112" width="118" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <rect x="548" y="112" width="118" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <rect x="690" y="112" width="118" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <rect x="832" y="112" width="118" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <rect x="974" y="112" width="118" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <rect x="1116" y="112" width="118" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <rect x="1258" y="112" width="118" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <rect x="1400" y="112" width="118" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <rect x="1542" y="112" width="118" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <rect x="1684" y="112" width="118" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <rect x="1826" y="112" width="70" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <text x="270" y="350" font-size="11" fill="#475569">↑ 12 列单元格占位</text>
+  </g>
+
+  <!-- KPI 卡 -->
+  <g>
+    <rect x="264" y="264" width="384" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <text x="288" y="296" font-size="13" fill="#94A3B8">今日消息总量</text>
+    <text x="288" y="338" font-size="30" font-weight="700" fill="#F1F5F9">128,540</text>
+    <rect x="288" y="350" width="62" height="20" rx="6" fill="#14342099"/>
+    <text x="298" y="364" font-size="12" fill="#4ADE80">▲ 12.4%</text>
+
+    <rect x="672" y="264" width="384" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <text x="696" y="296" font-size="13" fill="#94A3B8">活跃会话数</text>
+    <text x="696" y="338" font-size="30" font-weight="700" fill="#F1F5F9">3,287</text>
+    <rect x="696" y="350" width="62" height="20" rx="6" fill="#14342099"/>
+    <text x="706" y="364" font-size="12" fill="#4ADE80">▲ 3.1%</text>
+
+    <rect x="1080" y="264" width="384" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <text x="1104" y="296" font-size="13" fill="#94A3B8">接口平均延迟</text>
+    <text x="1104" y="338" font-size="30" font-weight="700" fill="#FBBF24">214ms</text>
+    <rect x="1104" y="350" width="62" height="20" rx="6" fill="#42200699"/>
+    <text x="1114" y="364" font-size="12" fill="#FBBF24">▲ 8.0%</text>
+
+    <rect x="1488" y="264" width="408" height="120" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <text x="1512" y="296" font-size="13" fill="#94A3B8">错误率</text>
+    <text x="1512" y="338" font-size="30" font-weight="700" fill="#F87171">0.42%</text>
+    <rect x="1512" y="350" width="62" height="20" rx="6" fill="#45161699"/>
+    <text x="1522" y="364" font-size="12" fill="#F87171">▼ 0.1%</text>
+  </g>
+
+  <!-- 图表区 -->
+  <g>
+    <rect x="264" y="416" width="1016" height="296" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <text x="288" y="448" font-size="16" font-weight="600" fill="#F1F5F9">消息量趋势</text>
+    <line x1="288" y1="660" x2="1256" y2="660" stroke="#1F2A3C" stroke-width="1"/>
+    <line x1="288" y1="610" x2="1256" y2="610" stroke="#172033" stroke-width="1"/>
+    <line x1="288" y1="560" x2="1256" y2="560" stroke="#172033" stroke-width="1"/>
+    <line x1="288" y1="510" x2="1256" y2="510" stroke="#172033" stroke-width="1"/>
+    <polyline points="300,620 420,580 540,600 660,520 780,540 900,470 1020,500 1140,440 1240,460" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="300,640 420,630 540,635 660,600 780,615 900,590 1020,605 1140,575 1240,585" fill="none" stroke="#22D3EE" stroke-width="2" stroke-dasharray="4 4"/>
+
+    <rect x="1312" y="416" width="584" height="296" rx="12" fill="#111827" stroke="#1F2A3C" stroke-width="1"/>
+    <text x="1336" y="448" font-size="16" font-weight="600" fill="#F1F5F9">渠道分布</text>
+    <circle cx="1460" cy="580" r="80" fill="none" stroke="#3B82F6" stroke-width="22"/>
+    <path d="M1460 500 a80 80 0 0 1 70 120" fill="none" stroke="#4ADE80" stroke-width="22"/>
+    <path d="M1530 620 a80 80 0 0 1 -60 38" fill="none" stroke="#FBBF24" stroke-width="22"/>
+    <rect x="1600" y="520" width="12" height="12" rx="3" fill="#3B82F6"/>
+    <text x="1620" y="531" font-size="13" fill="#CBD5E1">飞书群组 56%</text>
+    <rect x="1600" y="552" width="12" height="12" rx="3" fill="#4ADE80"/>
+    <text x="1620" y="563" font-size="13" fill="#CBD5E1">单聊 28%</text>
+    <rect x="1600" y="584" width="12" height="12" rx="3" fill="#FBBF24"/>
+    <text x="1620" y="595" font-size="13" fill="#CBD5E1">机器人 16%</text>
+  </g>
+
+  <text x="264" y="760" font-size="12" fill="#475569">说明：深色大屏版本，布局结构与浅色版一致；语义色在深底上做提亮处理以保持可识别。</text>
+</svg>

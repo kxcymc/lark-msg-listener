@@ -1,0 +1,156 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',-apple-system,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- ===== left nav ===== -->
+  <rect x="0" y="0" width="240" height="1080" fill="#FFFFFF"/>
+  <line x1="240" y1="0" x2="240" y2="1080" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="20" y="18" width="32" height="32" rx="8" fill="#2563EB"/>
+  <text x="29" y="40" font-size="16" font-weight="700" fill="#FFFFFF">WL</text>
+  <text x="62" y="34" font-size="16" font-weight="600" fill="#0F172A">工作量后台</text>
+  <text x="62" y="50" font-size="11" fill="#64748B">dashboard-monitor</text>
+  <line x1="16" y1="66" x2="224" y2="66" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="20" y="92" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">概览</text>
+  <text x="44" y="125" font-size="14" fill="#475569">总览</text>
+  <text x="44" y="161" font-size="14" fill="#475569">实时监控台</text>
+  <text x="44" y="197" font-size="14" fill="#475569">数据分析</text>
+  <text x="20" y="232" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">消息记录</text>
+  <text x="44" y="265" font-size="14" fill="#475569">记录列表</text>
+  <text x="44" y="301" font-size="14" fill="#475569">会话回放</text>
+  <text x="20" y="336" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">研发流程</text>
+  <text x="44" y="369" font-size="14" fill="#475569">需求</text>
+  <text x="44" y="405" font-size="14" fill="#475569">开发任务</text>
+  <text x="44" y="441" font-size="14" fill="#475569">仓库</text>
+  <text x="20" y="476" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">运行诊断</text>
+  <text x="44" y="509" font-size="14" fill="#475569">接口调用</text>
+  <text x="44" y="545" font-size="14" fill="#475569">长连接事件</text>
+  <text x="44" y="581" font-size="14" fill="#475569">错误中心</text>
+  <text x="20" y="616" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">报表与设置</text>
+  <text x="44" y="649" font-size="14" fill="#475569">周报链接</text>
+  <!-- selected: 报表导出 -->
+  <rect x="0" y="662" width="240" height="36" fill="#EFF4FF"/>
+  <rect x="0" y="662" width="3" height="36" fill="#2563EB"/>
+  <text x="44" y="685" font-size="14" font-weight="600" fill="#2563EB">报表导出</text>
+  <text x="44" y="721" font-size="14" fill="#475569">设置</text>
+  <line x1="16" y1="1000" x2="224" y2="1000" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="28" cy="1028" r="5" fill="#16A34A"/>
+  <text x="42" y="1032" font-size="12" fill="#475569">数据源 · SQLite 已连接</text>
+  <text x="42" y="1052" font-size="11" fill="#94A3B8">延迟 12ms · 同步正常</text>
+
+  <!-- ===== top bar ===== -->
+  <rect x="240" y="0" width="1680" height="56" fill="#FFFFFF"/>
+  <line x1="240" y1="56" x2="1920" y2="56" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="264" y="28" font-size="20" font-weight="600" fill="#0F172A">报表导出</text>
+  <text x="264" y="46" font-size="12" fill="#64748B">报表与设置 / 报表导出</text>
+  <rect x="820" y="14" width="280" height="28" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="836" y="32" font-size="13" fill="#0F172A">2026-05-13 ～ 2026-06-12</text>
+  <text x="1070" y="32" font-size="12" fill="#64748B">▾</text>
+  <rect x="1640" y="14" width="72" height="28" rx="6" fill="#2563EB"/>
+  <text x="1656" y="32" font-size="13" fill="#FFFFFF">刷新</text>
+  <text x="1722" y="32" font-size="13" fill="#475569">自动刷新</text>
+  <rect x="1794" y="20" width="34" height="16" rx="8" fill="#CBD5E1"/>
+  <circle cx="1810" cy="28" r="6" fill="#FFFFFF"/>
+  <circle cx="1866" cy="28" r="6" fill="#16A34A"/>
+  <text x="1878" y="32" font-size="13" fill="#475569">健康</text>
+
+  <!-- ===== export condition card ===== -->
+  <g>
+    <rect x="264" y="80" width="1024" height="340" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="288" y="112" font-size="16" font-weight="600" fill="#0F172A">导出条件</text>
+    <text x="396" y="112" font-size="12" fill="#94A3B8">配置筛选后生成 xlsx 工作簿</text>
+    <line x1="264" y1="128" x2="1288" y2="128" stroke="#F1F5F9"/>
+
+    <text x="288" y="162" font-size="13" fill="#64748B">日期范围</text>
+    <rect x="288" y="172" width="300" height="34" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/><text x="302" y="194" font-size="13" fill="#475569">2026-05-13 ～ 2026-06-12</text>
+    <rect x="600" y="172" width="60" height="34" rx="6" fill="#EFF4FF" stroke="#2563EB"/><text x="616" y="194" font-size="12" fill="#2563EB">本月</text>
+    <rect x="668" y="172" width="60" height="34" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/><text x="682" y="194" font-size="12" fill="#475569">本周</text>
+
+    <text x="760" y="162" font-size="13" fill="#64748B">报表类型</text>
+    <rect x="760" y="172" width="200" height="34" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/><text x="774" y="194" font-size="13" fill="#475569">综合工作量报表 ▾</text>
+    <text x="984" y="162" font-size="13" fill="#64748B">数据范围</text>
+    <rect x="984" y="172" width="280" height="34" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/><text x="998" y="194" font-size="13" fill="#475569">全部服务 / 全部仓库 ▾</text>
+
+    <text x="288" y="244" font-size="13" fill="#64748B">状态筛选</text>
+    <rect x="288" y="254" width="92" height="30" rx="6" fill="#EFF4FF" stroke="#2563EB"/><text x="302" y="274" font-size="12" fill="#2563EB">全部</text>
+    <rect x="388" y="254" width="92" height="30" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/><text x="408" y="274" font-size="12" fill="#475569">成功</text>
+    <rect x="488" y="254" width="92" height="30" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/><text x="508" y="274" font-size="12" fill="#475569">失败</text>
+    <rect x="588" y="254" width="92" height="30" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/><text x="606" y="274" font-size="12" fill="#475569">运行中</text>
+
+    <text x="760" y="244" font-size="13" fill="#64748B">包含 Sheet</text>
+    <g font-size="12" fill="#475569">
+      <rect x="760" y="256" width="14" height="14" rx="3" fill="#2563EB"/><path d="M763 263 l3 3 l5 -6" stroke="#FFFFFF" stroke-width="1.6" fill="none"/><text x="782" y="268">Summary</text>
+      <rect x="884" y="256" width="14" height="14" rx="3" fill="#2563EB"/><path d="M887 263 l3 3 l5 -6" stroke="#FFFFFF" stroke-width="1.6" fill="none"/><text x="906" y="268">明细全量</text>
+      <rect x="1010" y="256" width="14" height="14" rx="3" fill="#FFFFFF" stroke="#CBD5E1"/><text x="1032" y="268">仅聚合</text>
+    </g>
+
+    <line x1="264" y1="312" x2="1288" y2="312" stroke="#F1F5F9"/>
+    <rect x="288" y="340" width="180" height="44" rx="8" fill="#2563EB"/>
+    <path d="M312 362 l0 -14 m0 14 l-5 -5 m5 5 l5 -5" stroke="#FFFFFF" stroke-width="1.6" fill="none"/>
+    <text x="328" y="367" font-size="14" fill="#FFFFFF" font-weight="600">生成 xlsx 下载</text>
+    <rect x="484" y="340" width="140" height="44" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/><text x="510" y="367" font-size="13" fill="#475569">预览数据量</text>
+    <text x="660" y="367" font-size="12" fill="#64748B">预计 7 个 Sheet · 约 4,820 行 · 文件 ~1.2MB</text>
+  </g>
+
+  <!-- ===== report content note ===== -->
+  <g>
+    <rect x="1312" y="80" width="632" height="340" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="1336" y="112" font-size="16" font-weight="600" fill="#0F172A">报表内容说明</text>
+    <text x="1336" y="132" font-size="12" fill="#94A3B8">xlsx 工作簿包含以下 Sheet</text>
+    <line x1="1336" y1="144" x2="1920" y2="144" stroke="#F1F5F9"/>
+    <g font-size="13">
+      <rect x="1336" y="160" width="180" height="32" rx="6" fill="#EFF4FF"/><text x="1350" y="181" fill="#2563EB" font-weight="600">Summary</text><text x="1530" y="181" fill="#64748B" font-size="12">总体指标汇总</text>
+      <rect x="1336" y="200" width="180" height="32" rx="6" fill="#F8FAFC"/><text x="1350" y="221" fill="#0F172A">DailyMetrics</text><text x="1530" y="221" fill="#64748B" font-size="12">按日指标</text>
+      <rect x="1336" y="240" width="180" height="32" rx="6" fill="#F8FAFC"/><text x="1350" y="261" fill="#0F172A">Demands</text><text x="1530" y="261" fill="#64748B" font-size="12">需求明细</text>
+      <rect x="1336" y="280" width="180" height="32" rx="6" fill="#F8FAFC"/><text x="1350" y="301" fill="#0F172A">DevTasks</text><text x="1530" y="301" fill="#64748B" font-size="12">开发任务明细</text>
+      <rect x="1336" y="320" width="180" height="32" rx="6" fill="#F8FAFC"/><text x="1350" y="341" fill="#0F172A">ApiCalls</text><text x="1530" y="341" fill="#64748B" font-size="12">接口调用明细</text>
+
+      <rect x="1556" y="160" width="180" height="32" rx="6" fill="#F8FAFC"/><text x="1570" y="181" fill="#0F172A">Errors</text><text x="1750" y="181" fill="#64748B" font-size="12">错误聚合</text>
+      <rect x="1556" y="200" width="180" height="32" rx="6" fill="#F8FAFC"/><text x="1570" y="221" fill="#0F172A">Records</text><text x="1750" y="221" fill="#64748B" font-size="12">消息记录</text>
+      <rect x="1556" y="240" width="180" height="32" rx="6" fill="#F8FAFC"/><text x="1570" y="261" fill="#0F172A">WeeklyReports</text><text x="1750" y="261" fill="#64748B" font-size="12">周报链接</text>
+      <rect x="1556" y="280" width="180" height="32" rx="6" fill="#F8FAFC"/><text x="1570" y="301" fill="#0F172A">Repos</text><text x="1750" y="301" fill="#64748B" font-size="12">仓库统计</text>
+      <rect x="1556" y="320" width="180" height="32" rx="6" fill="#F8FAFC"/><text x="1570" y="341" fill="#0F172A">Streams</text><text x="1750" y="341" fill="#64748B" font-size="12">长连接事件</text>
+    </g>
+  </g>
+
+  <!-- ===== export history table ===== -->
+  <g>
+    <rect x="264" y="436" width="1680" height="620" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="288" y="468" font-size="16" font-weight="600" fill="#0F172A">导出历史</text>
+    <text x="1790" y="468" font-size="12" fill="#64748B">共 36 条</text>
+    <!-- header -->
+    <rect x="264" y="484" width="1680" height="44" fill="#F8FAFC"/>
+    <line x1="264" y1="484" x2="1944" y2="484" stroke="#E2E8F0"/>
+    <line x1="264" y1="528" x2="1944" y2="528" stroke="#E2E8F0"/>
+    <g font-size="12" fill="#64748B" font-weight="600">
+      <text x="288" y="512">文件名</text>
+      <text x="660" y="512">导出条件</text>
+      <text x="1180" y="512">行数</text>
+      <text x="1320" y="512">状态</text>
+      <text x="1500" y="512">创建时间</text>
+      <text x="1720" y="512">错误</text>
+    </g>
+    <g font-size="13" fill="#0F172A">
+      <text x="288" y="556" font-family="monospace" font-size="12" fill="#2563EB">workload_2026-05-13_06-12.xlsx</text><text x="660" y="556" fill="#64748B" font-size="12">综合 · 全部服务 · 全部状态</text><text x="1180" y="556">4,820</text><circle cx="1324" cy="552" r="4" fill="#16A34A"/><text x="1336" y="556" fill="#16A34A">已完成</text><text x="1500" y="556" font-size="12">06-12 14:30:11</text><text x="1720" y="556" fill="#94A3B8">—</text>
+      <line x1="264" y1="576" x2="1944" y2="576" stroke="#F1F5F9"/>
+      <text x="288" y="604" font-family="monospace" font-size="12" fill="#2563EB">errors_2026-06_week24.xlsx</text><text x="660" y="604" fill="#64748B" font-size="12">错误聚合 · bot · 失败</text><text x="1180" y="604">312</text><circle cx="1324" cy="600" r="4" fill="#16A34A"/><text x="1336" y="604" fill="#16A34A">已完成</text><text x="1500" y="604" font-size="12">06-12 11:08:42</text><text x="1720" y="604" fill="#94A3B8">—</text>
+      <line x1="264" y1="624" x2="1944" y2="624" stroke="#F1F5F9"/>
+      <text x="288" y="652" font-family="monospace" font-size="12" fill="#2563EB">apicalls_2026-06-11.xlsx</text><text x="660" y="652" fill="#64748B" font-size="12">接口调用 · kxcymc_openapi · 全部</text><text x="1180" y="652">1,842</text><circle cx="1324" cy="648" r="4" fill="#D97706"/><text x="1336" y="652" fill="#D97706">生成中 62%</text><text x="1500" y="652" font-size="12">06-12 10:55:03</text><text x="1720" y="652" fill="#94A3B8">—</text>
+      <line x1="264" y1="672" x2="1944" y2="672" stroke="#F1F5F9"/>
+      <text x="288" y="700" font-family="monospace" font-size="12" fill="#475569">demands_2026-05.xlsx</text><text x="660" y="700" fill="#64748B" font-size="12">需求明细 · 全部仓库 · 成功</text><text x="1180" y="700" fill="#94A3B8">—</text><circle cx="1324" cy="696" r="4" fill="#DC2626"/><text x="1336" y="700" fill="#DC2626">失败</text><text x="1500" y="700" font-size="12">06-12 09:40:18</text><text x="1720" y="700" fill="#DC2626" font-size="12">磁盘空间不足</text>
+      <line x1="264" y1="720" x2="1944" y2="720" stroke="#F1F5F9"/>
+      <text x="288" y="748" font-family="monospace" font-size="12" fill="#2563EB">repos_summary.xlsx</text><text x="660" y="748" fill="#64748B" font-size="12">仓库统计 · 全部仓库</text><text x="1180" y="748">36</text><circle cx="1324" cy="744" r="4" fill="#16A34A"/><text x="1336" y="748" fill="#16A34A">已完成</text><text x="1500" y="748" font-size="12">06-11 18:22:50</text><text x="1720" y="748" fill="#94A3B8">—</text>
+      <line x1="264" y1="768" x2="1944" y2="768" stroke="#F1F5F9"/>
+      <text x="288" y="796" font-family="monospace" font-size="12" fill="#2563EB">workload_2026-05-week21.xlsx</text><text x="660" y="796" fill="#64748B" font-size="12">综合 · web-app · 全部</text><text x="1180" y="796">1,204</text><circle cx="1324" cy="792" r="4" fill="#16A34A"/><text x="1336" y="796" fill="#16A34A">已完成</text><text x="1500" y="796" font-size="12">06-11 16:01:09</text><text x="1720" y="796" fill="#94A3B8">—</text>
+      <line x1="264" y1="816" x2="1944" y2="816" stroke="#F1F5F9"/>
+      <text x="288" y="844" font-family="monospace" font-size="12" fill="#2563EB">records_2026-06-10.xlsx</text><text x="660" y="844" fill="#64748B" font-size="12">消息记录 · 研发群 · 全部</text><text x="1180" y="844">986</text><circle cx="1324" cy="840" r="4" fill="#16A34A"/><text x="1336" y="844" fill="#16A34A">已完成</text><text x="1500" y="844" font-size="12">06-10 20:14:33</text><text x="1720" y="844" fill="#94A3B8">—</text>
+      <line x1="264" y1="864" x2="1944" y2="864" stroke="#F1F5F9"/>
+      <text x="288" y="892" font-family="monospace" font-size="12" fill="#2563EB">devtasks_2026-06.xlsx</text><text x="660" y="892" fill="#64748B" font-size="12">开发任务 · 全部 · 成功</text><text x="1180" y="892">428</text><circle cx="1324" cy="888" r="4" fill="#16A34A"/><text x="1336" y="892" fill="#16A34A">已完成</text><text x="1500" y="892" font-size="12">06-10 09:30:00</text><text x="1720" y="892" fill="#94A3B8">—</text>
+      <line x1="264" y1="912" x2="1944" y2="912" stroke="#F1F5F9"/>
+      <text x="288" y="940" font-family="monospace" font-size="12" fill="#2563EB">weeklyreports_q2.xlsx</text><text x="660" y="940" fill="#64748B" font-size="12">周报链接 · 全部</text><text x="1180" y="940">24</text><circle cx="1324" cy="936" r="4" fill="#16A34A"/><text x="1336" y="940" fill="#16A34A">已完成</text><text x="1500" y="940" font-size="12">06-09 11:45:21</text><text x="1720" y="940" fill="#94A3B8">—</text>
+    </g>
+    <!-- action hint -->
+    <line x1="264" y1="976" x2="1944" y2="976" stroke="#E2E8F0"/>
+    <text x="288" y="1008" font-size="12" fill="#64748B">点击文件名下载 · 已完成文件保留 30 天后自动清理</text>
+    <rect x="1680" y="992" width="120" height="32" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/><text x="1702" y="1013" font-size="12" fill="#475569">批量下载</text>
+    <rect x="1812" y="992" width="120" height="32" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/><text x="1834" y="1013" font-size="12" fill="#DC2626">清理历史</text>
+  </g>
+</svg>

@@ -1,0 +1,185 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',-apple-system,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- ===== left nav ===== -->
+  <rect x="0" y="0" width="240" height="1080" fill="#FFFFFF"/>
+  <line x1="240" y1="0" x2="240" y2="1080" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="20" y="18" width="32" height="32" rx="8" fill="#2563EB"/>
+  <text x="29" y="40" font-size="16" font-weight="700" fill="#FFFFFF">WL</text>
+  <text x="62" y="34" font-size="16" font-weight="600" fill="#0F172A">工作量后台</text>
+  <text x="62" y="50" font-size="11" fill="#64748B">dashboard-monitor</text>
+  <line x1="16" y1="66" x2="224" y2="66" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="20" y="92" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">概览</text>
+  <text x="44" y="125" font-size="14" fill="#475569">总览</text>
+  <text x="44" y="161" font-size="14" fill="#475569">实时监控台</text>
+  <text x="44" y="197" font-size="14" fill="#475569">数据分析</text>
+  <text x="20" y="232" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">消息记录</text>
+  <text x="44" y="265" font-size="14" fill="#475569">记录列表</text>
+  <text x="44" y="301" font-size="14" fill="#475569">会话回放</text>
+  <text x="20" y="336" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">研发流程</text>
+  <text x="44" y="369" font-size="14" fill="#475569">需求</text>
+  <text x="44" y="405" font-size="14" fill="#475569">开发任务</text>
+  <!-- selected: 仓库 -->
+  <rect x="0" y="418" width="240" height="36" fill="#EFF4FF"/>
+  <rect x="0" y="418" width="3" height="36" fill="#2563EB"/>
+  <text x="44" y="441" font-size="14" font-weight="600" fill="#2563EB">仓库</text>
+  <text x="20" y="476" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">运行诊断</text>
+  <text x="44" y="509" font-size="14" fill="#475569">接口调用</text>
+  <text x="44" y="545" font-size="14" fill="#475569">长连接事件</text>
+  <text x="44" y="581" font-size="14" fill="#475569">错误中心</text>
+  <text x="20" y="616" font-size="11" font-weight="600" fill="#94A3B8" letter-spacing="1">报表与设置</text>
+  <text x="44" y="649" font-size="14" fill="#475569">周报链接</text>
+  <text x="44" y="685" font-size="14" fill="#475569">报表导出</text>
+  <text x="44" y="721" font-size="14" fill="#475569">设置</text>
+  <line x1="16" y1="1000" x2="224" y2="1000" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="28" cy="1028" r="5" fill="#16A34A"/>
+  <text x="42" y="1032" font-size="12" fill="#475569">数据源 · SQLite 已连接</text>
+  <text x="42" y="1052" font-size="11" fill="#94A3B8">延迟 12ms · 同步正常</text>
+
+  <!-- ===== top bar ===== -->
+  <rect x="240" y="0" width="1680" height="56" fill="#FFFFFF"/>
+  <line x1="240" y1="56" x2="1920" y2="56" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="264" y="28" font-size="20" font-weight="600" fill="#0F172A">仓库</text>
+  <text x="264" y="46" font-size="12" fill="#64748B">研发流程 / 仓库</text>
+  <rect x="820" y="14" width="280" height="28" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="836" y="32" font-size="13" fill="#0F172A">2026-05-13 ～ 2026-06-12</text>
+  <text x="1070" y="32" font-size="12" fill="#64748B">▾</text>
+  <rect x="1640" y="14" width="72" height="28" rx="6" fill="#2563EB"/>
+  <text x="1656" y="32" font-size="13" fill="#FFFFFF">刷新</text>
+  <text x="1722" y="32" font-size="13" fill="#475569">自动刷新</text>
+  <rect x="1794" y="20" width="34" height="16" rx="8" fill="#16A34A"/>
+  <circle cx="1820" cy="28" r="6" fill="#FFFFFF"/>
+  <circle cx="1866" cy="28" r="6" fill="#16A34A"/>
+  <text x="1878" y="32" font-size="13" fill="#475569">健康</text>
+
+  <!-- ===== repo stats cards ===== -->
+  <g>
+    <rect x="264" y="80" width="408" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="288" y="110" font-size="13" fill="#64748B">仓库总数</text>
+    <text x="288" y="150" font-size="30" font-weight="700" fill="#0F172A">36</text>
+    <text x="430" y="150" font-size="12" fill="#16A34A">活跃 28 · 归档 8</text>
+  </g>
+  <g>
+    <rect x="696" y="80" width="408" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="720" y="110" font-size="13" fill="#64748B">关联需求数</text>
+    <text x="720" y="150" font-size="30" font-weight="700" fill="#2563EB">412</text>
+    <text x="862" y="150" font-size="12" fill="#64748B">本周 +28</text>
+  </g>
+  <g>
+    <rect x="1128" y="80" width="408" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="1152" y="110" font-size="13" fill="#64748B">关联任务数 / MR 数</text>
+    <text x="1152" y="150" font-size="30" font-weight="700" fill="#0891B2">1,284</text>
+    <text x="1330" y="150" font-size="12" fill="#64748B">MR 386 · 合并率 92%</text>
+  </g>
+  <g>
+    <rect x="1560" y="80" width="384" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="1584" y="110" font-size="13" fill="#64748B">失败数</text>
+    <text x="1584" y="150" font-size="30" font-weight="700" fill="#DC2626">47</text>
+    <text x="1700" y="150" font-size="12" fill="#DC2626">失败率 3.7%</text>
+  </g>
+
+  <!-- ===== repo table ===== -->
+  <g>
+    <rect x="264" y="196" width="1024" height="860" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="288" y="228" font-size="16" font-weight="600" fill="#0F172A">仓库列表</text>
+    <rect x="1010" y="212" width="200" height="28" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/><text x="1022" y="231" font-size="12" fill="#94A3B8">搜索 名称 / 路径 / remote</text>
+    <!-- header -->
+    <rect x="264" y="248" width="1024" height="44" fill="#F8FAFC"/>
+    <line x1="264" y1="248" x2="1288" y2="248" stroke="#E2E8F0"/>
+    <line x1="264" y1="292" x2="1288" y2="292" stroke="#E2E8F0"/>
+    <g font-size="12" fill="#64748B" font-weight="600">
+      <text x="284" y="276">repo ID</text>
+      <text x="364" y="276">名称</text>
+      <text x="500" y="276">路径</text>
+      <text x="720" y="276">remote</text>
+      <text x="920" y="276">branches</text>
+      <text x="1030" y="276">扫描时间</text>
+    </g>
+    <g font-size="13" fill="#0F172A">
+      <rect x="264" y="292" width="1024" height="48" fill="#EFF4FF"/>
+      <rect x="264" y="292" width="3" height="48" fill="#2563EB"/>
+      <text x="284" y="321" font-family="monospace" font-size="12" fill="#2563EB">r-01</text><text x="364" y="321" fill="#0891B2">web-app</text><text x="500" y="321" font-family="monospace" font-size="11" fill="#475569">~/code/web-app</text><text x="720" y="321" font-family="monospace" font-size="11" fill="#475569">git@git/web-app</text><text x="940" y="321">12</text><text x="1030" y="321" font-size="12">06-12 14:20</text>
+      <line x1="264" y1="340" x2="1288" y2="340" stroke="#F1F5F9"/>
+      <text x="284" y="369" font-family="monospace" font-size="12" fill="#475569">r-02</text><text x="364" y="369" fill="#0891B2">api-svc</text><text x="500" y="369" font-family="monospace" font-size="11" fill="#475569">~/code/api-svc</text><text x="720" y="369" font-family="monospace" font-size="11" fill="#475569">git@git/api-svc</text><text x="940" y="369">8</text><text x="1030" y="369" font-size="12">06-12 14:18</text>
+      <line x1="264" y1="388" x2="1288" y2="388" stroke="#F1F5F9"/>
+      <text x="284" y="417" font-family="monospace" font-size="12" fill="#475569">r-03</text><text x="364" y="417" fill="#0891B2">tracker</text><text x="500" y="417" font-family="monospace" font-size="11" fill="#475569">~/code/tracker</text><text x="720" y="417" font-family="monospace" font-size="11" fill="#475569">git@git/tracker</text><text x="940" y="417">5</text><text x="1030" y="417" font-size="12">06-12 14:15</text>
+      <line x1="264" y1="436" x2="1288" y2="436" stroke="#F1F5F9"/>
+      <text x="284" y="465" font-family="monospace" font-size="12" fill="#475569">r-04</text><text x="364" y="465" fill="#0891B2">auth</text><text x="500" y="465" font-family="monospace" font-size="11" fill="#475569">~/code/auth</text><text x="720" y="465" font-family="monospace" font-size="11" fill="#475569">git@git/auth</text><text x="940" y="465">6</text><text x="1030" y="465" font-size="12">06-12 14:10</text>
+      <line x1="264" y1="484" x2="1288" y2="484" stroke="#F1F5F9"/>
+      <text x="284" y="513" font-family="monospace" font-size="12" fill="#475569">r-05</text><text x="364" y="513" fill="#0891B2">report</text><text x="500" y="513" font-family="monospace" font-size="11" fill="#475569">~/code/report</text><text x="720" y="513" font-family="monospace" font-size="11" fill="#475569">git@git/report</text><text x="940" y="513">4</text><text x="1030" y="513" font-size="12">06-12 13:58</text>
+      <line x1="264" y1="532" x2="1288" y2="532" stroke="#F1F5F9"/>
+      <text x="284" y="561" font-family="monospace" font-size="12" fill="#475569">r-06</text><text x="364" y="561" fill="#0891B2">infra</text><text x="500" y="561" font-family="monospace" font-size="11" fill="#475569">~/code/infra</text><text x="720" y="561" font-family="monospace" font-size="11" fill="#475569">git@git/infra</text><text x="940" y="561">9</text><text x="1030" y="561" font-size="12">06-12 13:40</text>
+      <line x1="264" y1="580" x2="1288" y2="580" stroke="#F1F5F9"/>
+      <text x="284" y="609" font-family="monospace" font-size="12" fill="#475569">r-07</text><text x="364" y="609" fill="#0891B2">mobile-app</text><text x="500" y="609" font-family="monospace" font-size="11" fill="#475569">~/code/mobile</text><text x="720" y="609" font-family="monospace" font-size="11" fill="#475569">git@git/mobile</text><text x="940" y="609">7</text><text x="1030" y="609" font-size="12">06-12 13:22</text>
+      <line x1="264" y1="628" x2="1288" y2="628" stroke="#F1F5F9"/>
+      <text x="284" y="657" font-family="monospace" font-size="12" fill="#475569">r-08</text><text x="364" y="657" fill="#0891B2">data-pipe</text><text x="500" y="657" font-family="monospace" font-size="11" fill="#475569">~/code/data-pipe</text><text x="720" y="657" font-family="monospace" font-size="11" fill="#475569">git@git/data-pipe</text><text x="940" y="657">3</text><text x="1030" y="657" font-size="12">06-12 12:50</text>
+      <line x1="264" y1="676" x2="1288" y2="676" stroke="#F1F5F9"/>
+      <text x="284" y="705" font-family="monospace" font-size="12" fill="#475569">r-09</text><text x="364" y="705" fill="#0891B2">gateway</text><text x="500" y="705" font-family="monospace" font-size="11" fill="#475569">~/code/gateway</text><text x="720" y="705" font-family="monospace" font-size="11" fill="#475569">git@git/gateway</text><text x="940" y="705">5</text><text x="1030" y="705" font-size="12">06-12 12:30</text>
+      <line x1="264" y1="724" x2="1288" y2="724" stroke="#F1F5F9"/>
+      <text x="284" y="753" font-family="monospace" font-size="12" fill="#475569">r-10</text><text x="364" y="753" fill="#0891B2">admin-portal</text><text x="500" y="753" font-family="monospace" font-size="11" fill="#475569">~/code/admin</text><text x="720" y="753" font-family="monospace" font-size="11" fill="#475569">git@git/admin</text><text x="940" y="753">6</text><text x="1030" y="753" font-size="12">06-12 11:55</text>
+      <line x1="264" y1="772" x2="1288" y2="772" stroke="#F1F5F9"/>
+      <text x="284" y="801" font-family="monospace" font-size="12" fill="#94A3B8">r-11</text><text x="364" y="801" fill="#94A3B8">legacy-erp</text><text x="500" y="801" font-family="monospace" font-size="11" fill="#94A3B8">~/code/erp</text><text x="720" y="801" font-family="monospace" font-size="11" fill="#94A3B8">git@git/erp</text><text x="940" y="801" fill="#94A3B8">2</text><text x="1030" y="801" font-size="12" fill="#94A3B8">归档</text>
+    </g>
+    <text x="288" y="844" font-size="12" fill="#64748B">第 1 / 4 页 · 已选中 r-01 web-app</text>
+  </g>
+
+  <!-- ===== repo detail ===== -->
+  <g>
+    <rect x="1312" y="196" width="632" height="860" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="1336" y="228" font-size="16" font-weight="600" fill="#0F172A">仓库详情</text>
+    <text x="1430" y="228" font-size="13" fill="#0891B2">web-app</text>
+    <rect x="1840" y="212" width="80" height="24" rx="6" fill="#DCFCE7"/><circle cx="1856" cy="224" r="4" fill="#16A34A"/><text x="1868" y="228" font-size="12" fill="#16A34A">活跃</text>
+    <line x1="1336" y1="244" x2="1920" y2="244" stroke="#F1F5F9"/>
+    <g font-size="13" fill="#0F172A">
+      <text x="1336" y="272" fill="#64748B">repo ID</text><text x="1500" y="272" font-family="monospace" font-size="12">r-01</text>
+      <text x="1336" y="298" fill="#64748B">路径</text><text x="1500" y="298" font-family="monospace" font-size="12">~/code/web-app</text>
+      <text x="1336" y="324" fill="#64748B">remote</text><text x="1500" y="324" font-family="monospace" font-size="12" fill="#2563EB">git@git.internal:fe/web-app.git</text>
+      <text x="1336" y="350" fill="#64748B">最近扫描</text><text x="1500" y="350">2026-06-12 14:20:08</text>
+    </g>
+
+    <!-- repo stats mini -->
+    <rect x="1336" y="372" width="138" height="72" rx="8" fill="#F8FAFC"/>
+    <text x="1350" y="396" font-size="12" fill="#64748B">关联需求</text><text x="1350" y="428" font-size="22" font-weight="700" fill="#2563EB">68</text>
+    <rect x="1486" y="372" width="138" height="72" rx="8" fill="#F8FAFC"/>
+    <text x="1500" y="396" font-size="12" fill="#64748B">关联任务</text><text x="1500" y="428" font-size="22" font-weight="700" fill="#0891B2">214</text>
+    <rect x="1636" y="372" width="138" height="72" rx="8" fill="#F8FAFC"/>
+    <text x="1650" y="396" font-size="12" fill="#64748B">MR 数</text><text x="1650" y="428" font-size="22" font-weight="700" fill="#16A34A">62</text>
+    <rect x="1786" y="372" width="134" height="72" rx="8" fill="#FEF2F2"/>
+    <text x="1800" y="396" font-size="12" fill="#991B1B">失败数</text><text x="1800" y="428" font-size="22" font-weight="700" fill="#DC2626">7</text>
+
+    <!-- branch list -->
+    <text x="1336" y="478" font-size="13" font-weight="600" fill="#0F172A">分支列表</text>
+    <text x="1430" y="478" font-size="12" fill="#94A3B8">12 个</text>
+    <rect x="1336" y="488" width="584" height="160" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <g font-size="13">
+      <text x="1352" y="512" font-family="monospace" fill="#0F172A">main</text><rect x="1440" y="500" width="56" height="18" rx="5" fill="#DBEAFE"/><text x="1450" y="513" font-size="11" fill="#1D4ED8">默认</text><text x="1800" y="512" font-size="12" fill="#64748B">06-12 14:02</text>
+      <text x="1352" y="538" font-family="monospace" fill="#475569">develop</text><text x="1800" y="538" font-size="12" fill="#64748B">06-12 13:40</text>
+      <text x="1352" y="564" font-family="monospace" fill="#475569">feat/login-redesign</text><rect x="1560" y="552" width="50" height="18" rx="5" fill="#DCFCE7"/><text x="1568" y="565" font-size="11" fill="#16A34A">已合</text><text x="1800" y="564" font-size="12" fill="#64748B">06-12 11:20</text>
+      <text x="1352" y="590" font-family="monospace" fill="#475569">feat/tracker-fix</text><rect x="1560" y="578" width="50" height="18" rx="5" fill="#FEF3C7"/><text x="1566" y="591" font-size="11" fill="#B45309">审核中</text><text x="1800" y="590" font-size="12" fill="#64748B">06-11 18:05</text>
+      <text x="1352" y="616" font-family="monospace" fill="#475569">hotfix/auth-403</text><rect x="1560" y="604" width="50" height="18" rx="5" fill="#FEE2E2"/><text x="1570" y="617" font-size="11" fill="#B91C1C">冲突</text><text x="1800" y="616" font-size="12" fill="#64748B">06-11 09:42</text>
+      <text x="1352" y="642" font-family="monospace" fill="#94A3B8">+ 还有 7 个分支...</text>
+    </g>
+
+    <!-- related demand -->
+    <text x="1336" y="682" font-size="13" font-weight="600" fill="#0F172A">关联需求</text>
+    <rect x="1336" y="692" width="584" height="120" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <g font-size="12">
+      <text x="1352" y="714" font-family="monospace" fill="#2563EB">D-20687</text><text x="1452" y="714" fill="#0F172A">登录页改版</text><circle cx="1856" cy="710" r="4" fill="#16A34A"/><text x="1868" y="714" fill="#16A34A">完成</text>
+      <text x="1352" y="738" font-family="monospace" fill="#2563EB">D-20654</text><text x="1452" y="738" fill="#0F172A">首页性能优化</text><circle cx="1856" cy="734" r="4" fill="#D97706"/><text x="1868" y="738" fill="#D97706">进行</text>
+      <text x="1352" y="762" font-family="monospace" fill="#2563EB">D-20612</text><text x="1452" y="762" fill="#0F172A">表单校验补全</text><circle cx="1856" cy="758" r="4" fill="#16A34A"/><text x="1868" y="762" fill="#16A34A">完成</text>
+      <text x="1352" y="786" font-family="monospace" fill="#2563EB">D-20588</text><text x="1452" y="786" fill="#0F172A">暗色主题</text><circle cx="1856" cy="782" r="4" fill="#DC2626"/><text x="1868" y="786" fill="#DC2626">失败</text>
+    </g>
+
+    <!-- related task -->
+    <text x="1336" y="842" font-size="13" font-weight="600" fill="#0F172A">关联任务</text>
+    <rect x="1336" y="852" width="584" height="120" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <g font-size="12">
+      <text x="1352" y="874" font-family="monospace" fill="#2563EB">T-2087</text><text x="1452" y="874" fill="#0F172A">登录页改版实现</text><text x="1700" y="874" fill="#64748B">claude_code</text><circle cx="1890" cy="870" r="4" fill="#16A34A"/>
+      <text x="1352" y="898" font-family="monospace" fill="#2563EB">T-2065</text><text x="1452" y="898" fill="#0F172A">首页懒加载</text><text x="1700" y="898" fill="#64748B">kxcymc_openapi</text><circle cx="1890" cy="894" r="4" fill="#D97706"/>
+      <text x="1352" y="922" font-family="monospace" fill="#2563EB">T-2041</text><text x="1452" y="922" fill="#0F172A">表单组件重构</text><text x="1700" y="922" fill="#64748B">claude_code</text><circle cx="1890" cy="918" r="4" fill="#16A34A"/>
+      <text x="1352" y="946" font-family="monospace" fill="#2563EB">T-2018</text><text x="1452" y="946" fill="#0F172A">主题切换</text><text x="1700" y="946" fill="#64748B">trae_side_chat</text><circle cx="1890" cy="942" r="4" fill="#DC2626"/>
+    </g>
+    <rect x="1336" y="990" width="584" height="40" rx="8" fill="#EFF4FF"/>
+    <text x="1350" y="1015" font-size="12" fill="#2563EB">扫描来源：本地 git 工作区 · 每 30 分钟自动扫描分支与 MR 状态</text>
+  </g>
+</svg>

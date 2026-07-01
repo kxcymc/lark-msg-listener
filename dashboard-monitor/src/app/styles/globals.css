@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * shadcn/ui 语义颜色变量（HSL，无 hsl() 包裹，供 tailwind.config.ts 引用）。
+ * 取值对齐 DASHBOARD_DEVELOPMENT_REPORT.md 配色语义：
+ *   主色 Primary  #2563EB -> 221.2 83.2% 53.3%
+ *   正文 Text     #0F172A (slate-950)
+ *   背景 Bg       #F8FAFC (slate-50)
+ *   边框 Border   #E2E8F0 (slate-200)
+ *   错误 Danger   #DC2626 -> 0 72.2% 50.6%
+ * 仅维护这一套来源，避免组件库默认色与设计稿色彩双轨打架。
+ */
+@layer base {
+  :root {
+    --background: 210 40% 98%; /* #F8FAFC */
+    --foreground: 222.2 47.4% 11.2%; /* #0F172A */
+    --card: 0 0% 100%; /* #FFFFFF surface */
+    --card-foreground: 222.2 47.4% 11.2%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    --primary: 221.2 83.2% 53.3%; /* #2563EB */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%; /* #64748B */
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 72.2% 50.6%; /* #DC2626 */
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%; /* #E2E8F0 */
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+
+    /* 业务状态语义色（HSL，供 tailwind.config.ts 引用，随主题切换）。
+     * soft 为浅底色块，foreground 为底色块上的可读文字色。 */
+    --success: 142.1 70.6% 36.3%; /* #16A34A */
+    --success-foreground: 0 0% 100%;
+    --success-soft: 141 78.9% 92.5%; /* #DCFCE7 */
+    --warning: 32.1 94.6% 43.7%; /* #D97706 */
+    --warning-foreground: 0 0% 100%;
+    --warning-soft: 48 96.5% 88.8%; /* #FEF3C7 */
+    --danger: 0 72.2% 50.6%; /* #DC2626 */
+    --danger-foreground: 0 0% 100%;
+    --danger-soft: 0 85.7% 94.3%; /* #FEE2E2 */
+    --info: 191.6 91.4% 36.5%; /* #0891B2 */
+    --info-foreground: 0 0% 100%;
+    --info-soft: 191.6 91.4% 36.5%; /* 与 info 同色，配合 /10 透明度使用 */
+  }
+
+  /* 深色大屏模式（实时监控台等使用） */
+  .dark {
+    --background: 222.2 47.4% 11.2%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 47.4% 13%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 47.4% 13%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+
+    /* 深色下：文字色提亮以保证对比度，soft 块改用低亮度同色调暗底。 */
+    --success: 142.1 70.2% 55%;
+    --success-foreground: 144 80% 10%;
+    --success-soft: 142.1 50% 18%;
+    --warning: 43 96% 62%;
+    --warning-foreground: 28 90% 12%;
+    --warning-soft: 32 60% 20%;
+    --danger: 0 90.6% 70.8%;
+    --danger-foreground: 0 80% 12%;
+    --danger-soft: 0 55% 24%;
+    --info: 188.7 85% 60%;
+    --info-foreground: 192 90% 10%;
+    --info-soft: 188.7 85% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+}

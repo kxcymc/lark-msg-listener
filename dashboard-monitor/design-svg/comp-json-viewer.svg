@@ -1,0 +1,118 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',-apple-system,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- header -->
+  <text x="80" y="72" font-size="20" font-weight="600" fill="#0F172A">JsonViewer JSON 查看器</text>
+  <text x="80" y="100" font-size="14" fill="#64748B">语法高亮（键/字符串/数字/布尔不同色）+ 折叠展开三角 + 字段路径复制 + 超长截断提示与原始文件路径。等宽 13px。</text>
+  <line x1="80" y1="120" x2="1840" y2="120" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- viewer container -->
+  <rect x="80" y="160" width="900" height="720" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <!-- toolbar 48 -->
+  <line x1="80" y1="208" x2="980" y2="208" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="104" y="190" font-size="14" font-weight="600" fill="#0F172A">message_payload.json</text>
+  <!-- expand/collapse all + copy -->
+  <rect x="760" y="174" width="92" height="28" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="772" y="192" font-size="12" fill="#64748B">全部折叠</text>
+  <rect x="860" y="174" width="100" height="28" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <rect x="872" y="182" width="10" height="12" rx="2" fill="none" stroke="#64748B" stroke-width="1.2"/>
+  <rect x="876" y="178" width="10" height="12" rx="2" fill="#F8FAFC" stroke="#64748B" stroke-width="1.2"/>
+  <text x="892" y="192" font-size="12" fill="#64748B">复制</text>
+
+  <!-- json body (monospace) -->
+  <g font-family="'SF Mono','Menlo','Consolas',monospace" font-size="13">
+    <!-- line 1 { -->
+    <path d="M108 232 l6 4 l-6 4 z" fill="#64748B"/>
+    <text x="124" y="240" fill="#0F172A">{</text>
+    <!-- msg_id -->
+    <text x="148" y="266" fill="#0891B2">"msg_id"</text>
+    <text x="220" y="266" fill="#64748B">:</text>
+    <text x="232" y="266" fill="#16A34A">"om_7d2f1a9c4b"</text>
+    <text x="372" y="266" fill="#64748B">,</text>
+    <!-- chat_type -->
+    <text x="148" y="292" fill="#0891B2">"chat_type"</text>
+    <text x="238" y="292" fill="#64748B">:</text>
+    <text x="250" y="292" fill="#16A34A">"group"</text>
+    <text x="318" y="292" fill="#64748B">,</text>
+    <!-- seq -->
+    <text x="148" y="318" fill="#0891B2">"seq"</text>
+    <text x="196" y="318" fill="#64748B">:</text>
+    <text x="208" y="318" fill="#2563EB">10248</text>
+    <text x="266" y="318" fill="#64748B">,</text>
+    <!-- is_recalled bool -->
+    <text x="148" y="344" fill="#0891B2">"is_recalled"</text>
+    <text x="250" y="344" fill="#64748B">:</text>
+    <text x="262" y="344" fill="#D97706">false</text>
+    <text x="310" y="344" fill="#64748B">,</text>
+    <!-- sender object (expanded) -->
+    <path d="M128 364 l6 4 l-6 4 z" fill="#64748B"/>
+    <text x="148" y="370" fill="#0891B2">"sender"</text>
+    <text x="222" y="370" fill="#64748B">: {</text>
+    <text x="180" y="396" fill="#0891B2">"id"</text>
+    <text x="218" y="396" fill="#64748B">:</text>
+    <text x="230" y="396" fill="#16A34A">"ou_3f8a2b"</text>
+    <text x="340" y="396" fill="#64748B">,</text>
+    <text x="180" y="422" fill="#0891B2">"type"</text>
+    <text x="230" y="422" fill="#64748B">:</text>
+    <text x="242" y="422" fill="#16A34A">"user"</text>
+    <text x="148" y="448" fill="#64748B">},</text>
+    <!-- content object collapsed -->
+    <path d="M130 462 l8 0 l-4 6 z" fill="#64748B"/>
+    <text x="148" y="474" fill="#0891B2">"content"</text>
+    <text x="232" y="474" fill="#64748B">: { … } </text>
+    <text x="310" y="474" fill="#94A3B8">3 项已折叠</text>
+    <text x="148" y="474" fill="#64748B"></text>
+    <!-- mentions array -->
+    <path d="M128 492 l6 4 l-6 4 z" fill="#64748B"/>
+    <text x="148" y="500" fill="#0891B2">"mentions"</text>
+    <text x="240" y="500" fill="#64748B">: [</text>
+    <text x="180" y="526" fill="#16A34A">"@all"</text>
+    <text x="232" y="526" fill="#64748B">,</text>
+    <text x="180" y="552" fill="#16A34A">"@ou_88c1"</text>
+    <text x="148" y="578" fill="#64748B">],</text>
+    <!-- create_time -->
+    <text x="148" y="604" fill="#0891B2">"create_time"</text>
+    <text x="256" y="604" fill="#64748B">:</text>
+    <text x="268" y="604" fill="#2563EB">1781250483</text>
+    <text x="358" y="604" fill="#64748B">,</text>
+    <!-- raw_text truncated -->
+    <text x="148" y="630" fill="#0891B2">"raw_text"</text>
+    <text x="232" y="630" fill="#64748B">:</text>
+    <text x="244" y="630" fill="#16A34A">"本次发布包含 12 项需求与 …"</text>
+    <!-- truncation chip -->
+    <rect x="500" y="618" width="120" height="20" rx="4" fill="#FEF3C7"/>
+    <text x="510" y="632" fill="#D97706" font-size="11">已截断 · 4.2 KB</text>
+    <!-- close brace -->
+    <text x="124" y="660" fill="#0F172A">}</text>
+  </g>
+
+  <!-- path copy hover row callout -->
+  <rect x="148" y="380" width="240" height="22" fill="none" stroke="#2563EB" stroke-dasharray="3 2"/>
+  <rect x="400" y="382" width="120" height="18" rx="4" fill="#0F172A"/>
+  <text x="408" y="395" font-size="11" fill="#FFFFFF" font-family="monospace">复制路径 sender.id</text>
+
+  <!-- truncation footer original path -->
+  <line x1="80" y1="800" x2="980" y2="800" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="104" y="832" font-size="12" fill="#64748B">内容超出展示上限，已截断。原始文件：</text>
+  <text x="104" y="856" font-size="12" fill="#2563EB" font-family="monospace">/var/data/lark/payloads/2026-06-12/om_7d2f1a9c4b.json</text>
+
+  <!-- 语法高亮图例 -->
+  <text x="1040" y="200" font-size="16" font-weight="600" fill="#0F172A">语法高亮配色</text>
+  <rect x="1040" y="224" width="14" height="14" rx="3" fill="#0891B2"/>
+  <text x="1064" y="236" font-size="13" fill="#475569">键名 key → Info #0891B2</text>
+  <rect x="1040" y="256" width="14" height="14" rx="3" fill="#16A34A"/>
+  <text x="1064" y="268" font-size="13" fill="#475569">字符串 string → Success #16A34A</text>
+  <rect x="1040" y="288" width="14" height="14" rx="3" fill="#2563EB"/>
+  <text x="1064" y="300" font-size="13" fill="#475569">数字 number → Primary #2563EB</text>
+  <rect x="1040" y="320" width="14" height="14" rx="3" fill="#D97706"/>
+  <text x="1064" y="332" font-size="13" fill="#475569">布尔 / null → Warning #D97706</text>
+  <rect x="1040" y="352" width="14" height="14" rx="3" fill="#64748B"/>
+  <text x="1064" y="364" font-size="13" fill="#475569">标点 / 折叠三角 → 次要 #64748B</text>
+
+  <text x="1040" y="424" font-size="16" font-weight="600" fill="#0F172A">交互规范</text>
+  <text x="1040" y="458" font-size="13" fill="#64748B">· 对象/数组前置折叠三角，▶ 折叠 / ▼ 展开。</text>
+  <text x="1040" y="484" font-size="13" fill="#64748B">· 折叠时显示 { … } 与「N 项已折叠」摘要。</text>
+  <text x="1040" y="510" font-size="13" fill="#64748B">· 行 hover 显示「复制路径」气泡（深底白字 tooltip）。</text>
+  <text x="1040" y="536" font-size="13" fill="#64748B">· 超长字符串截断为「已截断 · 大小」标签，底部给出原始文件路径，可点击下载。</text>
+  <text x="1040" y="562" font-size="13" fill="#64748B">· 全部使用等宽字体 13px，缩进 2 空格。</text>
+</svg>

@@ -1,0 +1,107 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',-apple-system,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1920" height="1080" fill="#F8FAFC"/>
+
+  <!-- header -->
+  <text x="80" y="72" font-size="20" font-weight="600" fill="#0F172A">Timeline 时间线</text>
+  <text x="80" y="100" font-size="14" fill="#64748B">纵向节点 + 时间 + 标题 + 描述，用于展示任务执行过程 / 事件流。节点色区分状态：完成 / 进行中 / 失败 / 等待。</text>
+  <line x1="80" y1="120" x2="1840" y2="120" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- ===== 主时间线 卡片 ===== -->
+  <text x="80" y="172" font-size="16" font-weight="600" fill="#0F172A">执行过程 · 混合状态</text>
+  <rect x="80" y="192" width="720" height="640" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+  <!-- vertical line -->
+  <line x1="200" y1="240" x2="200" y2="780" stroke="#E2E8F0" stroke-width="2"/>
+
+  <!-- node1 完成 -->
+  <circle cx="200" cy="252" r="9" fill="#16A34A"/>
+  <path d="M196 252 l3 3 l6 -6" fill="none" stroke="#FFFFFF" stroke-width="1.6"/>
+  <text x="112" y="248" font-size="12" fill="#94A3B8" text-anchor="end" transform="translate(76,0)">09:21:02</text>
+  <text x="232" y="248" font-size="14" font-weight="600" fill="#0F172A">接收消息事件</text>
+  <text x="232" y="272" font-size="13" fill="#64748B">长连接收到 im.message.receive_v1，msg_id om_7d2f1a9c4b</text>
+
+  <!-- node2 完成 -->
+  <circle cx="200" cy="340" r="9" fill="#16A34A"/>
+  <path d="M196 340 l3 3 l6 -6" fill="none" stroke="#FFFFFF" stroke-width="1.6"/>
+  <text x="188" y="336" font-size="12" fill="#94A3B8" text-anchor="end">09:21:03</text>
+  <text x="232" y="336" font-size="14" font-weight="600" fill="#0F172A">命令解析完成</text>
+  <text x="232" y="360" font-size="13" fill="#64748B">识别到指令 /devtask create，校验权限通过</text>
+
+  <!-- node3 进行中 -->
+  <circle cx="200" cy="428" r="9" fill="#2563EB"/>
+  <circle cx="200" cy="428" r="14" fill="none" stroke="#2563EB" stroke-width="1.5" opacity="0.4"/>
+  <text x="188" y="424" font-size="12" fill="#94A3B8" text-anchor="end">09:21:05</text>
+  <text x="232" y="424" font-size="14" font-weight="600" fill="#2563EB">开发任务编排中</text>
+  <text x="232" y="448" font-size="13" fill="#64748B">正在调用 CLI 执行器生成代码，已耗时 342ms…</text>
+  <rect x="232" y="462" width="300" height="6" rx="3" fill="#E2E8F0"/>
+  <rect x="232" y="462" width="180" height="6" rx="3" fill="#2563EB"/>
+
+  <!-- node4 失败 -->
+  <circle cx="200" cy="552" r="9" fill="#DC2626"/>
+  <line x1="196" y1="548" x2="204" y2="556" stroke="#FFFFFF" stroke-width="1.6"/>
+  <line x1="204" y1="548" x2="196" y2="556" stroke="#FFFFFF" stroke-width="1.6"/>
+  <text x="188" y="548" font-size="12" fill="#94A3B8" text-anchor="end">09:21:18</text>
+  <text x="232" y="548" font-size="14" font-weight="600" fill="#DC2626">推送卡片失败</text>
+  <text x="232" y="572" font-size="13" fill="#64748B">调用 im/v1/messages 返回 99991663，触发重试机制</text>
+  <rect x="232" y="586" width="360" height="40" rx="6" fill="#FEF2F2"/>
+  <text x="244" y="610" font-size="12" fill="#DC2626" font-family="monospace">Error: token expired, retry 1/3</text>
+
+  <!-- node5 等待 -->
+  <circle cx="200" cy="680" r="9" fill="#FFFFFF" stroke="#D97706" stroke-width="2"/>
+  <circle cx="200" cy="680" r="3" fill="#D97706"/>
+  <text x="188" y="676" font-size="12" fill="#94A3B8" text-anchor="end">--:--:--</text>
+  <text x="232" y="676" font-size="14" font-weight="600" fill="#D97706">等待重试</text>
+  <text x="232" y="700" font-size="13" fill="#64748B">将于 5s 后自动重新推送</text>
+
+  <!-- node6 待执行 灰 -->
+  <circle cx="200" cy="760" r="9" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="188" y="756" font-size="12" fill="#CBD5E1" text-anchor="end">待执行</text>
+  <text x="232" y="756" font-size="14" font-weight="600" fill="#94A3B8">归档记录</text>
+  <text x="232" y="780" font-size="13" fill="#94A3B8">写入 SQLite，更新工作量统计</text>
+
+  <!-- ===== 节点状态图例 ===== -->
+  <text x="880" y="172" font-size="16" font-weight="600" fill="#0F172A">节点状态色</text>
+
+  <circle cx="896" cy="208" r="9" fill="#16A34A"/>
+  <path d="M892 208 l3 3 l6 -6" fill="none" stroke="#FFFFFF" stroke-width="1.6"/>
+  <text x="920" y="213" font-size="13" fill="#475569">完成 → 实心 Success #16A34A + 勾</text>
+
+  <circle cx="896" cy="252" r="9" fill="#2563EB"/>
+  <circle cx="896" cy="252" r="14" fill="none" stroke="#2563EB" stroke-width="1.5" opacity="0.4"/>
+  <text x="920" y="257" font-size="13" fill="#475569">进行中 → 实心 Primary #2563EB + 脉冲环</text>
+
+  <circle cx="896" cy="300" r="9" fill="#DC2626"/>
+  <line x1="892" y1="296" x2="900" y2="304" stroke="#FFFFFF" stroke-width="1.6"/>
+  <line x1="900" y1="296" x2="892" y2="304" stroke="#FFFFFF" stroke-width="1.6"/>
+  <text x="920" y="305" font-size="13" fill="#475569">失败 → 实心 Danger #DC2626 + 叉</text>
+
+  <circle cx="896" cy="344" r="9" fill="#FFFFFF" stroke="#D97706" stroke-width="2"/>
+  <circle cx="896" cy="344" r="3" fill="#D97706"/>
+  <text x="920" y="349" font-size="13" fill="#475569">等待 → 描边 Warning #D97706</text>
+
+  <circle cx="896" cy="388" r="9" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="920" y="393" font-size="13" fill="#475569">待执行 → 描边灰 #CBD5E1（未激活）</text>
+
+  <!-- spec -->
+  <text x="880" y="456" font-size="16" font-weight="600" fill="#0F172A">布局规范</text>
+  <text x="880" y="492" font-size="13" fill="#64748B">· 节点直径 18px，连接竖线 2px / #E2E8F0。</text>
+  <text x="880" y="518" font-size="13" fill="#64748B">· 左侧时间戳右对齐 caption 12px #94A3B8。</text>
+  <text x="880" y="544" font-size="13" fill="#64748B">· 节点右侧：标题 14/600 + 描述 13/400 次要文字。</text>
+  <text x="880" y="570" font-size="13" fill="#64748B">· 节点间距 ≥ 80px，描述可承载错误块 / 进度条等附加内容。</text>
+  <text x="880" y="596" font-size="13" fill="#64748B">· 当前进行中节点标题用 Primary 强调，已完成正常 Text 色。</text>
+
+  <!-- 横向时间线缩略 -->
+  <text x="880" y="664" font-size="16" font-weight="600" fill="#0F172A">横向变体（缩略）</text>
+  <line x1="900" y1="740" x2="1700" y2="740" stroke="#E2E8F0" stroke-width="2"/>
+  <line x1="900" y1="740" x2="1300" y2="740" stroke="#16A34A" stroke-width="2"/>
+  <circle cx="900" cy="740" r="8" fill="#16A34A"/>
+  <circle cx="1100" cy="740" r="8" fill="#16A34A"/>
+  <circle cx="1300" cy="740" r="8" fill="#2563EB"/>
+  <circle cx="1500" cy="740" r="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <circle cx="1700" cy="740" r="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="900" y="772" font-size="12" fill="#475569" text-anchor="middle">接收</text>
+  <text x="1100" y="772" font-size="12" fill="#475569" text-anchor="middle">解析</text>
+  <text x="1300" y="772" font-size="12" fill="#2563EB" text-anchor="middle">编排中</text>
+  <text x="1500" y="772" font-size="12" fill="#94A3B8" text-anchor="middle">推送</text>
+  <text x="1700" y="772" font-size="12" fill="#94A3B8" text-anchor="middle">归档</text>
+</svg>
