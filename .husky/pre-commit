@@ -1,0 +1,33 @@
+#!/usr/bin/env sh
+# 提交前钩子入口：调用敏感信息扫描器，命中即阻止提交。
+# 为什么用 sh + 显式定位仓库根：git 以 core.hooksPath 触发钩子时，工作目录
+# 是仓库根，但为兼容各种客户端/子目录调用，这里用 git rev-parse 稳妥定位，
+# 再用 node 执行扫描脚本（本工作区强约束 Node >=18 三端可用）。
+
+# 允许用环境变量临时关闭（应急用），默认开启。
+if [ "$HUSKY_SKIP_SECRET_SCAN" = "1" ]; then
+  echo "已跳过敏感信息扫描（HUSKY_SKIP_SECRET_SCAN=1）"
+  exit 0
+fi
+
+REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null)
+if [ -z "$REPO_ROOT" ]; then
+  echo "pre-commit: 无法定位仓库根，跳过扫描" >&2
+  exit 0
+fi
+
+SCANNER="$REPO_ROOT/.husky/scan-secrets.mjs"
+if [ ! -f "$SCANNER" ]; then
+  echo "pre-commit: 未找到扫描脚本 $SCANNER，跳过" >&2
+  exit 0
+fi
+
+# 定位 node：优先 PATH 中的 node，其次常见路径。找不到则拦截并提示。
+NODE_BIN=$(command -v node 2>/dev/null)
+if [ -z "$NODE_BIN" ]; then
+  echo "pre-commit: 未找到 node（本项目要求 Node >=18），无法执行敏感信息扫描。" >&2
+  echo "  请安装 Node 或将其加入 PATH；应急可用 git commit --no-verify 跳过。" >&2
+  exit 1
+fi
+
+exec "$NODE_BIN" "$SCANNER"

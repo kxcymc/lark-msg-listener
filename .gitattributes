@@ -1,0 +1,9 @@
+# 保证跨平台一致的换行符处理。
+# 为什么需要：Git for Windows 默认 core.autocrlf=true，checkout 时会把脚本转成 CRLF。
+# .husky/pre-commit 与扫描脚本以 sh/node 解释执行，若被转成 CRLF，MSYS sh 会因
+# `#!/usr/bin/env sh\r` 报 bad interpreter 导致钩子在 Windows 端直接失效。
+# 这里强制 shell/mjs 脚本始终以 LF 入库与检出，保证三端一致可运行。
+* text=auto
+*.sh text eol=lf
+*.mjs text eol=lf
+.husky/pre-commit text eol=lf
