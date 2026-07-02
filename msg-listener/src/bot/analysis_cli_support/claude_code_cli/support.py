@@ -16,10 +16,10 @@ from ....common.ccr_gateway import (
     load_ccr_config,
 )
 from ....common.claude_code_cli import (
+    CLAUDE_CODE_CLI_DEFAULT_OUTPUT_FORMAT,
     CLAUDE_CODE_CLI_READONLY_DISALLOWED_TOOLS,
     coerce_tool_list,
     discover_claude_model_options,
-    load_claude_code_cli_base_config,
     merge_disallowed_tools,
     resolve_analysis_task_state_dir,
 )
@@ -36,12 +36,13 @@ def _build_claude_config(cfg: dict) -> ClaudeCodeCliConfig:
     phase2_cfg = cfg.get("phase2") or {}
     claude_cfg = phase2_cfg.get("claude") or {}
     timeout = float(phase2_cfg.get("analysis_timeout_seconds", 240))
-    base_config = load_claude_code_cli_base_config(cfg)
     extra_disallowed_tools = coerce_tool_list(claude_cfg.get("disallowed_tools"))
     ccr_cfg = load_ccr_config(cfg)
     return ClaudeCodeCliConfig(
-        command=base_config.command,
-        output_format=base_config.output_format,
+        output_format=str(
+            claude_cfg.get("output_format", CLAUDE_CODE_CLI_DEFAULT_OUTPUT_FORMAT)
+        )
+        or CLAUDE_CODE_CLI_DEFAULT_OUTPUT_FORMAT,
         analysis_prompt_template=str(claude_cfg.get("analysis_prompt_template", "")),
         model_name=str(claude_cfg.get("model", "")),
         # 需求分析场景必须只读，配置项只能追加禁用工具，不能放开写入类工具。

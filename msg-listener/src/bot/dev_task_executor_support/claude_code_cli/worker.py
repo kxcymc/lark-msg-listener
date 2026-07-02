@@ -23,9 +23,9 @@ from ....common.ccr_gateway import CcrGatewayConfig, build_ccr_env
 from ....common.claude_code_cli import (
     CLAUDE_CODE_CLI_DEV_TASK_BUILTIN_DISALLOWED_TOOLS,
     CLAUDE_CODE_CLI_PERMISSION_MODE,
-    ClaudeCodeCliBaseConfig,
     build_claude_print_argv,
     coerce_tool_list,
+    merge_disallowed_tools,
 )
 
 ERROR_CLAUDE_CLI_TIMEOUT = "claude_cli_timeout"
@@ -188,16 +188,15 @@ def _run(*, metadata: dict[str, Any], stdout_path: Path, stderr_path: Path) -> d
 
 
 def _build_cli_command(metadata: dict[str, Any]) -> list[str]:
-    config = ClaudeCodeCliBaseConfig(
-        command=str(metadata.get("command") or "claude"),
+    return build_claude_print_argv(
         model=str(metadata.get("model") or ""),
         output_format=str(metadata.get("output_format") or ""),
-        disallowed_tools=coerce_tool_list(metadata.get("disallowed_tools")),
-    )
-    return build_claude_print_argv(
-        config,
         permission_mode=CLAUDE_CODE_CLI_PERMISSION_MODE,
-        disallowed_tools=CLAUDE_CODE_CLI_DEV_TASK_BUILTIN_DISALLOWED_TOOLS,
+        # 执行器侧：配置禁用工具与内置高风险 Bash 黑名单合并，黑名单不可移除。
+        disallowed_tools=merge_disallowed_tools(
+            coerce_tool_list(metadata.get("disallowed_tools")),
+            CLAUDE_CODE_CLI_DEV_TASK_BUILTIN_DISALLOWED_TOOLS,
+        ),
     )
 
 

@@ -10,8 +10,9 @@ from .executor import ClaudeCodeCliExecutor
 from .models import ClaudeCodeCliConfig
 from ....common.ccr_gateway import ensure_gateway_ready, load_ccr_config
 from ....common.claude_code_cli import (
+    CLAUDE_CODE_CLI_DEFAULT_OUTPUT_FORMAT,
+    coerce_tool_list,
     discover_claude_model_options,
-    load_claude_code_cli_base_config,
     resolve_dev_task_state_dir,
 )
 
@@ -23,14 +24,16 @@ MODEL_FIELD_KEY = "phase3.dev_task.claude_code_cli.model"
 
 def _build_config(cfg: dict) -> ClaudeCodeCliConfig:
     dev_task_cfg = ((cfg.get("phase3") or {}).get("dev_task") or {})
-    base_config = load_claude_code_cli_base_config(cfg)
+    cli_cfg = dev_task_cfg.get("claude_code_cli") or {}
     # 读取顶层 [ccr]，把网关开关与地址固化进配置，供 executor 写入 worker metadata。
     ccr_cfg = load_ccr_config(cfg)
     return ClaudeCodeCliConfig(
-        command=base_config.command,
-        model=base_config.model,
-        output_format=base_config.output_format,
-        disallowed_tools=base_config.disallowed_tools,
+        model=str(cli_cfg.get("model", "")),
+        output_format=str(
+            cli_cfg.get("output_format", CLAUDE_CODE_CLI_DEFAULT_OUTPUT_FORMAT)
+        )
+        or CLAUDE_CODE_CLI_DEFAULT_OUTPUT_FORMAT,
+        disallowed_tools=coerce_tool_list(cli_cfg.get("disallowed_tools")),
         state_dir=resolve_dev_task_state_dir(PROJECT_ROOT),
         submit_timeout_seconds=float(dev_task_cfg.get("submit_timeout_seconds", 30)),
         ccr_enabled=ccr_cfg.enabled,

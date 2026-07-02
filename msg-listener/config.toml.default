@@ -129,6 +129,8 @@ disallowed_tools = ["Edit", "Write", "MultiEdit", "Bash"]
 [phase2.claude]
 # Claude 分析器模型名；留空使用 CLI/CCR 默认模型，候选值由 CCR 配置或 ACP 动态发现。
 model = ""
+# 要求 CLI 输出可解析结果；只读工具黑名单由代码固定追加。
+output_format = "json"
 # 自定义分析 prompt 模板；留空使用内置模板。
 analysis_prompt_template = ""
 # 分析器额外禁用工具；Edit/Write/MultiEdit/Bash 由代码固定追加，保证只读。
@@ -180,8 +182,6 @@ endpoint = "https://example-api.com"
 pat_token = ""
 
 [phase3.dev_task.claude_code_cli]
-# Claude Code CLI 可执行命令（默认在 PATH 中查找 `claude`）。
-command = "claude"
 # Claude Code CLI 模型名；留空使用 CLI/CCR 默认模型，候选值由 CCR 配置或 ACP 动态发现。
 model = ""
 # 要求 CLI 输出可解析结果；权限模式 bypassPermissions 与高风险 Bash 黑名单由代码固定处理。

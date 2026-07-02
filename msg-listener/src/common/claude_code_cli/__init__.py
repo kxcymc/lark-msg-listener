@@ -10,7 +10,6 @@ import platform
 import re
 import shlex
 import shutil
-from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Iterable
 
@@ -69,33 +68,6 @@ CLAUDE_CODE_CLI_DEV_TASK_BUILTIN_DISALLOWED_TOOLS = (
 )
 
 
-@dataclass(frozen=True)
-class ClaudeCodeCliBaseConfig:
-    """分析器和开发任务执行器共用的 Claude Code CLI 字段。"""
-
-    command: str = CLAUDE_CODE_CLI_DEFAULT_COMMAND
-    model: str = ""
-    output_format: str = CLAUDE_CODE_CLI_DEFAULT_OUTPUT_FORMAT
-    disallowed_tools: tuple[str, ...] = field(default_factory=tuple)
-
-
-def load_claude_code_cli_base_config(cfg: dict) -> ClaudeCodeCliBaseConfig:
-    """从 phase3 读取 Claude Code CLI 公共配置。"""
-    cli_cfg = (
-        ((cfg.get("phase3") or {}).get("dev_task") or {}).get("claude_code_cli") or {}
-    )
-    return ClaudeCodeCliBaseConfig(
-        command=str(cli_cfg.get("command", CLAUDE_CODE_CLI_DEFAULT_COMMAND))
-        or CLAUDE_CODE_CLI_DEFAULT_COMMAND,
-        model=str(cli_cfg.get("model", "")),
-        output_format=str(
-            cli_cfg.get("output_format", CLAUDE_CODE_CLI_DEFAULT_OUTPUT_FORMAT)
-        )
-        or CLAUDE_CODE_CLI_DEFAULT_OUTPUT_FORMAT,
-        disallowed_tools=coerce_tool_list(cli_cfg.get("disallowed_tools")),
-    )
-
-
 def coerce_tool_list(
     value: object,
     default: Iterable[str] | None = None,
@@ -127,23 +99,26 @@ def merge_disallowed_tools(*groups: Iterable[str]) -> tuple[str, ...]:
 
 
 def build_claude_print_argv(
-    config: ClaudeCodeCliBaseConfig,
     *,
+    model: str = "",
+    output_format: str = "",
     prompt: str | None = None,
     permission_mode: str = "",
     disallowed_tools: Iterable[str] = (),
 ) -> list[str]:
-    """按统一的输出格式、模型和工具规则构造 `claude -p` argv。"""
-    argv = [config.command, "-p"]
+    """按统一的输出格式、模型和工具规则构造 `claude -p` argv。
+
+    命令固定为 `claude`；model/output_format/disallowed_tools
+    由各调用方（分析器 / 执行器）从自己的配置段读取后显式传入。
+    """
+    argv = [CLAUDE_CODE_CLI_DEFAULT_COMMAND, "-p"]
     if permission_mode:
         argv += ["--permission-mode", permission_mode]
-    model = config.model.strip()
-    if model:
-        argv += ["--model", model]
-    output_format = config.output_format.strip()
-    if output_format:
-        argv += ["--output-format", output_format]
-    for tool in merge_disallowed_tools(config.disallowed_tools, disallowed_tools):
+    if model.strip():
+        argv += ["--model", model.strip()]
+    if output_format.strip():
+        argv += ["--output-format", output_format.strip()]
+    for tool in merge_disallowed_tools(disallowed_tools):
         argv += ["--disallowedTools", tool]
     if prompt is not None:
         argv.append(prompt)

@@ -16,7 +16,6 @@ from ....common.claude_code_cli import (
     CLAUDE_CODE_CLI_DEFAULT_COMMAND,
     CLAUDE_CODE_CLI_DEFAULT_OUTPUT_FORMAT,
     CLAUDE_CODE_CLI_READONLY_DISALLOWED_TOOLS,
-    ClaudeCodeCliBaseConfig,
     build_claude_print_argv,
     merge_disallowed_tools,
 )
@@ -247,18 +246,15 @@ class ClaudeCodeCliAnalyzer:
         )
 
     def _build_argv(self, prompt: str, payload: AnalyzerInput) -> list[str]:
-        cli_config = ClaudeCodeCliBaseConfig(
-            command=self.config.command,
+        return build_claude_print_argv(
             model=self.config.model_name,
             output_format=self.config.output_format,
+            prompt=self._build_prompt_payload(prompt, payload),
+            # 需求分析场景必须只读：无论配置怎么填，都固定追加写入类禁用工具。
             disallowed_tools=merge_disallowed_tools(
                 self.config.disallowed_tools,
                 CLAUDE_CODE_CLI_READONLY_DISALLOWED_TOOLS,
             ),
-        )
-        return build_claude_print_argv(
-            cli_config,
-            prompt=self._build_prompt_payload(prompt, payload),
         )
 
     def _build_prompt(self) -> str:
